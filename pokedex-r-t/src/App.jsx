@@ -9,11 +9,11 @@ function App() {
   }
   return (
     <>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {/* <!--Fondo liza claro, contiene LOS DATOS DE UN POKEMON --> */}
-      <div className="flex min-w-dvw min-h-dvh justify-center p-1 dark:bg-violet-400">
+      <div className="flex min-w-dvw min-h-dvh py-2 justify-center bg-violet-400">
         {/* <!-- Contenido POKEDEX POKEMON --> */}
-        <div className="box-border flex max-w-dvw flex-col border-x-8 border-violet-400 p-2 lg:max-w-fit">
+        <div className="flex-col min-w-11/12 sm:min-w-md max-w-dvw max-h-dvh">
           <PokemonOrangeCard pokeData={charizardData} showShiny={false}/>
         </div>
       </div>

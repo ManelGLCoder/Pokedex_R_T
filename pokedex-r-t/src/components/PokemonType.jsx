@@ -2,7 +2,7 @@ import "../App.css"
 
 const PokemonType = ({ pokemonType}) => {
     return (
-    <div className={`grid max-w-fit grid-cols-3 gap-1 rounded-xl px-2 py-1.5 text-xs ${colorType[pokemonType]} text-white`}>
+    <div className={`grid grid-cols-3 max-w-fit px-2 py-1.5 gap-1 rounded-xl text-xs ${colorType[pokemonType]} text-white`}>
         <img className="size-4" src={srcType(pokemonType)} alt="Fire Icon"/>
         <span className="col-span-2">{nameType[pokemonType]}</span>
     </div>

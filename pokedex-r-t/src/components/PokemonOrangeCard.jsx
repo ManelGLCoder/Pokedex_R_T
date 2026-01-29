@@ -11,7 +11,11 @@ const PokemonOrangeCard = ({pokeData, showShiny}) => {
                 </div>
                 <TypesOfThePokemon types={[...pokeData.types]}/>
                 <div className="flex justify-center">
-                    <img className="size-32" src={`src/assets/pokemon/${pokeData.name + (showShiny? "_s" : "")}.svg`} alt={`${pokeData.name} Icon`} />
+                    <img 
+                        className="size-32" 
+                        src={`src/assets/pokemon/${pokeData.name + (showShiny? "_s" : "")}.svg`}
+                        alt={`${pokeData.name} Icon`}
+                    />
                 </div>
             </div>
     );
