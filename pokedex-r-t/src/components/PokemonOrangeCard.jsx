@@ -17,6 +17,7 @@ const PokemonOrangeCard = ({pokeData, showShiny}) => {
                         alt={`${pokeData.name} Icon`}
                     />
                 </div>
+                <br />
             </div>
     );
 };
