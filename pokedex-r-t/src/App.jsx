@@ -2,6 +2,8 @@ import './App.css'
 import PokemonOrangeCard from './components/PokemonOrangeCard';
 import PokemonVioletCard from './components/PokemonVioletCard';
 
+
+
 function App() {
   const charizardData = {
     id: "006",
@@ -9,7 +11,24 @@ function App() {
     types: ["fire", "flying"],
     species: "Pokémon Llama",
     description: "Cuando lanza una descarga de fuego supercaliente, la roja llama de su cola brilla más intensamente.",
-    habilities: ["Mar Llamas", "Poder Solar"]
+    habilities: ["Mar Llamas", "Poder Solar"],
+    evolutions:[
+      {
+        name: "Charmander",
+        types: ["fire"],
+        lvEvolution: 16
+      },
+      {
+        name: "Charmeleon",
+        types: ["fire"],
+        lvEvolution: 36
+      },
+      {
+        name: "Charizard",
+        types: ["fire", "flying"],
+        lvEvolution: null
+      },
+    ]
   }
   const shiny = false
   return (

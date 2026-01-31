@@ -4,9 +4,9 @@ import "../App.css"
 const SectionDescription = ({pokeData}) => {
     return (
         <section>
-            <span class="text-xl font-bold">Descripción</span>
-            <span class="mx-1 text-gray-400">{pokeData.species}</span>
-            <p class="text-gray-400">
+            <span className="text-xl font-bold">Descripción</span>
+            <span className="mx-1 text-gray-400">{pokeData.species}</span>
+            <p className="text-gray-400">
                 {pokeData.description}
             </p>
             <div className="flex justify-around px-5 py-5 my-5 my-relative rounded-xl bg-violet-800 text-xl text-white">

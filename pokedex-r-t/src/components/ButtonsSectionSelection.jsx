@@ -4,7 +4,7 @@ import ButtonSection from "./ButtonSection";
 
 const ButtonsSectionSelection = ({buttons}) => {
     return (
-        <div class="relative flex max-w-full justify-around text-lg md:text-xl">
+        <div className="relative flex max-w-full justify-around text-lg md:text-xl">
             {
             buttons.map((b, i)=>{
                 return (<ButtonSection key={i} buttonData={b} />)
