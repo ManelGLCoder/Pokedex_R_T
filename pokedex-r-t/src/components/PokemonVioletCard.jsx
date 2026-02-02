@@ -6,10 +6,15 @@ import SectionDescription from "./SectionDescription";
 import ButtonsSectionSelection from "./ButtonsSectionSelection";
 import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
+import MovementSection from "./MovementSection";
 import TypesOfThePokemon from "./TypesOfThePokemon";
 
-const bHabilities = {name:"Habilidades", isFocus: true , link: "comming soon"}
-const bMoves = {name:"Movimientos", isFocus: false , link: "comming soon"}
+const bHabilities = {name:"Habilidades", isFocus: false , link: "comming soon"}
+const bMoves = {name:"Movimientos", isFocus: true , link: "comming soon"}
+const bLvMoves = {name:"Level Up", isFocus: true , link: "comming soon"}
+const bTMHMMoves = {name:"TM/HM", isFocus: false , link: "comming soon"}
+const bEggMoves = {name:"Egg", isFocus: false , link: "comming soon"}
+const bTutorMoves = {name:"Tutor", isFocus: false , link: "comming soon"}
 const descriptionFocused = true
 const statsFocused = false
 const bEvolutions = {name:"Línea Evolutiva", isFocus: true , link: "comming soon"}
@@ -22,10 +27,13 @@ const PokemonVioletCard = ({pokeData, showShiny}) => {
             <ButtonsDescripStats descriptionFocused={descriptionFocused} statsFocused={statsFocused}/>
             <SectionDescription pokeData={pokeData}/>
             <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
-            {/* Hay que cargar según si esta uno u otro focus */}
-            <SectionHabilities pokeData={pokeData}/>
-            {/* Faltan movimientos */}
+            {
+                bHabilities.isFocus ? 
+                    <SectionHabilities pokeData={pokeData}/> : 
+                    <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
+            }
             <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
+            {/* Hay que cargar según si esta uno u otro focus */}
             <SectionEvolutionLine pokeData={pokeData}/>
             {/* Faltan variantes */}
             
