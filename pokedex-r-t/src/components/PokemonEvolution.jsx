@@ -4,9 +4,9 @@ import TypesOfThePokemon from "./TypesOfThePokemon";
 
 const PokemonEvolution = ({pokeEvData}) => {
     return (
-        <div className="flex flex-col justify-end gap-2 p-2">
+        <div className="flex flex-col justify-end self-center gap-2 p-2">
             <img 
-                className="flex justify-center size-32" 
+                className="flex justify-center self-center size-32" 
                 src={`src/assets/pokemon/${pokeEvData.name}.svg`}
                 alt={`${pokeEvData.name} Icon`}
             />

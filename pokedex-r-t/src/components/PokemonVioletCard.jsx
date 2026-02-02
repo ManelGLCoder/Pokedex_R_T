@@ -27,6 +27,7 @@ const PokemonVioletCard = ({pokeData, showShiny}) => {
             {/* Faltan movimientos */}
             <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
             <SectionEvolutionLine pokeData={pokeData}/>
+            {/* Faltan variantes */}
             
         </div>
     );

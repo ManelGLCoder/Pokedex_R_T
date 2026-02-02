@@ -9,7 +9,7 @@ const PokemonOrangeCard = ({pokeData, showShiny}) => {
                     <span className="col-span-2">{pokeData.name}</span>
                     <span className="col-start-5">#{pokeData.id}</span>
                 </div>
-                <TypesOfThePokemon types={[...pokeData.types]}/>
+                <TypesOfThePokemon types={[...pokeData.types]} centered={false}/>
                 <div className="flex justify-center">
                     <img 
                         className="size-32" 

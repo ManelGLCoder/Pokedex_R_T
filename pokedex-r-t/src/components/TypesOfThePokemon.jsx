@@ -1,9 +1,9 @@
 import "../App.css"
 import PokemonType from "./PokemonType";
 
-const TypesOfThePokemon = ({types}) => {
+const TypesOfThePokemon = ({types, centered = true}) => {
     return (
-        <div className="flex flex-wrap px-5 my-2  gap-1 justify-normal">
+        <div className={`flex flex-wrap px-5 my-2 gap-1 ${centered? "justify-center" : "justify-normal"}`}>
             {types.map((type, i)=>{
                 return (<PokemonType key={i} pokemonType={type} />)
             })}
