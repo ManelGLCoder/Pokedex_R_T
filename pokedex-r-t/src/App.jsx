@@ -57,7 +57,34 @@ function App() {
         {name: "Dragon Claw", type: "dragon", category: "physical", power: 80, accuaracy: 100, pp:15},
         {name: "Thunder Punch", type: "electric", category: "physical", power: 75, accuaracy: 100, pp:20},
       ]
-    }
+    },
+    stats:{
+      ps: 78,
+      attack: 84,
+      defense: 78,
+      speed: 100,
+      specialAttack: 109,
+      specialDefense: 85,
+      happiness:50,
+      catchRatio: 45,
+      statMax:255,
+      totalSum:534,
+      totalSumMax: 1530
+    },
+    strengths: [
+      {type:"ground", multiplier: "0"},
+      {type:"bug", multiplier: "1/4"},
+      {type:"grass", multiplier: "1/4"},
+      {type:"steel", multiplier: "1/2"},
+      {type:"fire", multiplier: "1/2"},
+      {type:"fairy", multiplier: "1/2"},
+      {type:"fighting", multiplier: "1/2"},
+    ],
+    weakness: [
+      {type:"rock", multiplier: "4"},
+      {type:"water", multiplier: "2"},
+      {type:"electric", multiplier: "2"}
+    ]
   }
   const shiny = false
   return (

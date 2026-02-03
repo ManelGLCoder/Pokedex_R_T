@@ -1,10 +1,21 @@
 import "../App.css"
 
-const PokemonType = ({ pokemonType}) => {
+const PokemonType = ({ pokemonType, strengthMultiplier=null, weakMultiplier=null}) => {
+    const simple = !strengthMultiplier && !weakMultiplier 
     return (
     <div className={`grid grid-cols-3 max-w-fit px-2 py-1.5 gap-1 rounded-xl text-xs ${colorType[pokemonType]} text-white`}>
-        <img className="size-4" src={srcType(pokemonType)} alt="Fire Icon"/>
-        <span className="col-span-2">{nameType[pokemonType]}</span>
+        <img className="size-4" src={srcType(pokemonType)} alt={`${pokemonType} Icon`}/>
+        {
+            simple && <span className="col-span-2">{nameType[pokemonType]}</span> 
+        }
+        {
+            !simple && 
+            <>
+                <span className="col-span-1">{nameType[pokemonType]}</span>
+                <span className="col-span-1 font-black">{strengthMultiplier ? strengthMultiplier : weakMultiplier}</span>
+            </>
+            
+        }
     </div>
     );
 };
