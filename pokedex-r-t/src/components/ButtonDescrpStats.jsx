@@ -15,9 +15,9 @@ const ButtonsDescripStats = ({descriptionFocused, statsFocused}) => {
     //     </div>
     // )
     const buttonWithIcon = (iconPath, name, selected, colStart) =>{
-        const bg = selected ? "" : "bg-violet-900"
+        const bg = selected ? "" : "bg-violet-900 hover:bg-violet-800"
         return(
-            <button className={`grid col-start-${colStart} max-w-fit justify-items-center px-3 py-1 gap-0 rounded-xl ${bg} hover:bg-violet-900`}>
+            <button className={`grid col-start-${colStart} max-w-fit justify-items-center px-3 py-1 gap-0 rounded-xl ${bg} `}>
                 <img className="size-8" src={iconPath} alt={`${name} Btn`} />
                 {
                     selected &&
