@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css"
 import ButtonSubSection from "./ButtonSubSection";
-import LevelUpMovementsSection from "./LevelUpMovementsSection";
 import MovementsListSection from "./MovementsListSection";
 import SearchMovement from "./SearchMovement";
 
@@ -10,7 +9,7 @@ const MovementSection = ({buttons_moves,moves}) => {
     const moveSectionRenderSwitch = (sectionName) =>{
         switch(sectionName){
             case "Level Up":
-                return <LevelUpMovementsSection moves={moves.lvUp}/>
+                return <MovementsListSection moves={moves.lvUp}/>
             case "TM/HM":
                 return <MovementsListSection moves={moves.tmHm}/>
             case "Egg":

@@ -1,24 +1,30 @@
 import React from "react";
 import "../App.css"
-import PokemonType from "./PokemonType";
+import PokemonTypeIcon from "./PokemonTypeIcon";
 import MoveCategory from "./MoveCategory";
 
 const Move = ({moveData}) => {
-    return (
+     return (
         <section className="my-1 flex flex-col">
-            <div className={`flex justify-around gap-1 rounded-xl ${primaryColorType[moveData.type]} p-1 font-bold`}>
-                <span className="flex">{moveData.name}</span>
-                <PokemonType pokemonType={moveData.type} />
-                <MoveCategory moveCategory={moveData.category}/>
-                
-            </div>
-            <div className={`mx-2 grid grid-cols-6 gap-1 rounded-b-xl ${secondColorType[moveData.type]} p-1 font-normal sm:mx-5 sm:gap-5`}>
-                <span className="justify-self-end">Power</span>
-                <span className="">{moveData.power?? "-"}</span>
-                <span className="justify-self-end">Accuracy</span>
-                <span className="">{moveData.accuaracy?? "-"}</span>
-                <span className="justify-self-end">PP</span>
-                <span className="">{moveData.pp}</span>
+            <div className={`flex justify-around items-center gap-1 px-5 rounded-xl text-xs sm:text-lg ${primaryColorType[moveData.type]} p-1 font-bold`}>
+                {
+                    moveData.lv && <span className="flex-1">{`Lvl ${moveData.lv}`}</span>
+                }
+                <MoveCategory className="flex-1" moveCategory={moveData.category}/>
+                <span className="flex-2">{moveData.name}</span>
+                <div className="grid grid-rows-2 text-center">
+                    <span>Power</span>
+                    <span>{moveData.power?? "-"}</span>
+                </div>
+                <div className="flex-1 grid grid-rows-2 text-center">
+                    <span>Accuracy</span>
+                    <span>{moveData.accuaracy?? "-"}</span>
+                </div>
+                <div className="flex-1 grid grid-rows-2 text-center">
+                    <span>PP</span>
+                    <span>{moveData.pp}</span>
+                </div>
+                <PokemonTypeIcon className="flex-1" pokemonType={moveData.type} />
             </div>
         </section>
     );
@@ -42,25 +48,5 @@ const primaryColorType = {
     "rock": "bg-stone-700",
     "steel": "bg-gray-400",
     "water": "bg-blue-400",
-}
-const secondColorType = {
-    "bug": "bg-green-800",
-    "dark": "bg-gray-700",
-    "dragon": "bg-cyan-450",
-    "electric": "bg-yellow-200",
-    "fairy": "bg-fuchsia-300",
-    "fighting": "bg-orange-600",
-    "fire": "bg-orange-300",
-    "flying": "bg-sky-200",
-    "ghost": "bg-gray-850",
-    "grass": "bg-lime-400",
-    "ground": "bg-amber-800",
-    "ice": "bg-blue-200",
-    "normal": "bg-neutral-300",
-    "poison": "bg-purple-800",
-    "psychic": "bg-pink-400",
-    "rock": "bg-stone-600",
-    "steel": "bg-gray-300",
-    "water": "bg-blue-300",
 }
 export default Move;
