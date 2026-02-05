@@ -6,14 +6,14 @@ import MoveCategory from "./MoveCategory";
 const LvMove = ({moveData}) => {
     return (
         <section className="my-1 flex flex-col">
-            <div className={`flex justify-around gap-1 ${primaryColorType[moveData.type]} p-1 font-bold`}>
+            <div className={`flex justify-around gap-1 rounded-xl ${primaryColorType[moveData.type]} p-1 font-bold`}>
                 <span className="flex justify-center">{`Lvl ${moveData.lv}`}</span>
                 <span className="flex">{moveData.name}</span>
                 <PokemonType pokemonType={moveData.type} />
                 <MoveCategory moveCategory={moveData.category}/>
                 
             </div>
-            <div className={`mx-2 grid grid-cols-6 gap-1 ${secondColorType[moveData.type]} p-1 font-normal sm:mx-5 sm:gap-5`}>
+            <div className={`mx-2 grid grid-cols-6 gap-1 rounded-b-xl ${secondColorType[moveData.type]} p-1 font-normal sm:mx-5 sm:gap-5`}>
                 <span className="justify-self-end">Power</span>
                 <span className="">{moveData.power?? "-"}</span>
                 <span className="justify-self-end">Accuracy</span>

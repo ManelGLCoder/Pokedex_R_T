@@ -93,7 +93,7 @@ function App() {
       {/* <!--Fondo liza claro, contiene LOS DATOS DE UN POKEMON --> */}
       <div className="flex min-w-dvw min-h-dvh py-2 justify-center bg-violet-400">
         {/* <!-- Contenido POKEDEX POKEMON --> */}
-        <div className="flex-col min-w-11/12 sm:min-w-md max-w-11/12 max-h-dvh">
+        <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
           <PokemonOrangeCard pokeData={charizardData} showShiny={shiny}/>
           <PokemonVioletCard pokeData={charizardData} showShiny={shiny}/>
         </div>

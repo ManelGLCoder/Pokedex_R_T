@@ -4,7 +4,7 @@ import TypesOfThePokemon from "./TypesOfThePokemon";
 
 const PokemonOrangeCard = ({pokeData, showShiny}) => {
     return (
-            <div className="rounded-xl py-3 text-sm/7 bg-orange-300 text-white">
+            <div className="py-3 text-sm/7 rounded-t-xl bg-orange-300 text-white">
                 <div className="grid grid-cols-5 px-5 py-2 text-xl font-bold">
                     <span className="col-span-2">{pokeData.name}</span>
                     <span className="col-start-5">#{pokeData.id}</span>

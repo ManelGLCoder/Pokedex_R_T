@@ -5,8 +5,8 @@ import ButtonsDescripStats from "./ButtonDescrpStats";
 import SectionPokemonInfo from "./SectionPokemonInfo";
 import SectionPokemonStats from "./SectionPokemonStats";
 
-const descriptionFocused = false
-const statsFocused = true
+const descriptionFocused = true
+const statsFocused = false
 
 const PokemonVioletCard = ({pokeData, showShiny}) => {
     return (
