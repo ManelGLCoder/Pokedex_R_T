@@ -29,6 +29,20 @@ function App() {
         lvEvolution: null
       },
     ],
+    variants:[
+      {
+        name: "Charizard X",
+        types: ["fire", "dragon"]
+      },
+      {
+        name: "Charizard Y",
+        types: ["fire", "flying"],
+      },
+      {
+        name: "Charizard Gmax",
+        types: ["fire", "flying"]
+      },
+    ],
     moves:{
       lvUp:[
         {lv: 1, name: "Dragon Claw", type: "dragon", category: "physical", power: 80, accuaracy: 100, pp:15},

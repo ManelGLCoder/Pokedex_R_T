@@ -6,15 +6,16 @@ import ButtonsSectionSelection from "./ButtonsSectionSelection";
 import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";
+import SectionVariant from "./SectionVariant";
 
-const bHabilities = {name:"Habilidades", isFocus: false , link: "comming soon"}
-const bMoves = {name:"Movimientos", isFocus: true , link: "comming soon"}
+const bHabilities = {name:"Habilidades", isFocus: true , link: "comming soon"}
+const bMoves = {name:"Movimientos", isFocus: false , link: "comming soon"}
 const bLvMoves = {name:"Level Up", isFocus: true , link: "comming soon"}
 const bTMHMMoves = {name:"TM/HM", isFocus: false , link: "comming soon"}
 const bEggMoves = {name:"Egg", isFocus: false , link: "comming soon"}
 const bTutorMoves = {name:"Tutor", isFocus: false , link: "comming soon"}
-const bEvolutions = {name:"Línea Evolutiva", isFocus: true , link: "comming soon"}
-const bVariants = {name:"Variantes", isFocus: false , link: "comming soon"}
+const bEvolutions = {name:"Línea Evolutiva", isFocus: false , link: "comming soon"}
+const bVariants = {name:"Variantes", isFocus: true , link: "comming soon"}
 
 const SectionPokemonInfo = ({pokeData}) => {
     return (
@@ -29,14 +30,11 @@ const SectionPokemonInfo = ({pokeData}) => {
                 }
                 <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
                 {
-                    //TODO /* Hay que cargar según si esta uno u otro focus */
-                }
-                <SectionEvolutionLine pokeData={pokeData}/>
-                {
-                    //TODO/* Faltan variantes */
+                    bEvolutions.isFocus?
+                        <SectionEvolutionLine pokeData={pokeData}/> :
+                        <SectionVariant pokeData={pokeData}/>
                 }
             </div>
-            
         </>
     );
 };
