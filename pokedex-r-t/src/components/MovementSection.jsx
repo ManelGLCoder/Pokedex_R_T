@@ -28,7 +28,7 @@ const MovementSection = ({buttons_moves,moves}) => {
                         return (<ButtonSubSection key={i} buttonData={b} />)
                 })}
             </div>
-            <p className="my-2 flex justify-self-center text-lg">Move learn methods</p>
+            <p className="flex justify-self-center my-2 text-lg">Move learn methods</p>
             {
                 moveSectionRenderSwitch(moveSectionSelected)
             }

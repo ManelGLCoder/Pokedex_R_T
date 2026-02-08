@@ -4,8 +4,8 @@ import PokemonTypeIcon from "./PokemonTypeIcon";
 import MoveCategory from "./MoveCategory";
 
 const Move = ({moveData}) => {
-     return (
-        <section className="my-1 flex flex-col">
+    return (
+        <section className="flex flex-col my-1">
             <div className={`flex justify-around items-center gap-1 px-5 rounded-xl text-xs sm:text-lg ${primaryColorType[moveData.type]} p-1 font-bold`}>
                 {
                     moveData.lv && <span className="flex-1">{`Lvl ${moveData.lv}`}</span>

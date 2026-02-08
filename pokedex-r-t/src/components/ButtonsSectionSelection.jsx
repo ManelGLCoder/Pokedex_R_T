@@ -4,7 +4,7 @@ import ButtonSection from "./ButtonSection";
 
 const ButtonsSectionSelection = ({buttons}) => {
     return (
-        <div className="relative flex top-3 text-lg md:text-xl">
+        <div className="relative top-3 flex text-lg md:text-xl">
             {
             buttons.map((b, i)=>{
                 const first = i == 0

@@ -3,7 +3,7 @@ import "../App.css"
 
 const LevelEvolution = ({lv}) => {
     return (
-        <div className="my-1.5 flex flex-col justify-center justify-self-center sm:max-w-fit">
+        <div className="flex flex-col justify-center justify-self-center my-1.5 sm:max-w-fit">
             <span className="flex justify-center justify-self-center text-sm sm:text-lg">{`Lv ${lv}`}</span>
                 <img 
                     className="h-12 w-12" 

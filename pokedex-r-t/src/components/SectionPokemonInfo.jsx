@@ -8,31 +8,31 @@ import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";
 import SectionVariant from "./SectionVariant";
 
-const bHabilities = {name:"Habilidades", isFocus: true , link: "comming soon"}
-const bMoves = {name:"Movimientos", isFocus: false , link: "comming soon"}
-const bLvMoves = {name:"Level Up", isFocus: true , link: "comming soon"}
-const bTMHMMoves = {name:"TM/HM", isFocus: false , link: "comming soon"}
-const bEggMoves = {name:"Egg", isFocus: false , link: "comming soon"}
-const bTutorMoves = {name:"Tutor", isFocus: false , link: "comming soon"}
-const bEvolutions = {name:"Línea Evolutiva", isFocus: false , link: "comming soon"}
-const bVariants = {name:"Variantes", isFocus: true , link: "comming soon"}
+const bHabilities = {name:"Habilidades", isFocus: false }
+const bMoves = {name:"Movimientos", isFocus: true }
+const bLvMoves = {name:"Level Up", isFocus: true }
+const bTMHMMoves = {name:"TM/HM", isFocus: false }
+const bEggMoves = {name:"Egg", isFocus: false }
+const bTutorMoves = {name:"Tutor", isFocus: false }
+const bEvolutions = {name:"Línea Evolutiva", isFocus: true }
+const bVariants = {name:"Variantes", isFocus: false }
 
 const SectionPokemonInfo = ({pokeData}) => {
     return (
         <>
-            <SectionDescription pokeData={pokeData}/>
+            <SectionDescription description={pokeData.description} species={pokeData.species} weight={pokeData.weight} height={pokeData.height}/>
             <div className="relative -top-5 flex flex-col gap-2">
                 <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
                 {
                     bHabilities.isFocus ? 
-                        <SectionHabilities pokeData={pokeData}/> : 
+                        <SectionHabilities habilitiesData={pokeData.habilities}/> : 
                         <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
                 }
                 <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
                 {
                     bEvolutions.isFocus?
-                        <SectionEvolutionLine pokeData={pokeData}/> :
-                        <SectionVariant pokeData={pokeData}/>
+                        <SectionEvolutionLine evolutionData={pokeData.evolutions}/> :
+                        <SectionVariant variantData={pokeData.variants}/>
                 }
             </div>
         </>

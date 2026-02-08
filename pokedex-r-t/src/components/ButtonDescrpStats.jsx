@@ -15,7 +15,7 @@ const ButtonsDescripStats = ({descriptionFocused, statsFocused}) => {
         )
     }
     return (
-        <div className="relative flex justify-items-center -top-5">
+        <div className="relative -top-5 flex justify-items-center">
             {buttonWithIcon("src/assets/b_description.svg", "Description", descriptionFocused)}
             {buttonWithIcon("src/assets/b_stats.svg", "Stats", statsFocused)}
         </div>

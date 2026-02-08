@@ -3,7 +3,7 @@ import "../App.css"
 const PokemonType = ({ pokemonType, strengthMultiplier=null, weakMultiplier=null}) => {
     const simple = !strengthMultiplier && !weakMultiplier 
     return (
-    <div className={`grid grid-cols-3 max-w-fit px-2 py-1.5 gap-1 rounded-xl text-xs ${colorType[pokemonType]} text-white`}>
+    <div className={`grid grid-cols-3 gap-1 px-2 py-1.5 max-w-fit rounded-xl text-xs ${colorType[pokemonType]} text-white`}>
         <img className="size-4" src={srcType(pokemonType)} alt={`${pokemonType} Icon`}/>
         {
             simple && <span className="col-span-2">{nameType[pokemonType]}</span> 
