@@ -6,7 +6,7 @@ import LevelEvolution from "./LevelEvolution";
 const SectionEvolutionLine = ({pokeData}) => {
     return (
         <section>
-            <div className="my-3 flex flex-col gap-2 rounded-xl bg-violet-800 px-5 py-4 sm:flex-row sm:justify-around">
+            <div className="flex flex-row justify-around gap-1 sm:gap-2 px-1 sm:px-5 py-2 sm:py-4 my-3 rounded-xl bg-violet-800">
                 {pokeData.evolutions.map((ev, i)=>{
                 return (
                     <>
