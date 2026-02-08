@@ -14,8 +14,8 @@ const bLvMoves = {name:"Level Up", isFocus: true }
 const bTMHMMoves = {name:"TM/HM", isFocus: false }
 const bEggMoves = {name:"Egg", isFocus: false }
 const bTutorMoves = {name:"Tutor", isFocus: false }
-const bEvolutions = {name:"Línea Evolutiva", isFocus: true }
-const bVariants = {name:"Variantes", isFocus: false }
+const bEvolutions = {name:"Línea Evolutiva", isFocus: false }
+const bVariants = {name:"Variantes", isFocus: true }
 
 const SectionPokemonInfo = ({pokeData}) => {
     return (

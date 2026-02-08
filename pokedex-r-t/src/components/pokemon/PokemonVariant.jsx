@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css"
-import TypesOfThePokemon from "./TypesOfThePokemon";
+import TypesOfThePokemon from "../elements/TypesOfThePokemon";
 
 const PokemonVariant = ({pokeEvData}) => {
     return (

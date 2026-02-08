@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css"
-import Move from "./Move";
+import Move from "../elements/Move";
 
 const MovementsListSection = ({moves}) => {
     return (

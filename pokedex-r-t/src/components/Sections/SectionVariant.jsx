@@ -1,6 +1,6 @@
 import React from "react";
-import "../App.css"
-import PokemonVariant from "./PokemonVariant";
+import "../../App.css"
+import PokemonVariant from "../pokemon/PokemonVariant";
 
 const SectionVariant = ({variantData}) => {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css"
 
-import Stat from "./Stat";
+import Stat from "../elements/Stat";
 
 const SectionBasicStats = ({stats}) => {
     return (

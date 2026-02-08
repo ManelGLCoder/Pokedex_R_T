@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"
+import "../../App.css"
 import ProgressBar from "../ProgressBar";
 
 const Stat = ({name, val, maxVal}) => {
