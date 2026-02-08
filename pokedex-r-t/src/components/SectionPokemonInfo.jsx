@@ -20,16 +20,23 @@ const SectionPokemonInfo = ({pokeData}) => {
     return (
         <>
             <SectionDescription pokeData={pokeData}/>
-            <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
-            {
-                bHabilities.isFocus ? 
-                    <SectionHabilities pokeData={pokeData}/> : 
-                    <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
-            }
-            <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
-            {/* Hay que cargar según si esta uno u otro focus */}
-            <SectionEvolutionLine pokeData={pokeData}/>
-            {/* Faltan variantes */}
+            <div className="relative -top-5 flex flex-col gap-2">
+                <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
+                {
+                    bHabilities.isFocus ? 
+                        <SectionHabilities pokeData={pokeData}/> : 
+                        <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
+                }
+                <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
+                {
+                    //TODO /* Hay que cargar según si esta uno u otro focus */
+                }
+                <SectionEvolutionLine pokeData={pokeData}/>
+                {
+                    //TODO/* Faltan variantes */
+                }
+            </div>
+            
         </>
     );
 };

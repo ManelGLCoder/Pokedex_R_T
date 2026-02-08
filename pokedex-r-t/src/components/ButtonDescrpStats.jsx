@@ -2,22 +2,10 @@ import React from "react";
 import "../App.css"
 
 const ButtonsDescripStats = ({descriptionFocused, statsFocused}) => {
-    // return(
-    //     <div className="relative grid grid-cols-3 justify-items-center -top-8">
-    //         <button className="grid max-w-fit justify-items-center px-3 py-1 gap-0 rounded-xl hover:bg-violet-900">
-    //             <img className="size-8" src="src/assets/b_description.svg" alt="Description Btn" />
-    //             <img className="relative size-5" src="src/assets/b_focus.svg" alt="" />
-    //         </button>
-    //         <button className="grid col-start-3 max-w-fit justify-items-center px-3 py-1 gap-0 rounded-xl hover:bg-violet-900">
-    //             <img className="size-8" src="src/assets/b_stats.svg" alt="Description Btn" />
-    //             <img className="relative size-5" src="src/assets/b_focus.svg" alt="" />
-    //         </button>
-    //     </div>
-    // )
-    const buttonWithIcon = (iconPath, name, selected, colStart) =>{
+    const buttonWithIcon = (iconPath, name, selected) =>{
         const bg = selected ? "" : "bg-violet-900 hover:bg-violet-800"
         return(
-            <button className={`grid col-start-${colStart} max-w-fit justify-items-center px-3 py-1 gap-0 rounded-xl ${bg} `}>
+            <button className={`flex-1 justify-items-center py-2 rounded-t-xl ${bg} `}>
                 <img className="size-8" src={iconPath} alt={`${name} Btn`} />
                 {
                     selected &&
@@ -27,9 +15,9 @@ const ButtonsDescripStats = ({descriptionFocused, statsFocused}) => {
         )
     }
     return (
-        <div className="relative grid grid-cols-3 justify-items-center -top-8">
-            {buttonWithIcon("src/assets/b_description.svg", "Description", descriptionFocused,1)}
-            {buttonWithIcon("src/assets/b_stats.svg", "Stats", statsFocused,3)}
+        <div className="relative flex justify-items-center -top-5">
+            {buttonWithIcon("src/assets/b_description.svg", "Description", descriptionFocused)}
+            {buttonWithIcon("src/assets/b_stats.svg", "Stats", statsFocused)}
         </div>
     );
 };
