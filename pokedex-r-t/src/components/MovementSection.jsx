@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css"
 import ButtonSubSection from "./ButtonSubSection";
 import MovementsListSection from "./MovementsListSection";
-import SearchMovement from "./SearchMovement";
 
 const MovementSection = ({buttons_moves,moves}) => {
     const moveSectionSelected = buttons_moves.filter((button)=>{ return button.isFocus})[0].name
@@ -33,7 +32,6 @@ const MovementSection = ({buttons_moves,moves}) => {
             {
                 moveSectionRenderSwitch(moveSectionSelected)
             }
-            <SearchMovement/>
         </div>
     );
 };
