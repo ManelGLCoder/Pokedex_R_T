@@ -2,7 +2,7 @@ import "../App.css"
 
 const PokemonTypeIcon = ({ pokemonType}) => {
     return (
-        <img className={`size-4 sm:size-8 rounded-full ${colorType[pokemonType]}`} src={srcType(pokemonType)} alt={`${pokemonType} Icon`}/>
+        <img className={`p-1 size-6 sm:size-8 rounded-full ${colorType[pokemonType]}`} src={srcType(pokemonType)} alt={`${pokemonType} Icon`}/>
     );
 };
 
