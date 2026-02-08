@@ -1,4 +1,4 @@
-import PokemonType from "./PokemonType"
+import PokemonType from "../elements/PokemonType"
 
 const SectionWeakness = ({weakness}) =>{
     return(

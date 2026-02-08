@@ -1,4 +1,4 @@
-import "../App.css"
+import "../../App.css"
 import PokemonType from "./PokemonType";
 import PokemonTypeIcon from "./PokemonTypeIcon"
 

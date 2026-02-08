@@ -1,6 +1,6 @@
 import React from "react";
-import "../App.css"
-import ButtonSubSection from "./ButtonSubSection";
+import "../../App.css"
+import ButtonSubSection from "../buttons/ButtonSubSection";
 import MovementsListSection from "./MovementsListSection";
 
 const MovementSection = ({buttons_moves,moves}) => {

@@ -1,6 +1,6 @@
 import './App.css'
-import PokemonOrangeCard from './components/PokemonOrangeCard';
-import PokemonVioletCard from './components/PokemonVioletCard';
+import PokemonOrangeCard from './components/principal-sections/PokemonOrangeCard';
+import PokemonVioletCard from './components/principal-sections/PokemonVioletCard';
 
 
 

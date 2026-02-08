@@ -1,8 +1,8 @@
 import React from "react";
-import "../App.css"
+import "../../App.css"
 
 import SectionDescription from "./SectionDescription";
-import ButtonsSectionSelection from "./ButtonsSectionSelection";
+import ButtonsSectionSelection from "../buttons/ButtonsSectionSelection";
 import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";

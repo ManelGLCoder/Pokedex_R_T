@@ -1,9 +1,9 @@
 import React from "react";
-import "../App.css"
-import ButtonShiny from "./ButtonShiny";
-import ButtonsDescripStats from "./ButtonDescrpStats";
-import SectionPokemonInfo from "./SectionPokemonInfo";
-import SectionPokemonStats from "./SectionPokemonStats";
+import "../../App.css"
+import ButtonShiny from "../buttons/ButtonShiny";
+import ButtonsDescripStats from "../buttons/ButtonDescrpStats";
+import SectionPokemonInfo from "../Sections/SectionPokemonInfo";
+import SectionPokemonStats from "../Sections/SectionPokemonStats";
 
 const descriptionFocused = true
 const statsFocused = false

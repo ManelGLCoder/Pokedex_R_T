@@ -1,4 +1,4 @@
-import "../App.css"
+import "../../App.css"
 
 const PokemonType = ({ pokemonType, strengthMultiplier=null, weakMultiplier=null}) => {
     const simple = !strengthMultiplier && !weakMultiplier 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"
+import "../../App.css"
 
 const ButtonSection = ({buttonData, first = false, last = false}) => {
     const selected = "px-0 py-2 font-bold bg-violet-800"

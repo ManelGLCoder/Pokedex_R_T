@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css"
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../ProgressBar";
 
 const Stat = ({name, val, maxVal}) => {
     const percentage = Math.floor((val/maxVal)*100) + "%"

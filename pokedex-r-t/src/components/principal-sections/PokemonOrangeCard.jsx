@@ -1,6 +1,6 @@
 import React from "react";
-import "../App.css"
-import TypesOfThePokemon from "./TypesOfThePokemon";
+import "../../App.css"
+import TypesOfThePokemon from "../elements/TypesOfThePokemon";
 
 const PokemonOrangeCard = ({pokeData, showShiny}) => {
     return (

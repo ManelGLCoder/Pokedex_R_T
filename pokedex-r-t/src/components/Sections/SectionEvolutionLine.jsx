@@ -1,7 +1,7 @@
 import React from "react";
-import "../App.css"
-import PokemonEvolution from "./PokemonEvolution";
-import LevelEvolution from "./LevelEvolution";
+import "../../App.css"
+import PokemonEvolution from "../pokemon/PokemonEvolution";
+import LevelEvolution from "../elements/LevelEvolution";
 
 const SectionEvolutionLine = ({evolutionData}) => {
     return (
