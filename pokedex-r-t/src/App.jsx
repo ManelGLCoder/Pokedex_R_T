@@ -1,6 +1,6 @@
 import './App.css'
-import PokemonOrangeCard from './components/principal-sections/PokemonOrangeCard';
-import PokemonVioletCard from './components/principal-sections/PokemonVioletCard';
+import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData';
+import SectionPokedexList from './components/principal-sections/SectionPokedexList';
 
 
 
@@ -102,16 +102,38 @@ function App() {
       {type:"electric", multiplier: "2"}
     ]
   }
-  const shiny = false
+  const pokedexData =
+    [
+      {id: "0001", name: "Charmander", types: ["grass","poison"]},
+      {id: "0002", name: "Charmeleon", types: ["grass","poison"]},
+      {id: "0003", name: "Charizard", types: ["grass","poison"]},
+      {id: "0004", name: "Charizard X", types: ["water"]},
+      {id: "0005", name: "Charizard Y", types: ["water"]},
+      {id: "0006", name: "Charizard Gmax", types: ["water"]},
+      {id: "0007", name: "Charmander", types: ["fire"]},
+      {id: "0008", name: "Charmeleon", types: ["fire"]},
+      {id: "0009", name: "Charizard", types: ["fire", "flying"]},
+      {id: "0010", name: "Charmander", types: ["fire", "dragon"]},
+      {id: "0011", name: "Charmeleon", types: ["fire", "fairy"]},
+      {id: "0012", name: "Charizard", types: ["fire", "normal"]},
+      {id: "0013", name: "Charmander", types: ["fire", "dragon"]},
+      {id: "0014", name: "Charmeleon", types: ["fire", "fairy"]},
+      {id: "0015", name: "Charizard", types: ["fire", "normal"]},
+      {id: "0016", name: "Charmander", types: ["fire", "dragon"]},
+      {id: "0017", name: "Charmeleon", types: ["fire", "fairy"]},
+      {id: "0018", name: "Charizard", types: ["fire", "normal"]},
+    ]
+  const inPokedex = true
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {/* <!--Fondo liza claro, contiene LOS DATOS DE UN POKEMON --> */}
       <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-        {/* <!-- Contenido POKEDEX POKEMON --> */}
         <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
-          <PokemonOrangeCard pokeData={charizardData} showShiny={shiny}/>
-          <PokemonVioletCard pokeData={charizardData} showShiny={shiny}/>
+            {
+              inPokedex? 
+              <SectionPokedexList pokeListData={pokedexData}/> :
+              <SectionAllPokemonData pokeData={charizardData}/>
+            }
         </div>
       </div>
     </>

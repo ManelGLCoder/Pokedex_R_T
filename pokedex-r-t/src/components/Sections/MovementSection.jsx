@@ -21,14 +21,14 @@ const MovementSection = ({buttons_moves,moves}) => {
     }
     
     return (
-        <div className="px-2 py-3 rounded-b-xl bg-violet-800">
+        <div className="isolate flex flex-col px-2 py-3 max-h-100 sm:max-h-70 rounded-b-xl bg-violet-800">
             <div className="flex gap-1.5 sm:gap-3 text-xs sm:text-lg">
                 {
                     buttons_moves.map((b, i)=>{
                         return (<ButtonSubSection key={i} buttonData={b} />)
                 })}
             </div>
-            <p className="flex justify-self-center my-2 text-lg">Move learn methods</p>
+            <p className="flex justify-self-center self-center my-2 text-lg">Move learn methods</p>
             {
                 moveSectionRenderSwitch(moveSectionSelected)
             }

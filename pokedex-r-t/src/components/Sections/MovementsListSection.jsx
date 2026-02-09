@@ -4,7 +4,7 @@ import Move from "../elements/Move";
 
 const MovementsListSection = ({moves}) => {
     return (
-        <section className="flex flex-col">
+        <section className="relative overflow-y-auto snap-y snap-proximity flex flex-col">
             {
                 moves.map((move,i)=>{
                     return (<Move key={i} moveData={move} />)
