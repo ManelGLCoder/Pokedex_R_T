@@ -123,7 +123,7 @@ function App() {
       {id: "0017", name: "Charmeleon", types: ["fire", "fairy"]},
       {id: "0018", name: "Charizard", types: ["fire", "normal"]},
     ]
-  const inPokedex = true
+  const inPokedex = false
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

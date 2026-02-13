@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   test: {
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    setupFiles: ['./src/test/setup.js']
   }
 })
