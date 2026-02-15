@@ -3,8 +3,7 @@
 // import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
-        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameAbilityInLang, fetchMove,
-        fetchNameMoveInLang
+        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove
      } from '../utilities/fetch-utilities'
 
 
@@ -73,8 +72,8 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${SOLAR_POWER_ABILITY}/`)
     })
 
-    it('should [fetchNameAbilityInLang] be a function', async ()=>{
-        expect(typeof fetchNameAbilityInLang).toBe('function')
+    it('should [fetchNameInLang] be a function', async ()=>{
+        expect(typeof fetchNameInLang).toBe('function')
     })
 
     it('should fetch ability name in correct language from PokeAPI', async()=>{
@@ -89,7 +88,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${BLAZE_ABILITY}/`)
 
-        const blazeES = await fetchNameAbilityInLang(blazeData, "es")
+        const blazeES = await fetchNameInLang(blazeData, "es")
         expect(blazeES).toBe(BLAZE_ABILITY_ES)
 
         vi.clearAllMocks()
@@ -105,13 +104,9 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${SOLAR_POWER_ABILITY}/`)
 
-        const solarPowerES = await fetchNameAbilityInLang(solarPowerData, "es")
+        const solarPowerES = await fetchNameInLang(solarPowerData, "es")
         expect(solarPowerES).toBe(SOLAR_POWER_ABILITY_ES)
     })
-
-    //! al ser un proyecto sencillo no vale la pena complicarse tanto con los movimientos
-    // it.todo('should fetch moves of specific group from PokeAPI', async()=>{
-    // })
 
     it('should [fetchMove] be a function', async()=>{
         expect(typeof fetchMove).toBe('function')
@@ -142,11 +137,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BREAKING_SWIPE_MOVE}/`)
     })
-
-    it('should [fetchNameMoveInLang] be a function', async ()=>{
-        expect(typeof fetchNameMoveInLang).toBe('function')
-    })
-
+    
     it('should fetch move name in correct language from PokeAPI', async()=>{
         global.fetch = vi.fn(() =>
             Promise.resolve({
@@ -159,7 +150,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BRUTAL_SWING_MOVE}/`)
 
-        const brutalSwingES = await fetchNameAbilityInLang(brutalSwingData, "es")
+        const brutalSwingES = await fetchNameInLang(brutalSwingData, "es")
         expect(brutalSwingES).toBe(BRUTAL_SWING_MOVE_ES)
 
         vi.clearAllMocks()
@@ -175,7 +166,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BREAKING_SWIPE_MOVE}/`)
 
-        const breakingSwipeES = await fetchNameAbilityInLang(breakingSwipeData, "es")
+        const breakingSwipeES = await fetchNameInLang(breakingSwipeData, "es")
         expect(breakingSwipeES).toBe(BREAKING_SWIPE_MOVE_ES)
     })
 

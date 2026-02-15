@@ -1,50 +1,31 @@
-export async function fetchPokemonDataSimplified(pokemon){
-    try{
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
-        const data = await response.json()
-        return data
-    }catch(error){
-        console.log(error)
-    }
+export function fetchNameInLang(data, language) {
+    const nameInLang = data.names.find((element) => {return element.language.name === language})
+    return  nameInLang.name
 }
 
-export async function fetchPokemonData(pokemon){
+export async function fetchPokemonDataSimplified(pokemon){
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
+}
+
+async function fetchData(url) {
     try{
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+        const response = await fetch(url)
         const data = await response.json()
         return data
     }catch(error){
         console.log(error)
     }
+} 
+
+export async function fetchPokemonData(pokemon){
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
 }
 
 export async function fetchAbility(ability) {
-    try{
-        const response = await fetch(`https://pokeapi.co/api/v2/ability/${ability}/`)
-        const data = await response.json()
-        return data
-    }catch(error){
-        console.log(error)
-    }
-}
-
-export async function fetchNameAbilityInLang(abilityData, language) {
-    const abilityInLang = abilityData.names.find((element) => {return element.language.name === language})
-    return  abilityInLang.name
+    return await fetchData(`https://pokeapi.co/api/v2/ability/${ability}/`)
 }
 
 export async function fetchMove(move) {
-    try{
-        const response = await fetch(`https://pokeapi.co/api/v2/move/${move}/`)
-        const data = await response.json()
-        return data
-    }catch(error){
-        console.log(error)
-    }
-}
-
-export async function fetchNameMoveInLang(moveData, language) {
-    const moveInLang = moveData.names.find((element) => {return element.language.name === language})
-    return  moveInLang.name
+    return await fetchData(`https://pokeapi.co/api/v2/move/${move}/`)
 }
 
