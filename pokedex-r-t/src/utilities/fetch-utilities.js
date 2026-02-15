@@ -18,9 +18,9 @@ export async function fetchPokemonData(pokemon){
     }
 }
 
-export async function fetchAbility(abilityURL) {
+export async function fetchAbility(ability) {
     try{
-        const response = await fetch(abilityURL)
+        const response = await fetch(`https://pokeapi.co/api/v2/ability/${ability}/`)
         const data = await response.json()
         return data
     }catch(error){

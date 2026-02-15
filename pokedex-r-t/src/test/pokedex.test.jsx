@@ -53,10 +53,10 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
             }),
         )
         
-        const blazeData = await fetchAbility(BLAZE_ABILITY_URL)
+        const blazeData = await fetchAbility(BLAZE_ABILITY)
         expect(blazeData).toEqual(BLAZE_ABILITY_DATA)
         expect(fetch).toHaveBeenCalledTimes(1)
-        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/ability/66/')
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${BLAZE_ABILITY}/`)
 
         vi.clearAllMocks()
 
@@ -66,10 +66,10 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
             }),
         )
         
-        const solarPowerData = await fetchAbility(SOLAR_POWER_ABILITY_URL)
+        const solarPowerData = await fetchAbility(SOLAR_POWER_ABILITY)
         expect(solarPowerData).toEqual(SOLAR_POWER_ABILITY_DATA)
         expect(fetch).toHaveBeenCalledTimes(1)
-        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/ability/94/')
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${SOLAR_POWER_ABILITY}/`)
     })
 
     it('should [fetchNameAbilityInLang] be a function', async ()=>{
@@ -83,10 +83,10 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
             }),
         )
         
-        const blazeData = await fetchAbility(BLAZE_ABILITY_URL)
+        const blazeData = await fetchAbility(BLAZE_ABILITY)
         expect(blazeData).toEqual(BLAZE_ABILITY_DATA)
         expect(fetch).toHaveBeenCalledTimes(1)
-        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/ability/66/')
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${BLAZE_ABILITY}/`)
 
         const blazeES = await fetchNameAbilityInLang(blazeData, "es")
         expect(blazeES).toBe(BLAZE_ABILITY_ES)
@@ -99,10 +99,10 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
             }),
         )
         
-        const solarPowerData = await fetchAbility(SOLAR_POWER_ABILITY_URL)
+        const solarPowerData = await fetchAbility(SOLAR_POWER_ABILITY)
         expect(solarPowerData).toEqual(SOLAR_POWER_ABILITY_DATA)
         expect(fetch).toHaveBeenCalledTimes(1)
-        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/ability/94/')
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${SOLAR_POWER_ABILITY}/`)
 
         const solarPowerES = await fetchNameAbilityInLang(solarPowerData, "es")
         expect(solarPowerES).toBe(SOLAR_POWER_ABILITY_ES)

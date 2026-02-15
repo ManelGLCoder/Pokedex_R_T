@@ -33021,7 +33021,7 @@ global.PIKACHU_DATA = {
   "weight": 60
 }
 
-global.BLAZE_ABILITY_URL = "https://pokeapi.co/api/v2/ability/66/"
+global.BLAZE_ABILITY = "blaze"
 global.BLAZE_ABILITY_DATA = {
   "effect_changes": [],
   "effect_entries": [
@@ -34294,7 +34294,7 @@ global.BLAZE_ABILITY_DATA = {
 }
 global.BLAZE_ABILITY_ES = "Mar Llamas"
 
-global.SOLAR_POWER_ABILITY_URL = "https://pokeapi.co/api/v2/ability/94/"
+global.SOLAR_POWER_ABILITY = "solar-power"
 global.SOLAR_POWER_ABILITY_DATA = {
   "effect_changes": [],
   "effect_entries": [
