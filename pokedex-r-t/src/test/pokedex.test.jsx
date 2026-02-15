@@ -3,7 +3,8 @@
 // import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
-        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameAbilityInLang
+        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameAbilityInLang, fetchMove,
+        fetchNameMoveInLang
      } from '../utilities/fetch-utilities'
 
 
@@ -108,10 +109,74 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(solarPowerES).toBe(SOLAR_POWER_ABILITY_ES)
     })
 
-    it.todo('should fetch moves of specific group from PokeAPI', async()=>{
+    //! al ser un proyecto sencillo no vale la pena complicarse tanto con los movimientos
+    // it.todo('should fetch moves of specific group from PokeAPI', async()=>{
+    // })
+
+    it('should [fetchMove] be a function', async()=>{
+        expect(typeof fetchMove).toBe('function')
     })
 
-    it.todo('should fetch data specific move from PokeAPI', async()=>{
+    it('should fetch data specific move from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(BRUTAL_SWING_MOVE_DATA),
+            }),
+        )
+        
+        const brutalSwingData = await fetchMove(BRUTAL_SWING_MOVE)
+        expect(brutalSwingData).toEqual(BRUTAL_SWING_MOVE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BRUTAL_SWING_MOVE}/`)
+
+        vi.clearAllMocks()
+
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(BREAKING_SWIPE_MOVE_DATA),
+            }),
+        )
+        
+        const breakingSwipeData = await fetchMove(BREAKING_SWIPE_MOVE)
+        expect(breakingSwipeData).toEqual(BREAKING_SWIPE_MOVE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BREAKING_SWIPE_MOVE}/`)
+    })
+
+    it('should [fetchNameMoveInLang] be a function', async ()=>{
+        expect(typeof fetchNameMoveInLang).toBe('function')
+    })
+
+    it('should fetch move name in correct language from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(BRUTAL_SWING_MOVE_DATA),
+            }),
+        )
+        
+        const brutalSwingData = await fetchMove(BRUTAL_SWING_MOVE)
+        expect(brutalSwingData).toEqual(BRUTAL_SWING_MOVE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BRUTAL_SWING_MOVE}/`)
+
+        const brutalSwingES = await fetchNameAbilityInLang(brutalSwingData, "es")
+        expect(brutalSwingES).toBe(BRUTAL_SWING_MOVE_ES)
+
+        vi.clearAllMocks()
+
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(BREAKING_SWIPE_MOVE_DATA),
+            }),
+        )
+        
+        const breakingSwipeData = await fetchMove(BREAKING_SWIPE_MOVE)
+        expect(breakingSwipeData).toEqual(BREAKING_SWIPE_MOVE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${BREAKING_SWIPE_MOVE}/`)
+
+        const breakingSwipeES = await fetchNameAbilityInLang(breakingSwipeData, "es")
+        expect(breakingSwipeES).toBe(BREAKING_SWIPE_MOVE_ES)
     })
 
     it.todo('should fetch stats from PokeAPI', async()=>{
@@ -144,7 +209,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
     it.todo('should get sprites data from pokemonData', async()=>{
     })
 
-    it.todo('should get moves by group data from pokemonData', async()=>{
+    it.todo('should get moves data from pokemonData', async()=>{
     })
 
     it.todo('should get types data from pokemonData', async()=>{

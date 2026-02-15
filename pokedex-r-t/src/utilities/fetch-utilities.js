@@ -32,3 +32,19 @@ export async function fetchNameAbilityInLang(abilityData, language) {
     const abilityInLang = abilityData.names.find((element) => {return element.language.name === language})
     return  abilityInLang.name
 }
+
+export async function fetchMove(move) {
+    try{
+        const response = await fetch(`https://pokeapi.co/api/v2/move/${move}/`)
+        const data = await response.json()
+        return data
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export async function fetchNameMoveInLang(moveData, language) {
+    const moveInLang = moveData.names.find((element) => {return element.language.name === language})
+    return  moveInLang.name
+}
+
