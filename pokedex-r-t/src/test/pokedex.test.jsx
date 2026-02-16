@@ -3,8 +3,9 @@
 // import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
-        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove
-     } from '../utilities/fetch-utilities'
+        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
+        fetchStat
+    } from '../utilities/fetch-utilities'
 
 
 describe('PokemApi REQUEST FUNCTIONS', () =>{
@@ -170,13 +171,36 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(breakingSwipeES).toBe(BREAKING_SWIPE_MOVE_ES)
     })
 
-    it.todo('should fetch stats from PokeAPI', async()=>{
-    })
+    it('should fetch stat in correct language from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(HP_STAT_DATA),
+            }),
+        )
+        
+        const hpData = await fetchStat(HP_STAT_ID)
+        expect(hpData).toEqual(HP_STAT_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${HP_STAT_ID}/`)
 
-    it.todo('should fetch stat in correct language from PokeAPI', async()=>{
-    })
+        const hpES = await fetchNameInLang(hpData, "es")
+        expect(hpES).toBe(HP_STAT_ES)
 
-    it.todo('should fetch types from PokeAPI', async()=>{
+        vi.clearAllMocks()
+
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(ATTACK_STAT_DATA),
+            }),
+        )
+        
+        const attackData = await fetchStat(ATTACK_STAT_ID)
+        expect(attackData).toEqual(ATTACK_STAT_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${ATTACK_STAT_ID}/`)
+
+        const attackES = await fetchNameInLang(attackData, "es")
+        expect(attackES).toBe(ATTACK_STAT_ES)
     })
 
     it.todo('should fetch type in correct language from PokeAPI', async()=>{
