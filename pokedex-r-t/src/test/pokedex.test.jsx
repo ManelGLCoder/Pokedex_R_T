@@ -4,7 +4,7 @@
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
         fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
-        fetchStat
+        fetchStat, fetchType
     } from '../utilities/fetch-utilities'
 
 
@@ -203,7 +203,36 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(attackES).toBe(ATTACK_STAT_ES)
     })
 
-    it.todo('should fetch type in correct language from PokeAPI', async()=>{
+    it('should fetch type in correct language from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(FIRE_TYPE_DATA),
+            }),
+        )
+        
+        const fireData = await fetchType(FIRE_TYPE_ID)
+        expect(fireData).toEqual(FIRE_TYPE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${FIRE_TYPE_ID}/`)
+
+        const fireES = await fetchNameInLang(fireData, "es")
+        expect(fireES).toBe(FIRE_TYPE_ES)
+
+        vi.clearAllMocks()
+
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(FLYING_TYPE_DATA),
+            }),
+        )
+        
+        const flyingData = await fetchType(FLYING_TYPE_ID)
+        expect(flyingData).toEqual(FLYING_TYPE_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${FLYING_TYPE_ID}/`)
+
+        const flyingES = await fetchNameInLang(flyingData, "es")
+        expect(flyingES).toBe(FLYING_TYPE_ES)
     })
 
     it.todo('should fetch chain evolution from PokeAPI', async()=>{

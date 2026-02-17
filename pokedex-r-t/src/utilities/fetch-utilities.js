@@ -33,3 +33,7 @@ export async function fetchStat(stat) {
     return await fetchData(`https://pokeapi.co/api/v2/stat/${stat}/`)
 }
 
+export async function fetchType(type) {
+    return await fetchData(`https://pokeapi.co/api/v2/type/${type}/`)
+}
+
