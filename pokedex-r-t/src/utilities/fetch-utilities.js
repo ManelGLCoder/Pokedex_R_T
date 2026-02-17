@@ -3,7 +3,7 @@ export function fetchNameInLang(data, language) {
     return  nameInLang.name
 }
 
-export async function fetchPokemonDataSimplified(pokemon){
+export async function fetchPokemonSimpleData(pokemon){
     return await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
 }
 

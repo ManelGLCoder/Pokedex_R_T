@@ -3,7 +3,7 @@
 // import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
-        fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
+        fetchPokemonSimpleData, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
         fetchStat, fetchType, fetchPokemonSpeciesData, fetchEvolutionChainData
     } from '../utilities/fetch-utilities'
 
@@ -261,7 +261,30 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/evolution-chain/${CHARIZARD_EVOLUTION_CHAIN_ID}/`)
     })
 
-    it.todo('should fetch simplified data(pokemonForm) from PokeAPI', async()=>{
+    it('should fetch simple data(pokemonForm) from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(CHARIZARD_FORM_DATA),
+            }),
+        )
+        
+        const charizardSimpleData = await fetchPokemonSimpleData("Charizard")
+        expect(charizardSimpleData).toEqual(CHARIZARD_FORM_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon-form/Charizard/')
+
+        vi.clearAllMocks()
+
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(PIKACHU_FORM_DATA),
+            }),
+        )
+        
+        const pikachuSimpleData = await fetchPokemonSimpleData(PIKACHU_ID)
+        expect(pikachuSimpleData).toEqual(PIKACHU_FORM_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon-form/25/')
     })
 
     it.todo('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
