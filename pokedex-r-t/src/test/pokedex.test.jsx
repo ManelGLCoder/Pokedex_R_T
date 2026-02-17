@@ -4,7 +4,7 @@
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
         fetchPokemonDataSimplified, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
-        fetchStat, fetchType
+        fetchStat, fetchType, fetchPokemonSpeciesData, fetchEvolutionChainData
     } from '../utilities/fetch-utilities'
 
 
@@ -235,10 +235,30 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(flyingES).toBe(FLYING_TYPE_ES)
     })
 
-    it.todo('should fetch chain evolution from PokeAPI', async()=>{
+    it('should fetch pokemon species data from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(CHARIZARD_SPECIES_DATA),
+            }),
+        )
+        
+        const speciesData = await fetchPokemonSpeciesData(CHARIZARD_ID)
+        expect(speciesData).toEqual(CHARIZARD_SPECIES_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/pokemon-species/${CHARIZARD_ID}/`)
     })
 
-    it.todo('should fetch evolution data from PokeAPI', async()=>{
+    it('should fetch chain evolution data from PokeAPI', async()=>{
+        global.fetch = vi.fn(() =>
+            Promise.resolve({
+            json: () => Promise.resolve(CHARIZARD_EVOLUTION_CHAIN_DATA),
+            }),
+        )
+        
+        const evChainData = await fetchEvolutionChainData(CHARIZARD_SPECIES_DATA.evolution_chain.url)
+        expect(evChainData).toEqual(CHARIZARD_EVOLUTION_CHAIN_DATA)
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/evolution-chain/${CHARIZARD_EVOLUTION_CHAIN_ID}/`)
     })
 
     it.todo('should fetch simplified data(pokemonForm) from PokeAPI', async()=>{

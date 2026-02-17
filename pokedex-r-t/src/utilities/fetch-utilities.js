@@ -37,3 +37,11 @@ export async function fetchType(type) {
     return await fetchData(`https://pokeapi.co/api/v2/type/${type}/`)
 }
 
+export async function fetchPokemonSpeciesData(pokemon) {
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon-species/${pokemon}/`)
+}
+
+export async function fetchEvolutionChainData(url) {
+    return await fetchData(url)
+}
+
