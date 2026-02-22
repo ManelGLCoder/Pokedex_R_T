@@ -1,7 +1,7 @@
-export function fetchNameInLang(data, language) {
-    const nameInLang = data.names.find((element) => {return element.language.name === language})
-    return  nameInLang.name
-}
+// export function fetchNameInLang(data, language) {
+//     const nameInLang = data.names.find((element) => {return element.language.name === language})
+//     return  nameInLang.name
+// }
 
 export function fetchPokemonSimpleData(pokemon){
     return fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)

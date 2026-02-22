@@ -1,19 +1,8 @@
-import { fetchType, fetchPokemonSimpleData} from "./fetch-utilities"
+import { fetchType, fetchPokemonSimpleData, fetchPokemonData, fetchPokemonSpeciesData} from "./fetch-utilities"
 import { POKEMON_TYPES } from "../dto/constants"
 
-//TODO: Mirar si se puede meter algun #region condicional 
-// TODO: que permita que la variable en test no se inicie
 // export let types = await getAllTypesIn("es")
-export async function simplePokemonInfo(pokeData, allTypesData) {
-    const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
-    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1) 
-    return {
-        id: idCompleted,
-        name: namePokemon,
-        types: getTypesData(pokeData.types, allTypesData)
-    }
-}
-
+export let currlanguage = 'es'
 export async function getAllTypesIn(lang) {
     let typesPromises = []
     let esTypes = {}
@@ -31,6 +20,22 @@ export async function getAllTypesIn(lang) {
     return esTypes
 }
 
+//TODO: falta variable global que guarde todos los tipos en español
+export async function getSimplePokemonInfo(pokemonId){
+    const rawPokeData = await fetchPokemonSimpleData(pokemonId)
+    return simplePokemonInfo(rawPokeData)
+}
+
+export function simplePokemonInfo(pokeData, allTypesData) {
+    const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
+    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1) 
+    return {
+        id: idCompleted,
+        name: namePokemon,
+        types: getTypesData(pokeData.types, allTypesData)
+    }
+}
+
 export function getTypesData(typesWanted, allTypesData){
     let typesData = []
     typesWanted.forEach(type=>{
@@ -41,12 +46,39 @@ export function getTypesData(typesWanted, allTypesData){
 }
 
 export function getNameInLang(data, language) {
-    const nameInLang = data.names.find((element) => {return element.language.name === language})
-    return  nameInLang.name
+    return getTextInLang(data, 'names', 'name', language)
 }
 
-//TODO: falta variable global que guarde todos los tipos en español
-export async function getSimplePokemonInfo(pokemonId){
-    const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData)
+const getTextInLang = (data, key1, key2, lang) =>{
+    const nameInLang = data[key1].find((element) => {return element.language.name === lang})
+    return  nameInLang[key2].replace(/(\r\n|\n|\r)/gm, " ")
+}
+
+export async function getPokemonInfo(pokemonId){
+    const rawPokeData = await fetchPokemonData(pokemonId)
+    const rawSpeciesData = await fetchPokemonSpeciesData(pokemonId)
+    return pokemonInfo(rawPokeData, rawSpeciesData)
+}
+
+export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData) {
+    return {
+        simpleInfo: simplePokemonInfo(pokeData, allTypesData),
+        species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
+        description: getFlavorTextInLang(pokeSpeciesData, currlanguage),
+        height: decimetresToMeters(pokeData.height),
+        weight: decimetresToMeters(pokeData.weight),
+
+    }
+}
+
+function getFlavorTextInLang(data, language){
+    return getTextInLang(data, 'flavor_text_entries', 'flavor_text', language)
+}
+
+function getGeneraTextInLang(data, language){
+    return getTextInLang(data, 'genera', 'genus', language)
+}
+
+function decimetresToMeters(dm){
+    return (dm / 10).toFixed(2)
 }

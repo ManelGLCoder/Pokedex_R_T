@@ -18519,12 +18519,12 @@ globalThis.CHARIZARD_SPECIES_DATA = {
     "url": "https://pokeapi.co/api/v2/evolution-chain/2/"
   },
   "evolves_from_species": {
-    "name": "charmander",
-    "url": "https://pokeapi.co/api/v2/pokemon-species/4/"
+    "name": "charmeleon",
+    "url": "https://pokeapi.co/api/v2/pokemon-species/5/"
   },
   "flavor_text_entries": [
     {
-      "flavor_text": "When it swings\nits burning tail,\nit elevates the\ftemperature to\nunbearably high\nlevels.",
+      "flavor_text": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18535,7 +18535,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "When it swings\nits burning tail,\nit elevates the\ftemperature to\nunbearably high\nlevels.",
+      "flavor_text": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18546,7 +18546,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Tough fights could\nexcite this\nPOKéMON. When\fexcited, it may\nblow out bluish-\nwhite flames.",
+      "flavor_text": "When expelling a\nblast of super\nhot fire, the red\fflame at the tip\nof its tail burns\nmore intensely.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18557,7 +18557,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It is very hot­\nheaded by nature,\nso it constantly\fseeks opponents.\nIt calms down only\nwhen it wins.",
+      "flavor_text": "If CHARIZARD be­\ncomes furious, the\nflame at the tip\fof its tail flares\nup in a whitish-\nblue color.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18568,7 +18568,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It has a barbaric\nnature. In battle,\nit whips its\ffiery tail around\nand slashes away\nwith sharp claws.",
+      "flavor_text": "Breathing intense,\nhot flames, it can\nmelt almost any­\fthing. Its breath\ninflicts terrible\npain on enemies.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18579,7 +18579,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "If it becomes\nagitated during\nbattle, it spouts\fintense flames,\nincinerating its\nsurroundings.",
+      "flavor_text": "It uses its wings\nto fly high. The\ntemperature of its\ffire increases as\nit gains exper­\nience in battle.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18590,7 +18590,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "CHARMELEON mercilessly destroys its\nfoes using its sharp claws.\nIf it encounters a strong foe, it turns\faggressive. In this excited state, the\nflame at the tip of its tail flares with a\nbluish white color.",
+      "flavor_text": "CHARIZARD flies around the sky in\nsearch of powerful opponents.\nIt breathes fire of such great heat\fthat it melts anything. However, it\nnever turns its fiery breath on any\nopponent weaker than itself.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18601,7 +18601,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "CHARMELEON mercilessly destroys its\nfoes using its sharp claws.\nIf it encounters a strong foe, it turns\faggressive. In this excited state, the\nflame at the tip of its tail flares with a\nbluish white color.",
+      "flavor_text": "CHARIZARD flies around the sky in\nsearch of powerful opponents.\nIt breathes fire of such great heat\fthat it melts anything. However, it\nnever turns its fiery breath on any\nopponent weaker than itself.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18612,7 +18612,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Without pity, its sharp claws destroy foes.\nIf it encounters a strong enemy, it\nbecomes agitated, and the flame on its\ntail flares with a bluish white color.",
+      "flavor_text": "A CHARIZARD flies about in search of\nstrong opponents. It breathes intense\nflames that can melt any material. However,\nit will never torch a weaker foe.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18623,7 +18623,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It lashes about with its tail to knock\ndown its foe. It then tears up the fallen\nopponent with sharp claws.",
+      "flavor_text": "Its wings can carry this POKéMON close to\nan altitude of 4,600 feet. It blows out\nfire at very high temperatures.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18634,7 +18634,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "When it swings its burning tail, it\nelevates the air temperature to \nunbearably high levels.",
+      "flavor_text": "It spits fire that is hot enough to melt\nboulders. It may cause forest fires by\nblowing flames.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18645,7 +18645,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18656,7 +18656,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18667,7 +18667,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18678,7 +18678,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It is very hotheaded by nature,\nso it constantly seeks opponents.\nIt calms down only when it wins.",
+      "flavor_text": "If CHARIZARD becomes furious,\nthe flame at the tip of its tail flares\nup in a light blue shade.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18689,7 +18689,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It has a barbaric nature. In battle,\nit whips its fiery tail around\nand slashes away with sharp claws.",
+      "flavor_text": "Breathing intense, hot flames, it can\nmelt almost anything. Its breath\ninflicts terrible pain on enemies.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18700,7 +18700,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "La nuit, la queue ardente du Reptincel\nbrille comme une étoile dans son\nrepaire montagneux.",
+      "flavor_text": "On raconte que la flamme du\nDracaufeu s’intensifie après\nun combat difficile.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -18711,7 +18711,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18722,7 +18722,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "La nuit, la queue ardente du Reptincel\nbrille comme une étoile dans son\nrepaire montagneux.",
+      "flavor_text": "On raconte que la flamme du\nDracaufeu s’intensifie après\nun combat difficile.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -18733,7 +18733,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18744,7 +18744,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18755,7 +18755,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "In the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.",
+      "flavor_text": "It is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18766,7 +18766,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "しっぽを　ふりまわして　あいてを\nなぎたおし　するどい　ツメで\nズタズタに　ひきさいてしまう。",
+      "flavor_text": "くちから　しゃくねつの　ほのおを\nはきだすとき　しっぽの　さきは\nより　あかく　はげしく　もえあがる。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -18777,7 +18777,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "꼬리를 휘둘러 상대를\n쓰러트리고 날카로운 발톱으로\n갈기갈기 찢어버린다.",
+      "flavor_text": "입에서 작렬하는 불꽃을\n토해낼 때 꼬리의 끝이\n더욱 붉고 격렬하게 타오른다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -18788,7 +18788,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Il se sert de sa queue pour faire tomber ses\nadversaires. Une fois qu’ils sont au sol, il les lacère\nde ses griffes acérées.",
+      "flavor_text": "Quand il crache son souffle brûlant, la flamme au bout\nde sa queue s’embrase.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -18799,7 +18799,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Es schlägt im Kampf mit seinem Schwanz nach\nseinen Gegnern. Anschließend zerfetzt es\ndie Gegner mit seinen scharfen Klauen.",
+      "flavor_text": "Wenn dieses Pokémon einen Strahl glühenden\nFeuers speit, leuchtet seine Schwanzspitze auf.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -18810,7 +18810,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Suele usar la cola para derribar a su rival. Cuando lo\ntira, se vale de sus afiladas garras para acabar con él.",
+      "flavor_text": "Cuando lanza una descarga de fuego supercaliente, la\nroja llama de su cola brilla más intensamente.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -18821,7 +18821,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Fa cadere a terra il nemico colpendolo con la coda,\nper poi finirlo con gli artigli affilati.",
+      "flavor_text": "Quando emette le sue lingue di fuoco, la fiamma\nrossa sulla punta della coda brucia più intensamente.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -18832,7 +18832,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It lashes about with its tail to knock down its foe.\nIt then tears up the fallen opponent with\nsharp claws.",
+      "flavor_text": "When expelling a blast of superhot fire,\nthe red flame at the tip of its tail burns\nmore intensely.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18843,7 +18843,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "尻尾を　振り回して\n相手を　なぎ倒し　鋭い　ツメで\nズタズタに　ひきさいてしまう。",
+      "flavor_text": "口から　灼熱の　炎を　吐き出すとき\n尻尾の　先は\nより　赤く　激しく　燃え上がる。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -18854,7 +18854,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "もえる　しっぽを　ふりまわすと\nまわりの　おんどが　どんどん\nあがって　あいてを　くるしめる。",
+      "flavor_text": "ちじょう　１４００メートル　まで\nハネを　つかって　とぶことができる。\nこうねつの　ほのおを　はく。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -18865,7 +18865,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "불타는 꼬리를 휘두르면\n주위의 온도가 점점\n올라가 상대를 괴롭게 한다.",
+      "flavor_text": "지상 1400m까지\n날개를 사용해 날 수 있다.\n고열의 불꽃을 내뿜는다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -18876,7 +18876,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "En agitant sa queue, il peut élever la température à\nun niveau incroyable.",
+      "flavor_text": "Ses ailes peuvent le faire voler à plus de 1 400 m\nd’altitude. Ce Pokémon crache du feu à des\ntempératures très élevées.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -18887,7 +18887,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Wenn Glutexo mit seinem Schwanz schwingt,\nsteigt die Temperatur ins Unermessliche.",
+      "flavor_text": "Dieses Pokémon kann mit seinen Flügeln\neine Höhe von bis zu 1 400 m erreichen.\nEs spuckt sehr heißes Feuer.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -18898,7 +18898,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Cuando balancea la ardiente cola, eleva la temperatura\na niveles muy altos.",
+      "flavor_text": "Con las alas que tiene puede alcanzar una altura de\ncasi 1400 m. Suele escupir fuego por la boca.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -18909,7 +18909,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Quando agita la sua coda infuocata porta la\ntemperatura a livelli insostenibili.",
+      "flavor_text": "Grazie alle possenti ali può volare fino a 1400 m\nd’altezza. Sputa fuoco a una temperatura\nimpressionante.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -18920,7 +18920,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "When it swings its burning tail, it elevates the air\ntemperature to unbearably high levels.",
+      "flavor_text": "Its wings can carry this Pokémon close to an\naltitude of 4,600 feet. It blows out fire at very\nhigh temperatures.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -18931,7 +18931,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "燃える　尻尾を　振り回すと\nまわりの　温度が　どんどん　上がって\n相手を　苦しめる。",
+      "flavor_text": "地上　１４００メートルまで\n羽を　使って　飛ぶことができる。\n高熱の　炎を　吐く。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -18942,7 +18942,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "するどい　ツメで　ようしゃなく　たたきのめす。\nきょうてきと　むかいあうと　きぶんが　たかぶり\nしっぽの　ほのおが　あおじろく　もえあがる。",
+      "flavor_text": "つよい　あいてを　もとめて　そらを　とびまわる。\nなんでも　とかして　しまう　こうねつの　ほのおを\nじぶんより　よわいものに　むけることは　しない。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -18953,7 +18953,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "날카로운 발톱으로 봐주지 않고 때려눕힌다.\n강한 적을 만나면 기분이 고양되며\n꼬리의 불꽃이 푸르스름하게 불타오른다.",
+      "flavor_text": "강한 상대를 찾아 하늘을 날아다닌다.\n무엇이든 다 녹여버리는 고열의 불꽃을\n자신보다 약한 자에게 들이대지 않는다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -18964,7 +18964,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Reptincel lacère ses ennemis sans pitié grâce à ses griffes\nacérées. S’il rencontre un ennemi puissant, il devient agressif\net la flamme au bout de sa queue s’embrase et prend\nune couleur bleu clair.",
+      "flavor_text": "Dracaufeu parcourt les cieux pour trouver des adversaires\nà sa mesure. Il crache de puissantes flammes capables de\nfaire fondre n’importe quoi. Mais il ne dirige jamais son souffle\ndestructeur vers un ennemi plus faible.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -18975,7 +18975,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Gnadenlos besiegt Glutexo seine Gegner mit seinen\nscharfen Klauen. Wenn es auf starke Gegner trifft,\nwird es wütend und die Flamme auf seiner Schweifspitze\nflackert in einem bläulichen Ton.",
+      "flavor_text": "Glurak fliegt durch die Lüfte, um starke Gegner aufzuspüren.\nSein heißer Feueratem bringt alles zum Schmelzen. Aber es\nrichtet seinen Feueratem nie auf schwächere Gegner.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -18986,7 +18986,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon no tiene reparo en acabar con su rival usando\nlas afiladas garras que tiene. Si su enemigo es fuerte, se\nvuelve agresivo, y la llama que tiene en el extremo de la cola\nempieza a arder con mayor intensidad tornándose azulada.",
+      "flavor_text": "Charizard se dedica a volar por los cielos en busca de\noponentes fuertes. Echa fuego por la boca y es capaz de\nderretir cualquier cosa. No obstante, si su rival es más débil\nque él, no usará este ataque.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -18997,7 +18997,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon distrugge il nemico senza pietà con i suoi\nartigli affilati. Quando incontra un avversario molto forte\ndiventa aggressivo. In questo stato di grande agitazione\nla fiamma della coda diventa di colore bianco bluastro.",
+      "flavor_text": "Charizard solca i cieli in cerca di nemici molto forti.\nRiesce a emettere fiammate di un calore tale da fondere\nogni cosa. Tuttavia, non rivolge mai le sue micidiali lingue\ndi fuoco contro avversari più deboli di lui.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19008,7 +19008,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon mercilessly destroys its foes using its sharp claws.\nIf it encounters a strong foe, it turns aggressive.\nIn this excited state, the flame at the tip of its tail flares with a\nbluish white color.",
+      "flavor_text": "Charizard flies around the sky in search of powerful opponents.\nIt breathes fire of such great heat that it melts anything.\nHowever, it never turns its fiery breath on any opponent\nweaker than itself.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19019,7 +19019,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "鋭い　ツメで　ようしゃなく　たたきのめす。\n強敵と　向かい合うと　気分が　たかぶり\n尻尾の　炎が　青白く　燃えあがる。",
+      "flavor_text": "強い　相手を　求めて　空を　飛び回る。\nなんでも　溶かして　しまう　高熱の　炎を\n自分より　弱いものに　向けることは　しない。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19030,7 +19030,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "するどい　ツメで　ようしゃなく　たたきのめす。\nきょうてきと　むかいあうと　きぶんが　たかぶり\nしっぽの　ほのおが　あおじろく　もえあがる。",
+      "flavor_text": "つよい　あいてを　もとめて　そらを　とびまわる。\nなんでも　とかして　しまう　こうねつの　ほのおを\nじぶんより　よわいものに　むけることは　しない。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -19041,7 +19041,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "날카로운 발톱으로 봐주지 않고 때려눕힌다.\n강한 적을 만나면 기분이 고양되며\n꼬리의 불꽃이 푸르스름하게 불타오른다.",
+      "flavor_text": "강한 상대를 찾아 하늘을 날아다닌다.\n무엇이든 다 녹여버리는 고열의 불꽃을\n자신보다 약한 자에게 들이대지 않는다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -19052,7 +19052,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Reptincel lacère ses ennemis sans pitié grâce à ses griffes\nacérées. S’il rencontre un ennemi puissant, il devient agressif\net la flamme au bout de sa queue s’embrase et prend\nune couleur bleu clair.",
+      "flavor_text": "Dracaufeu parcourt les cieux pour trouver des adversaires\nà sa mesure. Il crache de puissantes flammes capables de\nfaire fondre n’importe quoi. Mais il ne dirige jamais son souffle\ndestructeur vers un ennemi plus faible.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -19063,7 +19063,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Glutexo attackiert seine Feinde mit aller Gewalt und unter\nEinsatz seiner scharfen Krallen. Trifft es auf starke Gegner,\nwird es wütend und die Flamme auf seiner Schweifspitze\nflackert in einem bläulichen Ton.",
+      "flavor_text": "Glurak fliegt durch die Lüfte, um starke Gegner aufzuspüren.\nSein heißer Feueratem bringt alles zum Schmelzen. Aber es\nrichtet seinen Feueratem nie gegen schwächere Gegner.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -19074,7 +19074,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon no tiene reparo en acabar con su rival usando\nlas afiladas garras que tiene. Si su enemigo es fuerte, se\nvuelve agresivo, y la llama que tiene en el extremo de la cola\nempieza a arder con mayor intensidad tornándose azulada.",
+      "flavor_text": "Charizard se dedica a volar por los cielos en busca de\noponentes fuertes. Echa fuego por la boca y es capaz de\nderretir cualquier cosa. No obstante, si su rival es más débil\nque él, no usará este ataque.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -19085,7 +19085,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon distrugge il nemico senza pietà con i suoi\nartigli affilati. Quando incontra un avversario molto forte\ndiventa aggressivo. In questo stato di grande agitazione\nla fiamma della coda diventa di colore bianco bluastro.",
+      "flavor_text": "Charizard solca i cieli in cerca di nemici molto forti.\nRiesce a emettere fiammate di un calore tale da fondere\nogni cosa. Tuttavia, non rivolge mai le sue micidiali lingue\ndi fuoco contro avversari più deboli di lui.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19096,7 +19096,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Charmeleon mercilessly destroys its foes using its sharp\nclaws. If it encounters a strong foe, it turns aggressive.\nIn this excited state, the flame at the tip of its tail flares with\na bluish white color.",
+      "flavor_text": "Charizard flies around the sky in search of powerful opponents.\nIt breathes fire of such great heat that it melts anything.\nHowever, it never turns its fiery breath on any opponent\nweaker than itself.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19107,7 +19107,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "鋭い　ツメで　ようしゃなく　たたきのめす。\n強敵と　向かい合うと　気分が　たかぶり\n尻尾の　炎が　青白く　燃えあがる。",
+      "flavor_text": "強い　相手を　求めて　空を　飛び回る。\nなんでも　溶かして　しまう　高熱の　炎を\n自分より　弱いものに　向けることは　しない。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19118,7 +19118,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "きょうてきと　たたかいつづけ\nエキサイトすると　あおじろい\nほのおを　はきだすことがある。",
+      "flavor_text": "くちから　しゃくねつの　ほのおを\nはきだすとき　シッポのさきは\nより　あかく　はげしく　もえあがる。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -19129,7 +19129,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "강한 적과 싸움을 거듭하다\n흥분하면 푸르스름한\n불꽃을 뿜어낼 때가 있다.",
+      "flavor_text": "입에서 작렬하는 불꽃을\n토해낼 때 꼬리의 끝이\n더욱 붉고 격렬하게 타오른다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -19140,7 +19140,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "在與強敵戰鬥的過程中，\n如果情緒變得興奮起來，\n有時會噴出藍白色的火焰。",
+      "flavor_text": "從口中噴出熾熱的火焰時，\n尾巴尖端的紅色火焰\n會燃燒得更加激烈。",
       "language": {
         "name": "zh-hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -19151,7 +19151,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Exalté quand il affronte des adversaires\npuissants, ce Pokémon en vient parfois\nà cracher des flammes bleutées.",
+      "flavor_text": "Quand il crache son souffle brûlant, la flamme\nau bout de sa queue s’embrase.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -19162,7 +19162,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Kämpft es länger gegen starke Gegner, so gerät\nes in Aufregung und spuckt manchmal gleißend\nhelle, bläuliche Flammen.",
+      "flavor_text": "Wenn es einen Strahl glühenden Feuers speit,\nlodert die rote Flamme an seiner Schwanzspitze\nnoch intensiver.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -19173,7 +19173,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Librar combates intensos lo entusiasma tanto\nque en ocasiones lanza llamas de tono blanco\nazulado.",
+      "flavor_text": "Cuando exhala fuego abrasador, la llama de la\npunta de la cola se aviva y adquiere un intenso\ncolor rojo.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -19184,7 +19184,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Si infervora durante le lotte più dure e talvolta\nsputa fiamme bluastre.",
+      "flavor_text": "Quando emette lingue di fuoco roventi\ndalla bocca, la fiamma rossa sulla punta\ndella coda brucia più intensamente.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19195,7 +19195,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Tough fights could excite this Pokémon. When\nexcited, it may breathe out bluish-white flames.",
+      "flavor_text": "When this Pokémon expels a blast of superhot\nfire, the red flame at the tip of its tail burns\nmore intensely.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19206,7 +19206,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "強敵と　戦いつづけ\nエキサイトすると　青白い\n炎を　吐き出すことがある。",
+      "flavor_text": "口から　灼熱の　炎を\n吐き出すとき　シッポの先は\nより　赤く　激しく　燃えあがる。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19217,7 +19217,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "在与强敌战斗的过程中，\n如果情绪变得兴奋起来，\n有时会喷出青白色的烈火。",
+      "flavor_text": "从口中喷出灼热的火焰时，\n尾巴尖端的红色火焰\n会燃烧得更加猛烈。",
       "language": {
         "name": "zh-hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -19228,7 +19228,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "きょうてきと　たたかいつづけ\nエキサイトすると　あおじろい\nほのおを　はきだすことがある。",
+      "flavor_text": "くちから　しゃくねつの　ほのおを\nはきだすとき　シッポのさきは\nより　あかく　はげしく　もえあがる。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -19239,7 +19239,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "강한 적과 싸움을 거듭하다\n흥분하면 푸르스름한\n불꽃을 뿜어낼 때가 있다.",
+      "flavor_text": "입에서 작렬하는 불꽃을\n토해낼 때 꼬리의 끝이\n더욱 붉고 격렬하게 타오른다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -19250,7 +19250,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "在與強敵戰鬥的過程中，\n如果情緒變得興奮起來，\n有時會噴出藍白色的火焰。",
+      "flavor_text": "從口中噴出熾熱的火焰時，\n尾巴尖端的紅色火焰\n會燃燒得更加激烈。",
       "language": {
         "name": "zh-hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -19261,7 +19261,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Exalté quand il affronte des adversaires\npuissants, ce Pokémon en vient parfois\nà cracher des flammes bleutées.",
+      "flavor_text": "Quand il crache son souffle brûlant, la flamme\nau bout de sa queue s’embrase.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -19272,7 +19272,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Kämpft es länger gegen starke Gegner, so gerät\nes in Aufregung und spuckt manchmal gleißend\nhelle, bläuliche Flammen.",
+      "flavor_text": "Wenn es einen Strahl glühenden Feuers speit,\nlodert die rote Flamme an seiner Schwanzspitze\nnoch intensiver.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -19283,7 +19283,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Librar combates intensos lo entusiasma tanto\nque en ocasiones lanza llamas de tono blanco\nazulado.",
+      "flavor_text": "Cuando exhala fuego abrasador, la llama de la\npunta de la cola se aviva y adquiere un intenso\ncolor rojo.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -19294,7 +19294,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Si infervora durante le lotte più dure e talvolta\nsputa fiamme bluastre.",
+      "flavor_text": "Quando emette lingue di fuoco roventi\ndalla bocca, la fiamma rossa sulla punta\ndella coda brucia più intensamente.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19305,7 +19305,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Tough fights could excite this Pokémon. When\nexcited, it may breathe out bluish-white flames.",
+      "flavor_text": "When this Pokémon expels a blast of superhot\nfire, the red flame at the tip of its tail burns\nmore intensely.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19316,7 +19316,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "強敵と　戦いつづけ\nエキサイトすると　青白い\n炎を　吐き出すことがある。",
+      "flavor_text": "口から　灼熱の　炎を\n吐き出すとき　シッポの先は\nより　赤く　激しく　燃えあがる。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19327,7 +19327,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "在与强敌战斗的过程中，\n如果情绪变得兴奋起来，\n有时会喷出青白色的烈火。",
+      "flavor_text": "从口中喷出灼热的火焰时，\n尾巴尖端的红色火焰\n会燃烧得更加猛烈。",
       "language": {
         "name": "zh-hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -19338,7 +19338,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "もえる　しっぽを　ふりまわし\nするどい　ツメで　あいてを\nきりさく　あらあらしい　せいかく。",
+      "flavor_text": "がんせきも　やけるような\nしゃくねつの　ほのおを　はいて\nやまかじを　おこすことが　ある。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -19349,7 +19349,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "불타는 꼬리를 휘두르며\n날카로운 발톱으로 상대를\n베어 가르는 몹시 거친 성격이다.",
+      "flavor_text": "암석도 태워버릴 정도로\n작열하는 화염을 뿜어\n산불을 일으킬 때가 있다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -19360,7 +19360,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "揮動燃燒著火焰的尾巴，\n用鋒利的爪子撕裂對手。\n性情十分粗暴。",
+      "flavor_text": "會噴出彷彿連岩石\n都能燒焦的灼熱火焰。\n有時會引發森林火災。",
       "language": {
         "name": "zh-hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -19371,7 +19371,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Il est très brutal. En combat, il se sert de\nses griffes acérées et de sa queue enflammée\npour mettre en pièces ses adversaires.",
+      "flavor_text": "Son souffle brûlant peut faire fondre la roche.\nIl est parfois la cause d’incendies de forêt.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -19382,7 +19382,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Es ist brutal veranlagt. Im Kampf schlägt es mit\nseinem brennenden Schweif um sich und schlitzt\nGegner mit seinen scharfen Klauen auf.",
+      "flavor_text": "Dieses Pokémon kann mit seinem Feueratem\nFelsen schmelzen. Es verursacht ab und zu\nWaldbrände.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -19393,7 +19393,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Este Pokémon de naturaleza agresiva ataca en\ncombate con su cola llameante y hace trizas al\nrival con sus afiladas garras.",
+      "flavor_text": "Escupe un fuego tan caliente que funde las rocas.\nCausa incendios forestales sin querer.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -19404,7 +19404,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Ha un’indole feroce. Usa la coda fiammeggiante\ncome una frusta e lacera l’avversario con gli\nartigli affilati.",
+      "flavor_text": "Sputa fiamme incandescenti in grado di fondere\nle rocce. A volte causa incendi boschivi.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19415,7 +19415,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "It has a barbaric nature. In battle, it whips its\nfiery tail around and slashes away with sharp claws.",
+      "flavor_text": "It spits fire that is hot enough to melt boulders.\nIt may cause forest fires by blowing flames.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19426,7 +19426,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "燃える　しっぽを　振りまわし\nするどい　ツメで　相手を\n切り裂く　荒々しい　性格。",
+      "flavor_text": "岩石も　焼けるような\n灼熱の　炎を　吐いて\n山火事を　起こすことが　ある。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19437,7 +19437,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "挥动燃烧着火焰的尾巴，\n用锋利的爪子撕裂对手。\n性格十分粗暴。",
+      "flavor_text": "能够喷出猛烈的火焰，\n仿佛连岩石都能烤焦。\n有时会引发森林火灾。",
       "language": {
         "name": "zh-hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -19448,7 +19448,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "たたかいで　きもちが　たかぶると\nしゃくねつの　ほのおを　ふきながら\nあたりを　もやしてまわる。",
+      "flavor_text": "ちじょう　１４００メートル　まで\nハネを　つかって　とぶことができる。\nこうねつの　ほのおを　はく。",
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -19459,7 +19459,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "싸움으로 기분이 고조되면\n작열하는 불꽃을 뿜으며\n주변을 태워버린다.",
+      "flavor_text": "지상 1400m까지\n날개를 사용해 날 수 있다.\n고열의 불꽃을 내뿜는다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -19470,7 +19470,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "如果牠在戰鬥中亢奮起來，\n就會噴出灼熱的火焰，\n把周圍的東西燒得一乾二淨。",
+      "flavor_text": "能用翅膀飛到距離地面\n１４００公尺的高度。\n會吐出高溫的火焰。",
       "language": {
         "name": "zh-hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -19481,7 +19481,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "S’il s’excite pendant un combat, il crache\nde grandes flammes, brûlant tout ce qui\nse trouve aux alentours.",
+      "flavor_text": "Ses ailes lui permettent de voler à plus de\n1 400 m d’altitude. Ce Pokémon crache du feu\nà des températures très élevées.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -19492,7 +19492,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Steigert es sich in einen Kampf hinein, spuckt es\nFlammen, die alles in seiner Umgebung\nniederbrennen.",
+      "flavor_text": "Dieses Pokémon kann mit seinen Flügeln eine\nHöhe von bis zu 1 400 m erreichen. Es spuckt\nsehr heißes Feuer.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -19503,7 +19503,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Si se exalta en combate, expulsa intensas\nllamaradas que incineran todo a su alrededor.",
+      "flavor_text": "Sus potentes alas le permiten volar a una altura\nde 1400 m. Escupe llamaradas que llegan a\nalcanzar temperaturas elevadísimas.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -19514,7 +19514,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "Se s’infervora nella lotta, sputa potenti fiamme\nche inceneriscono l’area circostante.",
+      "flavor_text": "Grazie alle possenti ali può volare fino a\n1.400 m d’altezza. Le fiamme che sputa\npossono raggiungere temperature altissime.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -19525,7 +19525,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "If it becomes agitated during battle, it spouts\nintense flames, incinerating its surroundings.",
+      "flavor_text": "Its wings can carry this Pokémon close to an\naltitude of 4,600 feet. It blows out fire at very\nhigh temperatures.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -19536,7 +19536,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "戦いで　気持ちが　たかぶると\n灼熱の　炎を　吹きながら\nあたりを　燃やしてまわる。",
+      "flavor_text": "地上　１４００メートル　まで\n羽を　使って　飛ぶことができる。\n高熱の　炎を　吐く。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -19547,7 +19547,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
       }
     },
     {
-      "flavor_text": "如果它在战斗中亢奋起来，\n就会喷出灼热的火焰，\n把周围的东西烧得一干二净。",
+      "flavor_text": "能用翅膀飞到距地面\n１４００米的高度。\n会吐出高温火焰。",
       "language": {
         "name": "zh-hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -19559,7 +19559,7 @@ globalThis.CHARIZARD_SPECIES_DATA = {
     }
   ],
   "form_descriptions": [],
-  "forms_switchable": false,
+  "forms_switchable": true,
   "gender_rate": 1,
   "genera": [
     {
@@ -19647,167 +19647,167 @@ globalThis.CHARIZARD_SPECIES_DATA = {
   },
   "has_gender_differences": false,
   "hatch_counter": 20,
-  "id": 5,
+  "id": 6,
   "is_baby": false,
   "is_legendary": false,
   "is_mythical": false,
-  "name": "charmeleon",
+  "name": "charizard",
   "names": [
     {
       "language": {
         "name": "ja-hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
       },
-      "name": "リザード"
+      "name": "リザードン"
     },
     {
       "language": {
         "name": "ja-roma",
         "url": "https://pokeapi.co/api/v2/language/2/"
       },
-      "name": "Lizardo"
+      "name": "Lizardon"
     },
     {
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
       },
-      "name": "리자드"
+      "name": "리자몽"
     },
     {
       "language": {
         "name": "zh-hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
       },
-      "name": "火恐龍"
+      "name": "噴火龍"
     },
     {
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
       },
-      "name": "Reptincel"
+      "name": "Dracaufeu"
     },
     {
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
       },
-      "name": "Glutexo"
+      "name": "Glurak"
     },
     {
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
       },
-      "name": "Charmeleon"
+      "name": "Charizard"
     },
     {
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
       },
-      "name": "Charmeleon"
+      "name": "Charizard"
     },
     {
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
       },
-      "name": "Charmeleon"
+      "name": "Charizard"
     },
     {
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
       },
-      "name": "リザード"
+      "name": "リザードン"
     },
     {
       "language": {
         "name": "zh-hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
       },
-      "name": "火恐龙"
+      "name": "喷火龙"
     }
   ],
-  "order": 5,
+  "order": 6,
   "pal_park_encounters": [
     {
       "area": {
         "name": "field",
         "url": "https://pokeapi.co/api/v2/pal-park-area/2/"
       },
-      "base_score": 80,
-      "rate": 10
+      "base_score": 90,
+      "rate": 3
     }
   ],
   "pokedex_numbers": [
     {
-      "entry_number": 5,
+      "entry_number": 6,
       "pokedex": {
         "name": "national",
         "url": "https://pokeapi.co/api/v2/pokedex/1/"
       }
     },
     {
-      "entry_number": 5,
+      "entry_number": 6,
       "pokedex": {
         "name": "kanto",
         "url": "https://pokeapi.co/api/v2/pokedex/2/"
       }
     },
     {
-      "entry_number": 230,
+      "entry_number": 231,
       "pokedex": {
         "name": "original-johto",
         "url": "https://pokeapi.co/api/v2/pokedex/3/"
       }
     },
     {
-      "entry_number": 235,
+      "entry_number": 236,
       "pokedex": {
         "name": "updated-johto",
         "url": "https://pokeapi.co/api/v2/pokedex/7/"
       }
     },
     {
-      "entry_number": 110,
+      "entry_number": 111,
       "pokedex": {
         "name": "conquest-gallery",
         "url": "https://pokeapi.co/api/v2/pokedex/11/"
       }
     },
     {
-      "entry_number": 84,
+      "entry_number": 85,
       "pokedex": {
         "name": "kalos-central",
         "url": "https://pokeapi.co/api/v2/pokedex/12/"
       }
     },
     {
-      "entry_number": 5,
+      "entry_number": 6,
       "pokedex": {
         "name": "letsgo-kanto",
         "url": "https://pokeapi.co/api/v2/pokedex/26/"
       }
     },
     {
-      "entry_number": 379,
+      "entry_number": 380,
       "pokedex": {
         "name": "galar",
         "url": "https://pokeapi.co/api/v2/pokedex/27/"
       }
     },
     {
-      "entry_number": 168,
+      "entry_number": 169,
       "pokedex": {
         "name": "blueberry",
         "url": "https://pokeapi.co/api/v2/pokedex/33/"
       }
     },
     {
-      "entry_number": 152,
+      "entry_number": 153,
       "pokedex": {
         "name": "lumiose-city",
         "url": "https://pokeapi.co/api/v2/pokedex/34/"
@@ -19822,8 +19822,29 @@ globalThis.CHARIZARD_SPECIES_DATA = {
     {
       "is_default": true,
       "pokemon": {
-        "name": "charmeleon",
-        "url": "https://pokeapi.co/api/v2/pokemon/5/"
+        "name": "charizard",
+        "url": "https://pokeapi.co/api/v2/pokemon/6/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "charizard-mega-x",
+        "url": "https://pokeapi.co/api/v2/pokemon/10034/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "charizard-mega-y",
+        "url": "https://pokeapi.co/api/v2/pokemon/10035/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "charizard-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10196/"
       }
     }
   ]
@@ -19937,12 +19958,12 @@ globalThis.CHARIZARD_DATA_INFO = {
             id: "#0006",
             name: "Charizard",
             types: [{fire: "Fuego"}, {flying: "Volador"}]
-        }
-    /*
+        },
     species: "Pokémon Llama",
     description: "Cuando lanza una descarga de fuego supercaliente, la roja llama de su cola brilla más intensamente.",
     height: "1.70",
     weight: "90.50",
+    /*
     habilities: ["Mar Llamas", "Poder Solar"],
     evolutions:[
       {

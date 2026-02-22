@@ -3,11 +3,11 @@
 // import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
-        fetchPokemonSimpleData, fetchPokemonData , fetchAbility, fetchNameInLang, fetchMove,
+        fetchPokemonSimpleData, fetchPokemonData , fetchAbility, fetchMove,
         fetchStat, fetchType, fetchPokemonSpeciesData, fetchEvolutionChainData
     } from '../utilities/fetch-utilities'
 
-import { simplePokemonInfo, getTypesData } from '../utilities/get-data-utilities'
+import { simplePokemonInfo, pokemonInfo, getTypesData, getNameInLang } from '../utilities/get-data-utilities'
 
 describe('PokemApi REQUEST FUNCTIONS', () =>{
     afterEach(()=>{
@@ -74,10 +74,6 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${globalThis.SOLAR_POWER_ABILITY}/`)
     })
 
-    it('should [fetchNameInLang] be a function', async ()=>{
-        expect(typeof fetchNameInLang).toBe('function')
-    })
-
     it('should fetch ability name in correct language from PokeAPI', async()=>{
         globalThis.fetch = vi.fn(() =>
             Promise.resolve({
@@ -90,7 +86,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${globalThis.BLAZE_ABILITY}/`)
 
-        const blazeES = await fetchNameInLang(blazeData, "es")
+        const blazeES = getNameInLang(blazeData, "es")
         expect(blazeES).toBe(globalThis.BLAZE_ABILITY_ES)
 
         vi.clearAllMocks()
@@ -106,7 +102,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${globalThis.SOLAR_POWER_ABILITY}/`)
 
-        const solarPowerES = await fetchNameInLang(solarPowerData, "es")
+        const solarPowerES = getNameInLang(solarPowerData, "es")
         expect(solarPowerES).toBe(globalThis.SOLAR_POWER_ABILITY_ES)
     })
 
@@ -152,7 +148,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${globalThis.BRUTAL_SWING_MOVE}/`)
 
-        const brutalSwingES = await fetchNameInLang(brutalSwingData, "es")
+        const brutalSwingES = getNameInLang(brutalSwingData, "es")
         expect(brutalSwingES).toBe(globalThis.BRUTAL_SWING_MOVE_ES)
 
         vi.clearAllMocks()
@@ -168,7 +164,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${globalThis.BREAKING_SWIPE_MOVE}/`)
 
-        const breakingSwipeES = await fetchNameInLang(breakingSwipeData, "es")
+        const breakingSwipeES = getNameInLang(breakingSwipeData, "es")
         expect(breakingSwipeES).toBe(globalThis.BREAKING_SWIPE_MOVE_ES)
     })
 
@@ -184,7 +180,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${globalThis.HP_STAT_ID}/`)
 
-        const hpES = await fetchNameInLang(hpData, "es")
+        const hpES = getNameInLang(hpData, "es")
         expect(hpES).toBe(globalThis.HP_STAT_ES)
 
         vi.clearAllMocks()
@@ -200,7 +196,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${globalThis.ATTACK_STAT_ID}/`)
 
-        const attackES = await fetchNameInLang(attackData, "es")
+        const attackES = getNameInLang(attackData, "es")
         expect(attackES).toBe(globalThis.ATTACK_STAT_ES)
     })
 
@@ -216,7 +212,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${globalThis.FIRE_TYPE_ID}/`)
 
-        const fireES = await fetchNameInLang(fireData, "es")
+        const fireES = getNameInLang(fireData, "es")
         expect(fireES).toBe(globalThis.FIRE_TYPE_ES)
 
         vi.clearAllMocks()
@@ -232,7 +228,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${globalThis.FLYING_TYPE_ID}/`)
 
-        const flyingES = await fetchNameInLang(flyingData, "es")
+        const flyingES = getNameInLang(flyingData, "es")
         expect(flyingES).toBe(globalThis.FLYING_TYPE_ES)
     })
 
@@ -288,7 +284,9 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon-form/25/')
     })
 
-    it.todo('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
+    it('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
+        const charizardData = await pokemonInfo(globalThis.CHARIZARD_DATA, globalThis.CHARIZARD_SPECIES_DATA, globalThis.ALL_TYPES_IN_ES)
+        expect(charizardData).toEqual(globalThis.CHARIZARD_DATA_INFO)
     })
 
     it('should get pokemon types data', async()=>{
