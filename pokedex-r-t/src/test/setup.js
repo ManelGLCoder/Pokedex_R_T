@@ -1,5 +1,5 @@
-global.CHARIZARD_ID = 6
-global.CHARIZARD_FORM_DATA = {
+globalThis.CHARIZARD_ID = 6
+globalThis.CHARIZARD_FORM_DATA = {
     "form_name": "",
     "form_names": [],
     "form_order": 1,
@@ -59,7 +59,7 @@ global.CHARIZARD_FORM_DATA = {
         "url": "https://pokeapi.co/api/v2/version-group/28/"
     }
 }
-global.CHARIZARD_DATA = {
+globalThis.CHARIZARD_DATA = {
     "abilities": [
         {
         "ability": {
@@ -18498,7 +18498,7 @@ global.CHARIZARD_DATA = {
     ],
     "weight": 905
 }
-global.CHARIZARD_SPECIES_DATA = {
+globalThis.CHARIZARD_SPECIES_DATA = {
   "base_happiness": 70,
   "capture_rate": 45,
   "color": {
@@ -19828,8 +19828,8 @@ global.CHARIZARD_SPECIES_DATA = {
     }
   ]
 }
-global.CHARIZARD_EVOLUTION_CHAIN_ID = 2
-global.CHARIZARD_EVOLUTION_CHAIN_DATA = {
+globalThis.CHARIZARD_EVOLUTION_CHAIN_ID = 2
+globalThis.CHARIZARD_EVOLUTION_CHAIN_DATA = {
   "baby_trigger_item": null,
   "chain": {
     "evolution_details": [],
@@ -19925,8 +19925,8 @@ global.CHARIZARD_EVOLUTION_CHAIN_DATA = {
   "id": 2
 }
 
-global.PIKACHU_ID = 25
-global.PIKACHU_FORM_DATA = {
+globalThis.PIKACHU_ID = 25
+globalThis.PIKACHU_FORM_DATA = {
     "form_name": "",
     "form_names": [],
     "form_order": 1,
@@ -19979,7 +19979,7 @@ global.PIKACHU_FORM_DATA = {
         "url": "https://pokeapi.co/api/v2/version-group/28/"
     }
 }
-global.PIKACHU_DATA = {
+globalThis.PIKACHU_DATA = {
   "abilities": [
     {
       "ability": {
@@ -34447,8 +34447,8 @@ global.PIKACHU_DATA = {
   "weight": 60
 }
 
-global.BLAZE_ABILITY = "blaze"
-global.BLAZE_ABILITY_DATA = {
+globalThis.BLAZE_ABILITY = "blaze"
+globalThis.BLAZE_ABILITY_DATA = {
   "effect_changes": [],
   "effect_entries": [
     {
@@ -35718,10 +35718,10 @@ global.BLAZE_ABILITY_DATA = {
     }
   ]
 }
-global.BLAZE_ABILITY_ES = "Mar Llamas"
+globalThis.BLAZE_ABILITY_ES = "Mar Llamas"
 
-global.SOLAR_POWER_ABILITY = "solar-power"
-global.SOLAR_POWER_ABILITY_DATA = {
+globalThis.SOLAR_POWER_ABILITY = "solar-power"
+globalThis.SOLAR_POWER_ABILITY_DATA = {
   "effect_changes": [],
   "effect_entries": [
     {
@@ -36749,12 +36749,12 @@ global.SOLAR_POWER_ABILITY_DATA = {
     }
   ]
 }
-global.SOLAR_POWER_ABILITY_ES = "Poder Solar"
+globalThis.SOLAR_POWER_ABILITY_ES = "Poder Solar"
 
-global.CHARIZARD_ABILITIES_ES = ["Mar Llamas", "Poder Solar"]
+globalThis.CHARIZARD_ABILITIES_ES = ["Mar Llamas", "Poder Solar"]
 
-global.BRUTAL_SWING_MOVE = "brutal-swing"
-global.BRUTAL_SWING_MOVE_DATA = {
+globalThis.BRUTAL_SWING_MOVE = "brutal-swing"
+globalThis.BRUTAL_SWING_MOVE_DATA = {
   "accuracy": 100,
   "contest_combos": null,
   "contest_effect": null,
@@ -38155,10 +38155,10 @@ global.BRUTAL_SWING_MOVE_DATA = {
     "url": "https://pokeapi.co/api/v2/type/17/"
   }
 }
-global.BRUTAL_SWING_MOVE_ES = "Giro Vil"
+globalThis.BRUTAL_SWING_MOVE_ES = "Giro Vil"
 
-global.BREAKING_SWIPE_MOVE = "breaking-swipe"
-global.BREAKING_SWIPE_MOVE_DATA = {
+globalThis.BREAKING_SWIPE_MOVE = "breaking-swipe"
+globalThis.BREAKING_SWIPE_MOVE_DATA = {
   "accuracy": 100,
   "contest_combos": null,
   "contest_effect": null,
@@ -38845,10 +38845,10 @@ global.BREAKING_SWIPE_MOVE_DATA = {
     "url": "https://pokeapi.co/api/v2/type/16/"
   }
 }
-global.BREAKING_SWIPE_MOVE_ES = "Vasto Impacto"
+globalThis.BREAKING_SWIPE_MOVE_ES = "Vasto Impacto"
 
-global.HP_STAT_ID = "hp"
-global.HP_STAT_DATA = {
+globalThis.HP_STAT_ID = "hp"
+globalThis.HP_STAT_DATA = {
   "affecting_items": [
     {
       "name": "hp-up",
@@ -38951,10 +38951,10 @@ global.HP_STAT_DATA = {
     }
   ]
 }
-global.HP_STAT_ES = "PS"
+globalThis.HP_STAT_ES = "PS"
 
-global.ATTACK_STAT_ID = "attack"
-global.ATTACK_STAT_DATA = {
+globalThis.ATTACK_STAT_ID = "attack"
+globalThis.ATTACK_STAT_DATA = {
   "affecting_items": [
     {
       "name": "protein",
@@ -39450,10 +39450,10 @@ global.ATTACK_STAT_DATA = {
     }
   ]
 }
-global.ATTACK_STAT_ES = "Ataque"
+globalThis.ATTACK_STAT_ES = "Ataque"
 
-global.FIRE_TYPE_ID = "fire"
-global.FIRE_TYPE_DATA = {
+globalThis.FIRE_TYPE_ID = "fire"
+globalThis.FIRE_TYPE_DATA = {
   "damage_relations": {
     "double_damage_from": [
       {
@@ -40761,10 +40761,10 @@ global.FIRE_TYPE_DATA = {
     }
   }
 }
-global.FIRE_TYPE_ES = "Fuego"
+globalThis.FIRE_TYPE_ES = "Fuego"
 
-global.FLYING_TYPE_ID = "flying"
-global.FLYING_TYPE_DATA = {
+globalThis.FLYING_TYPE_ID = "flying"
+globalThis.FLYING_TYPE_DATA = {
   "damage_relations": {
     "double_damage_from": [
       {
@@ -42237,4 +42237,4 @@ global.FLYING_TYPE_DATA = {
     }
   }
 }
-global.FLYING_TYPE_ES = "Volador"
+globalThis.FLYING_TYPE_ES = "Volador"
