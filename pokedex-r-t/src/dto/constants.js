@@ -1,0 +1,21 @@
+export const POKEMON_TYPES = [
+    "Steel",
+    "Water",
+    "Bug",
+    "Dragon",
+    "Electric",
+    "Ghost",
+    "Fire",
+    "Fairy",
+    "Ice",
+    "Fighting",
+    "Normal",
+    "Grass",
+    "Psychic",
+    "Rock",
+    "Dark",
+    "Ground",
+    "Poison",
+    "Flying",
+    "Stellar"
+]

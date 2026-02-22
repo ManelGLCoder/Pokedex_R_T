@@ -7,6 +7,7 @@ import {
         fetchStat, fetchType, fetchPokemonSpeciesData, fetchEvolutionChainData
     } from '../utilities/fetch-utilities'
 
+import { simplePokemonInfo, getTypesData } from '../utilities/get-data-utilities'
 
 describe('PokemApi REQUEST FUNCTIONS', () =>{
     afterEach(()=>{
@@ -290,7 +291,14 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
     it.todo('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
     })
 
-    it.todo('should get pokemon data simplified needed for PokemonList section from PokeAPI', async()=>{
+    it('should get pokemon types data', async()=>{
+        const typesData = getTypesData(globalThis.CHARIZARD_FORM_DATA.types, globalThis.ALL_TYPES_IN_ES)
+        expect(typesData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO.types)
+    })
+
+    it('should get pokemon data simplified needed for PokemonList section from PokeAPI', async()=>{
+        const charizardSimpleData = await simplePokemonInfo(globalThis.CHARIZARD_FORM_DATA, globalThis.ALL_TYPES_IN_ES)
+        expect(charizardSimpleData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO)
     })
 
     it.todo('should get sprites data from pokemonData', async()=>{
