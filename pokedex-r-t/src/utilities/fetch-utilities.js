@@ -21,6 +21,20 @@ export async function fetchPokemonData(pokemon){
     return await fetchData(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
 }
 
+export async function fetchAbilities(pokeData) {
+    const abilitiesNames = pokeData.abilities.map((ability)=> ability.name)
+
+    let abilitiesPromises = []
+    
+    abilitiesNames.forEach(ability => {
+        const abilityPromise = new Promise((resolve)=>{resolve(fetchAbility(ability))})
+        abilitiesPromises.push(abilityPromise)
+    }) 
+    Promise.all(abilitiesPromises).then(abilitiesData=>{
+        return abilitiesData
+    })
+}
+
 export async function fetchAbility(ability) {
     return await fetchData(`https://pokeapi.co/api/v2/ability/${ability}/`)
 }

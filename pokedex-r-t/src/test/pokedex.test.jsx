@@ -285,7 +285,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
     })
 
     it('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
-        const charizardData = await pokemonInfo(globalThis.CHARIZARD_DATA, globalThis.CHARIZARD_SPECIES_DATA, globalThis.ALL_TYPES_IN_ES)
+        const charizardData = await pokemonInfo(globalThis.CHARIZARD_DATA, globalThis.CHARIZARD_SPECIES_DATA, globalThis.ALL_TYPES_IN_ES,globalThis.CHARIZARD_ABILITIES_DATA)
         expect(charizardData).toEqual(globalThis.CHARIZARD_DATA_INFO)
     })
 

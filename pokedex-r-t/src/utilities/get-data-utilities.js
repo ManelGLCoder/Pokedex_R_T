@@ -1,4 +1,4 @@
-import { fetchType, fetchPokemonSimpleData, fetchPokemonData, fetchPokemonSpeciesData} from "./fetch-utilities"
+import { fetchType, fetchPokemonSimpleData, fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities} from "./fetch-utilities"
 import { POKEMON_TYPES } from "../dto/constants"
 
 // export let types = await getAllTypesIn("es")
@@ -57,17 +57,18 @@ const getTextInLang = (data, key1, key2, lang) =>{
 export async function getPokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonData(pokemonId)
     const rawSpeciesData = await fetchPokemonSpeciesData(pokemonId)
-    return pokemonInfo(rawPokeData, rawSpeciesData)
+    const abilitiesData = await fetchAbilities(rawPokeData)
+    return pokemonInfo(rawPokeData, rawSpeciesData, abilitiesData)
 }
 
-export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData) {
+export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData, abilitiesData) {
     return {
         simpleInfo: simplePokemonInfo(pokeData, allTypesData),
         species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
         description: getFlavorTextInLang(pokeSpeciesData, currlanguage),
         height: decimetresToMeters(pokeData.height),
         weight: decimetresToMeters(pokeData.weight),
-
+        abilities: getAbilities(abilitiesData, currlanguage)
     }
 }
 
@@ -81,4 +82,22 @@ function getGeneraTextInLang(data, language){
 
 function decimetresToMeters(dm){
     return (dm / 10).toFixed(2)
+}
+
+export function getAbilities(abilitiesData, lang){
+    let abilitiesInLang = []
+    abilitiesData.forEach((abilityData)=>{
+        abilitiesInLang.push(getAbilityInLang(abilityData,lang))
+    })
+    return abilitiesInLang
+}
+
+function getAbilityInLang(abilityData, lang){
+    let abilityInLang
+    abilityData.names.forEach((ability)=>{
+        if(ability.language.name === lang){
+            abilityInLang = ability.name
+        }
+    })
+    return abilityInLang
 }
