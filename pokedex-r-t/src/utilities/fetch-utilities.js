@@ -3,8 +3,10 @@
 //     return  nameInLang.name
 // }
 
-export function fetchPokemonSimpleData(pokemon){
-    return fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
+import { simplePokemonInfo } from "./get-data-utilities"
+
+export async function fetchPokemonSimpleData(pokemon){
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
 }
 
 async function fetchData(url) {
@@ -59,3 +61,47 @@ export async function fetchEvolutionChainData(url) {
     return await fetchData(url)
 }
 
+export async function fetchAllEvolutionData(chainEvolutionData, allTypesData) {
+    const fetchEvolutionsData = async (evoData) =>{
+        let evoPromises = []
+        evoData.forEach(async(ev)=>{
+            const promise =  getEvoData(ev)
+            evoPromises.push(promise)
+        })
+        const evos = await Promise.all(evoPromises)
+        return evos
+    }
+
+    async function getEvoData(ev){
+        let evInfo 
+        const pokemonInfo = await getSimpleData(ev.species.name)
+        // const pokemonInfo =ev.species.name
+        if(Array.isArray(ev.evolves_to) && ev.evolves_to.length === 0){
+            evInfo = {
+                pokemonInfo: pokemonInfo,
+                evolutions: null
+            }
+        }
+        else{
+            const evsInfo = await fetchEvolutionsData(ev.evolves_to)
+            evInfo = {
+                pokemonInfo: pokemonInfo,
+                evolutions: evsInfo
+            }
+        }
+        return evInfo
+    }
+
+    const getSimpleData = async(name)=>{
+        const pokemonSimpleData = await fetchPokemonSimpleData(name)
+        return simplePokemonInfo(pokemonSimpleData, allTypesData)
+        
+    }
+    const simpleData = await getSimpleData(chainEvolutionData.chain.species.name)
+    const evolutions = await fetchEvolutionsData(chainEvolutionData.chain.evolves_to)
+    const chainpokemonEvData = {
+            pokemonInfo: simpleData,
+            evolutions: evolutions
+        }
+    return chainpokemonEvData
+}
