@@ -1,5 +1,3 @@
-import { pokemonInfo } from "../utilities/get-data-utilities"
-
 globalThis.CHARIZARD_ID = 6
 globalThis.CHARIZARD_FORM_DATA = {
     "form_name": "",
@@ -22320,20 +22318,6 @@ globalThis.CHARIZARD_DATA_INFO = {
         ]
     },
 /*
-    variants:[
-      {
-        name: "Charizard X",
-        types: ["fire", "dragon"]
-      },
-      {
-        name: "Charizard Y",
-        types: ["fire", "flying"],
-      },
-      {
-        name: "Charizard Gmax",
-        types: ["fire", "flying"]
-      },
-    ],
     moves:{
       lvUp:[
         {lv: 1, name: "Dragon Claw", type: "dragon", category: "physical", power: 80, accuaracy: 100, pp:15},

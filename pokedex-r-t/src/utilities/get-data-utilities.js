@@ -107,3 +107,29 @@ function getAbilityInLang(abilityData, lang){
     })
     return abilityInLang
 }
+
+export function getMoveNames(pokeData, limit){
+    let movesNames = []
+    let i = 0
+    for(let moveElement of pokeData.moves){
+        movesNames.push(moveElement.move.name)
+        if(limit && i === limit - 1){
+            break
+        }
+        i++
+    }
+    return movesNames
+}
+export function getMoveInfo(rawMoveData, allTypesData){
+    const nameInLang = getNameInLang(rawMoveData, 'es')
+    const typeInLang = allTypesData[rawMoveData.type.name]
+    const moveInfo = {
+        name: nameInLang,
+        accuracy: rawMoveData.accuracy,
+        power: rawMoveData.power,
+        pp: rawMoveData.pp,
+        type: typeInLang,
+        damageClass: rawMoveData.damage_class.name
+    }
+    return moveInfo
+}

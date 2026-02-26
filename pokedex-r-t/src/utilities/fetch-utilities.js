@@ -100,3 +100,12 @@ const fetchEvolutionData = async(ev)=>{
     }
     return evInfo
 }
+
+export async function fetchAllMovesInfo(movesName) {
+    let movePromises = []
+    movesName.forEach( (name)=>{
+        const movePromise =  new Promise((resolve)=>{resolve(fetchMove(name))})
+        movePromises.push(movePromise)
+    })
+    return Promise.all(movePromises)
+}
