@@ -1,3 +1,5 @@
+import { pokemonInfo } from "../utilities/get-data-utilities"
+
 globalThis.CHARIZARD_ID = 6
 globalThis.CHARIZARD_FORM_DATA = {
     "form_name": "",
@@ -22246,6 +22248,32 @@ globalThis.CHARIZARD_EVOLUTION_CHAIN_DATA = {
   },
   "id": 2
 }
+globalThis.CHARIZARD_EVOLUTION_INFO = {
+    pokemonInfo:{
+        id: "#0004",
+        name: "Charmander",
+        types: ["fire"]
+    },
+    evolutions: [
+        {
+        pokemonInfo:{
+            id: "#0005",
+            name: "Charmeleon",
+            types: ["fire"]
+        },
+        evolutions: [
+            {
+                pokemonInfo: {
+                    id: "#0006",
+                    name: "Chaizard",
+                    types: ["fire", "flying"]
+                },
+                evolutions: null
+            }
+        ]
+    }
+    ]
+}
 
 globalThis.CHARIZARD_DATA_SIMPLE_INFO = {
     id: "#0006",
@@ -22265,24 +22293,33 @@ globalThis.CHARIZARD_DATA_INFO = {
     height: "1.70",
     weight: "90.50",
     abilities: ["Mar Llamas", "Poder Solar"],
-    /*
-    evolutions:[
-      {
-        name: "Charmander",
-        types: ["fire"],
-        lvEvolution: 16
-      },
-      {
-        name: "Charmeleon",
-        types: ["fire"],
-        lvEvolution: 36
-      },
-      {
-        name: "Charizard",
-        types: ["fire", "flying"],
-        lvEvolution: null
-      },
-    ],
+    evolutions:{ 
+        pokemonInfo:{
+            id: "#0004",
+            name: "Charmander",
+            types: ["fire"]
+        },
+        evolutions: [
+            {
+                pokemonInfo:{
+                    id: "#0005",
+                    name: "Charmeleon",
+                    types: ["fire"]
+                },
+                evolutions: [
+                    {
+                        pokemonInfo: {
+                            id: "#0006",
+                            name: "Chaizard",
+                            types: ["fire", "flying"]
+                        },
+                        evolutions: null
+                    }
+                ]
+            }
+        ]
+    },
+/*
     variants:[
       {
         name: "Charizard X",

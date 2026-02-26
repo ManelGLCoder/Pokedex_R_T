@@ -1,4 +1,7 @@
-import { fetchType, fetchPokemonSimpleData, fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities} from "./fetch-utilities"
+import { fetchType, fetchPokemonSimpleData, 
+    fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
+    fetchEvolutionChainData, fetchEvolutionLineDataBy,
+} from "./fetch-utilities"
 import { POKEMON_TYPES } from "../dto/constants"
 
 // export let types = await getAllTypesIn("es")
@@ -23,7 +26,7 @@ export async function getAllTypesIn(lang) {
 //TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData)
+    return simplePokemonInfo(rawPokeData/*,types*/)
 }
 
 export function simplePokemonInfo(pokeData, allTypesData) {
@@ -58,17 +61,20 @@ export async function getPokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonData(pokemonId)
     const rawSpeciesData = await fetchPokemonSpeciesData(pokemonId)
     const abilitiesData = await fetchAbilities(rawPokeData)
-    return pokemonInfo(rawPokeData, rawSpeciesData, abilitiesData)
+    const evolutionData = await fetchEvolutionChainData(rawSpeciesData.evolution_chain.url)
+    const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
+    return pokemonInfo(rawPokeData, rawSpeciesData, abilitiesData, evolutionsInfo)
 }
 
-export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData, abilitiesData) {
+export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData, abilitiesData, evolutionInfo) {
     return {
         simpleInfo: simplePokemonInfo(pokeData, allTypesData),
         species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
         description: getFlavorTextInLang(pokeSpeciesData, currlanguage),
         height: decimetresToMeters(pokeData.height),
         weight: decimetresToMeters(pokeData.weight),
-        abilities: getAbilities(abilitiesData, currlanguage)
+        abilities: getAbilities(abilitiesData, currlanguage),
+        evolutions: evolutionInfo,
     }
 }
 

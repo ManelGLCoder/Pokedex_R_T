@@ -3,7 +3,7 @@
 //     return  nameInLang.name
 // }
 
-import { simplePokemonInfo } from "./get-data-utilities"
+import {getSimplePokemonInfo } from "./get-data-utilities"
 
 export async function fetchPokemonSimpleData(pokemon){
     return await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
@@ -61,47 +61,42 @@ export async function fetchEvolutionChainData(url) {
     return await fetchData(url)
 }
 
-export async function fetchAllEvolutionData(chainEvolutionData, allTypesData) {
-    const fetchEvolutionsData = async (evoData) =>{
-        let evoPromises = []
-        evoData.forEach(async(ev)=>{
-            const promise =  getEvoData(ev)
-            evoPromises.push(promise)
-        })
-        const evos = await Promise.all(evoPromises)
-        return evos
-    }
+//TODO: Refactorizar para que los fetch sean independiente de los gets
+export async function fetchEvolutionLineDataBy(chainEvolutionData) {
+    const pokemonInfo = await getSimplePokemonInfo(chainEvolutionData.chain.species.name)
+    const evolutionsInfo = await fetchEvolutionsData(chainEvolutionData.chain.evolves_to)
+    const pokemonEvLineInfo = {
+            pokemonInfo: pokemonInfo,
+            evolutions: evolutionsInfo
+        }
+    return pokemonEvLineInfo
+}
 
-    async function getEvoData(ev){
-        let evInfo 
-        const pokemonInfo = await getSimpleData(ev.species.name)
-        // const pokemonInfo =ev.species.name
-        if(Array.isArray(ev.evolves_to) && ev.evolves_to.length === 0){
-            evInfo = {
-                pokemonInfo: pokemonInfo,
-                evolutions: null
-            }
-        }
-        else{
-            const evsInfo = await fetchEvolutionsData(ev.evolves_to)
-            evInfo = {
-                pokemonInfo: pokemonInfo,
-                evolutions: evsInfo
-            }
-        }
-        return evInfo
-    }
+const fetchEvolutionsData = async (evoData) =>{
+    let evoPromises = []
+    evoData.forEach(async(ev)=>{
+        const promise =  fetchEvolutionData(ev)
+        evoPromises.push(promise)
+    })
+    const evolutionsInfo = await Promise.all(evoPromises)
+    return evolutionsInfo
+}
 
-    const getSimpleData = async(name)=>{
-        const pokemonSimpleData = await fetchPokemonSimpleData(name)
-        return simplePokemonInfo(pokemonSimpleData, allTypesData)
-        
-    }
-    const simpleData = await getSimpleData(chainEvolutionData.chain.species.name)
-    const evolutions = await fetchEvolutionsData(chainEvolutionData.chain.evolves_to)
-    const chainpokemonEvData = {
-            pokemonInfo: simpleData,
-            evolutions: evolutions
+const fetchEvolutionData = async(ev)=>{
+    let evInfo 
+    const pokemonInfo = await getSimplePokemonInfo(ev.species.name)
+    if(Array.isArray(ev.evolves_to) && ev.evolves_to.length === 0){
+        evInfo = {
+            pokemonInfo: pokemonInfo,
+            evolutions: null
         }
-    return chainpokemonEvData
+    }
+    else{
+        const evsInfo = await fetchEvolutionsData(ev.evolves_to)
+        evInfo = {
+            pokemonInfo: pokemonInfo,
+            evolutions: evsInfo
+        }
+    }
+    return evInfo
 }
