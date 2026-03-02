@@ -32112,23 +32112,7 @@ globalThis.CHARIZARD_DATA_INFO = {
       statMax:255,
       totalSum:534,
       totalSumMax: 1530
-    },
-    /*
-    strengths: [
-      {type:"ground", multiplier: "0"},
-      {type:"bug", multiplier: "1/4"},
-      {type:"grass", multiplier: "1/4"},
-      {type:"steel", multiplier: "1/2"},
-      {type:"fire", multiplier: "1/2"},
-      {type:"fairy", multiplier: "1/2"},
-      {type:"fighting", multiplier: "1/2"},
-    ],
-    weakness: [
-      {type:"rock", multiplier: "4"},
-      {type:"water", multiplier: "2"},
-      {type:"electric", multiplier: "2"}
-    ]
-      */
+    }
 }
 
 globalThis.PIKACHU_ID = 25
