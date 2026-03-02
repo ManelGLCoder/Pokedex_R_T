@@ -66,7 +66,10 @@ export async function getPokemonInfo(pokemonId){
     return pokemonInfo(rawPokeData, rawSpeciesData, abilitiesData, evolutionsInfo)
 }
 
-export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData, abilitiesData, evolutionInfo) {
+export function pokemonInfo(
+        pokeData, pokeSpeciesData, allTypesData,
+        abilitiesData, evolutionInfo, movesData,
+    ) {
     return {
         simpleInfo: simplePokemonInfo(pokeData, allTypesData),
         species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
@@ -75,6 +78,8 @@ export function pokemonInfo(pokeData, pokeSpeciesData, allTypesData, abilitiesDa
         weight: decimetresToMeters(pokeData.weight),
         abilities: getAbilities(abilitiesData, currlanguage),
         evolutions: evolutionInfo,
+        moves: getMovesInfo(movesData,allTypesData),
+        stats: getStatsInfo(pokeData, pokeSpeciesData)
     }
 }
 
@@ -120,6 +125,12 @@ export function getMoveNames(pokeData, limit){
     }
     return movesNames
 }
+
+export function getMovesInfo(movesData, types){
+    return movesData.map((move)=>getMoveInfo(move,types))
+}
+
+//TODO: Cuando se implemente cache que en esta función que cree o compruebe el id(nombre en ingles)
 export function getMoveInfo(rawMoveData, allTypesData){
     const nameInLang = getNameInLang(rawMoveData, 'es')
     const typeInLang = allTypesData[rawMoveData.type.name]
@@ -132,4 +143,24 @@ export function getMoveInfo(rawMoveData, allTypesData){
         damageClass: rawMoveData.damage_class.name
     }
     return moveInfo
+}
+
+export function getStatsInfo(pokeData, pokeSpeciesData){
+    let stats = {}
+    pokeData.stats.forEach((s)=>{
+        stats[`${s.stat.name}`] = s.base_stat
+    })
+    return {
+        hp: stats['hp'],
+        attack: stats['attack'],
+        defense: stats['defense'],
+        speed: stats['speed'],
+        specialAttack: stats['special-attack'],
+        specialDefense: stats['special-defense'],
+        happiness:pokeSpeciesData.base_happiness,
+        catchRatio: pokeSpeciesData.capture_rate,
+        statMax:255,
+        totalSum:534,
+        totalSumMax: 1530
+    }
 }
