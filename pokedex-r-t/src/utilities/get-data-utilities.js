@@ -5,7 +5,7 @@ import { fetchType, fetchPokemonSimpleData,
 } from "./fetch-utilities"
 import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME } from "../dto/constants"
 
-export let types = await getAllTypesIn("es")
+// export let types = await getAllTypesIn("es")
 export let currlanguage = 'es'
 export async function getAllTypesIn(lang) {
     let typesPromises = []
@@ -27,17 +27,21 @@ export async function getAllTypesIn(lang) {
 //TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData,types)
-    // return simplePokemonInfo(rawPokeData/*,types*/)
+    // return simplePokemonInfo(rawPokeData,types)
+    return simplePokemonInfo(rawPokeData/*,types*/)
 }
 
 export function simplePokemonInfo(pokeData, allTypesData) {
     const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
-    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1) 
+    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1)
+    const sprite = pokeData.sprites.front_default
+    const shinySprite = pokeData.sprites.front_shiny
     return {
         id: idCompleted,
         name: namePokemon,
-        types: getTypesData(pokeData.types, allTypesData)
+        types: getTypesData(pokeData.types, allTypesData),
+        sprite: sprite,
+        spriteShiny: shinySprite
     }
 }
 

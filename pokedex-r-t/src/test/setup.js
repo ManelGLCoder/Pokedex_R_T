@@ -22273,10 +22273,12 @@ globalThis.CHARIZARD_EVOLUTION_INFO = {
     ]
 }
 
-globalThis.CHARIZARD_DATA_SIMPLE_INFO = {
+globalThis.CHARIZARD_DATA_SIMPLE_INFO =  {
     id: "#0006",
     name: "Charizard",
-    types: [{fire: "Fuego"}, {flying: "Volador"}]
+    types: [{fire: "Fuego"}, {flying: "Volador"}],
+    sprite:  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    spriteShiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png"
 }
 
 globalThis.CHARIZARD_FIVE_MOVES_DATA = [
@@ -32025,7 +32027,9 @@ globalThis.CHARIZARD_DATA_INFO = {
         {
             id: "#0006",
             name: "Charizard",
-            types: [{fire: "Fuego"}, {flying: "Volador"}]
+            types: [{fire: "Fuego"}, {flying: "Volador"}],
+            sprite:  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+            spriteShiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png"
         },
     species: "Pokémon Llama",
     description: "Cuando lanza una descarga de fuego supercaliente, la roja llama de su cola brilla más intensamente.",
