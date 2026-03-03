@@ -19,3 +19,6 @@ export const POKEMON_TYPES = [
     "Flying",
     "Stellar"
 ]
+
+export const LIMIT_MOVES_FETCH_SAME_TIME = 10
+export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 15

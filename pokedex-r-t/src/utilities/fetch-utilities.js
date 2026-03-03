@@ -24,7 +24,7 @@ export async function fetchPokemonData(pokemon){
 }
 
 export async function fetchAbilities(pokeData) {
-    const abilitiesNames = pokeData.abilities.map((ability)=> ability.name)
+    const abilitiesNames = pokeData.abilities.map((a)=> a.ability.name)
 
     let abilitiesPromises = []
     
@@ -32,7 +32,7 @@ export async function fetchAbilities(pokeData) {
         const abilityPromise = new Promise((resolve)=>{resolve(fetchAbility(ability))})
         abilitiesPromises.push(abilityPromise)
     }) 
-    Promise.all(abilitiesPromises).then(abilitiesData=>{
+    return Promise.all(abilitiesPromises).then(abilitiesData=>{
         return abilitiesData
     })
 }

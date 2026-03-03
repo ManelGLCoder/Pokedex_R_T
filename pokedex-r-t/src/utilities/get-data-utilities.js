@@ -1,10 +1,11 @@
 import { fetchType, fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
+    fetchAllMovesInfo,
 } from "./fetch-utilities"
-import { POKEMON_TYPES } from "../dto/constants"
+import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME } from "../dto/constants"
 
-// export let types = await getAllTypesIn("es")
+export let types = await getAllTypesIn("es")
 export let currlanguage = 'es'
 export async function getAllTypesIn(lang) {
     let typesPromises = []
@@ -26,7 +27,8 @@ export async function getAllTypesIn(lang) {
 //TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData/*,types*/)
+    return simplePokemonInfo(rawPokeData,types)
+    // return simplePokemonInfo(rawPokeData/*,types*/)
 }
 
 export function simplePokemonInfo(pokeData, allTypesData) {
@@ -63,7 +65,11 @@ export async function getPokemonInfo(pokemonId){
     const abilitiesData = await fetchAbilities(rawPokeData)
     const evolutionData = await fetchEvolutionChainData(rawSpeciesData.evolution_chain.url)
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
-    return pokemonInfo(rawPokeData, rawSpeciesData, abilitiesData, evolutionsInfo)
+    const movesNames = getMoveNames(rawPokeData,LIMIT_MOVES_FETCH_SAME_TIME)
+    const movesInfo = await fetchAllMovesInfo(movesNames)
+    return pokemonInfo(
+            rawPokeData, rawSpeciesData, types,abilitiesData, evolutionsInfo, movesInfo
+        )
 }
 
 export function pokemonInfo(
