@@ -7,7 +7,10 @@ import {
         fetchStat, fetchType, fetchPokemonSpeciesData, fetchEvolutionChainData
     } from '../utilities/fetch-utilities'
 
-import { simplePokemonInfo, pokemonInfo, getTypesData, getNameInLang } from '../utilities/get-data-utilities'
+import { 
+    simplePokemonInfo, pokemonInfo, getTypesData, getNameInLang,
+    getSprite, getShinySprite
+} from '../utilities/get-data-utilities'
 
 describe('PokemApi REQUEST FUNCTIONS', () =>{
     afterEach(()=>{
@@ -284,8 +287,8 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon-form/25/')
     })
 
-    it('should get pokemon data needed for PokemonInfo section from PokeAPI', async()=>{
-        const charizardData = await pokemonInfo(
+    it('should get pokemon data needed for PokemonInfo section from PokeAPI', ()=>{
+        const charizardData = pokemonInfo(
             globalThis.CHARIZARD_DATA,
             globalThis.CHARIZARD_SPECIES_DATA,
             globalThis.ALL_TYPES_IN_ES,
@@ -296,31 +299,23 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(charizardData).toEqual(globalThis.CHARIZARD_DATA_INFO)
     })
 
-    it('should get pokemon types data', async()=>{
+    it('should get pokemon types data', ()=>{
         const typesData = getTypesData(globalThis.CHARIZARD_FORM_DATA.types, globalThis.ALL_TYPES_IN_ES)
         expect(typesData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO.types)
     })
 
-    it('should get pokemon data simplified needed for PokemonList section from PokeAPI', async()=>{
-        const charizardSimpleData = await simplePokemonInfo(globalThis.CHARIZARD_FORM_DATA, globalThis.ALL_TYPES_IN_ES)
+    it('should get pokemon data simplified needed for PokemonList section from PokeAPI', ()=>{
+        const charizardSimpleData = simplePokemonInfo(globalThis.CHARIZARD_FORM_DATA, globalThis.ALL_TYPES_IN_ES)
         expect(charizardSimpleData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO)
     })
 
-    it.todo('should get sprites data from pokemonData', async()=>{
+    it('should get sprites data from pokemonData', ()=>{
+        const simpleInfo = globalThis.CHARIZARD_DATA_INFO.simpleInfo
+        const sprite = getSprite(simpleInfo)
+        const spriteShiny = getShinySprite(simpleInfo)
+        expect(sprite).toEqual(globalThis.CHARIZARD_DATA_INFO.simpleInfo.sprite)
+        expect(spriteShiny).toEqual(globalThis.CHARIZARD_DATA_INFO.simpleInfo.spriteShiny)
     })
-
-    it.todo('should get moves data from pokemonData', async()=>{
-    })
-
-    it.todo('should get types data from pokemonData', async()=>{
-    })
-
-    it.todo('should get stats data from pokemonData', async()=>{
-    })
-
-    it.todo('should get evolution data from pokemonData', async()=>{
-    })
-
 
     // afterEach(cleanup)
     // it('should render',() =>{

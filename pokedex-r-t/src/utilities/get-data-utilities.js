@@ -45,6 +45,14 @@ export function simplePokemonInfo(pokeData, allTypesData) {
     }
 }
 
+export function getSprite(pokeSimpleInfo){
+    return pokeSimpleInfo.sprite
+}
+
+export function getShinySprite(pokemonSimpleInfo){
+    return pokemonSimpleInfo.spriteShiny
+}
+
 export function getTypesData(typesWanted, allTypesData){
     let typesData = []
     typesWanted.forEach(type=>{
