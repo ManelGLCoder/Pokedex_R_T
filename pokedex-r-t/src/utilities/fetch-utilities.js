@@ -109,3 +109,7 @@ export async function fetchAllMovesInfo(movesName) {
     })
     return Promise.all(movePromises)
 }
+
+export async function fetchPokemonList(){
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=2000`)
+}

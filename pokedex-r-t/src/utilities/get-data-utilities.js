@@ -1,11 +1,11 @@
 import { fetchType, fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
-    fetchAllMovesInfo,
+    fetchAllMovesInfo,fetchPokemonList
 } from "./fetch-utilities"
 import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME } from "../dto/constants"
 
-// export let types = await getAllTypesIn("es")
+export const types = await getAllTypesIn("es")
 export let currlanguage = 'es'
 export async function getAllTypesIn(lang) {
     let typesPromises = []
@@ -27,8 +27,8 @@ export async function getAllTypesIn(lang) {
 //TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    // return simplePokemonInfo(rawPokeData,types)
-    return simplePokemonInfo(rawPokeData/*,types*/)
+    return simplePokemonInfo(rawPokeData,types)
+    // return simplePokemonInfo(rawPokeData/*,types*/)
 }
 
 export function simplePokemonInfo(pokeData, allTypesData) {
@@ -181,4 +181,12 @@ export function getStatsInfo(pokeData, pokeSpeciesData){
         totalSum:534,
         totalSumMax: 1530
     }
+}
+
+export async function getListOfPokemon(){
+    const listData = await fetchPokemonList()
+    return listData.results.map((pokeData)=> {
+        const id = pokeData.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/','')
+        return id
+    })
 }

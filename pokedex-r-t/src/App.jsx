@@ -1,11 +1,41 @@
 import './App.css'
-import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData';
-import SectionPokedexList from './components/principal-sections/SectionPokedexList';
+import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData'
+import SectionPokedexList from './components/principal-sections/SectionPokedexList'
+
+import { getAllTypesIn, getPokemonInfo, getSimplePokemonInfo, types, getListOfPokemon} from './utilities/get-data-utilities';
+import { LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON } from './dto/constants.js';
 
 
+import { useContext, useEffect } from 'react';
+import { PokedexContext } from './contexts/PokedexContext.jsx';
+//!To test for now
+
+  //TODO: [DONE] hacer función para obtener los datos para la pokedex
+  //TODO: [DONE] primero que muestre X pokemon en la pokedex
+
+  let lastId = 0
+  const getPokemonList = (startId, pokemonNamesList) =>{
+    let listPromise = []
+    const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
+    for(let i = startId -1; i < maxIndex; i++){
+      if(i >= MAX_NUMBER_OF_POKEMON){
+        break
+      }
+      const pokemonPromise = getSimplePokemonInfo(pokemonNamesList[i])
+      listPromise.push(pokemonPromise)
+      lastId = i
+    }
+    return Promise.all(listPromise)
+  }
+
+  //TODO: segundo que vaya añadiendo en base vayas bajando
+  //TODO: tercero que al seleccionar un pokemon se muestren sus datos
+  //TODO: cuarto que se guarde en cache y no haga llamadas si ya se tiene
+  //TODO: solucionar pokemons sin sprites
 
 function App() {
-  const charizardData = {
+  const {pokedexList, setPokedexList} = useContext(PokedexContext)
+    const charizardData = {
     id: "006",
     name: "Charizard",
     types: ["fire", "flying"],
@@ -101,43 +131,33 @@ function App() {
       {type:"water", multiplier: "2"},
       {type:"electric", multiplier: "2"}
     ]
-  }
-  const pokedexData =
-    [
-      {id: "0001", name: "Charmander", types: ["grass","poison"]},
-      {id: "0002", name: "Charmeleon", types: ["grass","poison"]},
-      {id: "0003", name: "Charizard", types: ["grass","poison"]},
-      {id: "0004", name: "Charizard X", types: ["water"]},
-      {id: "0005", name: "Charizard Y", types: ["water"]},
-      {id: "0006", name: "Charizard Gmax", types: ["water"]},
-      {id: "0007", name: "Charmander", types: ["fire"]},
-      {id: "0008", name: "Charmeleon", types: ["fire"]},
-      {id: "0009", name: "Charizard", types: ["fire", "flying"]},
-      {id: "0010", name: "Charmander", types: ["fire", "dragon"]},
-      {id: "0011", name: "Charmeleon", types: ["fire", "fairy"]},
-      {id: "0012", name: "Charizard", types: ["fire", "normal"]},
-      {id: "0013", name: "Charmander", types: ["fire", "dragon"]},
-      {id: "0014", name: "Charmeleon", types: ["fire", "fairy"]},
-      {id: "0015", name: "Charizard", types: ["fire", "normal"]},
-      {id: "0016", name: "Charmander", types: ["fire", "dragon"]},
-      {id: "0017", name: "Charmeleon", types: ["fire", "fairy"]},
-      {id: "0018", name: "Charizard", types: ["fire", "normal"]},
-    ]
-  const inPokedex = false
-  return (
+    }
+    const inPokedex = true
+    useEffect(()=>{
+      const initPokedexList = async () =>{
+        const POKEMON_IDS_LIST = await getListOfPokemon()
+        return await getPokemonList(1000, POKEMON_IDS_LIST)
+      }
+          initPokedexList().then((result)=>{
+          setPokedexList(result)
+          })
+      return ()=>{}
+    },[])
+
+    return (
     <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-        <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
-            {
-              inPokedex? 
-              <SectionPokedexList pokeListData={pokedexData}/> :
-              <SectionAllPokemonData pokeData={charizardData}/>
-            }
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
+            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
+                {
+                    inPokedex? 
+                    <SectionPokedexList/> :
+                    <SectionAllPokemonData pokeData={charizardData}/>
+                }
+            </div>
         </div>
-      </div>
     </>
-  )
+    )
 }
 
 export default App
