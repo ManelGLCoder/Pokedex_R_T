@@ -6,26 +6,26 @@ const PokemonTypeIcon = ({ pokemonType}) => {
     );
 };
 
-const srcType = (pokemonType) => `src/assets/types/t_${pokemonType}.png`
+const srcType = (pokemonType) => `src/assets/types/t_${pokemonType}.svg`
 
 const colorType = {
-    "bug": "bg-green-900",
-    "dark": "bg-gray-800",
-    "dragon": "bg-cyan-950",
-    "electric": "bg-yellow-300",
-    "fairy": "bg-fuchsia-400",
-    "fighting": "bg-orange-700",
-    "fire": "bg-orange-400",
-    "flying": "bg-sky-300",
-    "ghost": "bg-gray-950",
-    "grass": "bg-lime-500",
-    "ground": "bg-amber-900",
-    "ice": "bg-blue-300",
-    "normal": "bg-neutral-400",
-    "poison": "bg-purple-900",
-    "psychic": "bg-pink-500",
-    "rock": "bg-stone-700",
-    "steel": "bg-gray-400",
-    "water": "bg-blue-400",
+    "bug": "bg-bug",
+    "dark": "bg-dark",
+    "dragon": "bg-dragon",
+    "electric": "bg-electric",
+    "fairy": "bg-fairy",
+    "fighting": "bg-fighting",
+    "fire": "bg-fire",
+    "flying": "bg-flying",
+    "ghost": "bg-ghost",
+    "grass": "bg-grass",
+    "ground": "bg-ground",
+    "ice": "bg-ice",
+    "normal": "bg-normal",
+    "poison": "bg-poison",
+    "psychic": "bg-psychic",
+    "rock": "bg-rock",
+    "steel": "bg-steel",
+    "water": "bg-water",
 }
 export default PokemonTypeIcon;
