@@ -1,13 +1,14 @@
 import '../../App.css'
 import SectionSearchPokemon from '../Sections/SectionSearchPokemon'
 import PokedexElement from '../elements/PokedexElement'
+import ButtonShowMorePokemon from '../buttons/ButtonShowMorePokemon.jsx';
 
 
 import { useContext, useEffect } from 'react';
 import { PokedexContext } from '../../contexts/PokedexContext.jsx';
 
 function SectionPokedexList() {
-    const {pokedexList, setPokedexList} = useContext(PokedexContext)
+    const {pokedexList} = useContext(PokedexContext)
     //TODO: implementar que muestre cargando cuando no estén listos
     useEffect(()=>{
         if(pokedexList.lenght === undefined){
@@ -31,6 +32,7 @@ function SectionPokedexList() {
                             return(<PokedexElement key={i} pokeElementData={pokemon}/>)
                         })
                     }
+                    <ButtonShowMorePokemon/>
         </section>
         
     </div>

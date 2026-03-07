@@ -2,39 +2,24 @@ import './App.css'
 import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData'
 import SectionPokedexList from './components/principal-sections/SectionPokedexList'
 
-import { getAllTypesIn, getPokemonInfo, getSimplePokemonInfo, types, getListOfPokemon} from './utilities/get-data-utilities';
-import { LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON } from './dto/constants.js';
-
-
+import { getListOfPokemon} from './utilities/get-data-utilities';
 import { useContext, useEffect } from 'react';
-import { PokedexContext } from './contexts/PokedexContext.jsx';
+import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
+
 //!To test for now
 
   //TODO: [DONE] hacer función para obtener los datos para la pokedex
   //TODO: [DONE] primero que muestre X pokemon en la pokedex
-
-  let lastId = 0
-  const getPokemonList = (startId, pokemonNamesList) =>{
-    let listPromise = []
-    const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
-    for(let i = startId -1; i < maxIndex; i++){
-      if(i >= MAX_NUMBER_OF_POKEMON){
-        break
-      }
-      const pokemonPromise = getSimplePokemonInfo(pokemonNamesList[i])
-      listPromise.push(pokemonPromise)
-      lastId = i
-    }
-    return Promise.all(listPromise)
-  }
-
-  //TODO: segundo que vaya añadiendo en base vayas bajando
+  //TODO: [DONE/ALTERNATIVE]segundo que vaya añadiendo en base vayas bajando
   //TODO: tercero que al seleccionar un pokemon se muestren sus datos
   //TODO: cuarto que se guarde en cache y no haga llamadas si ya se tiene
   //TODO: solucionar pokemons sin sprites
 
 function App() {
-  const {pokedexList, setPokedexList} = useContext(PokedexContext)
+  const {
+    setPokedexList,
+    setIdList,
+  } = useContext(PokedexContext)
     const charizardData = {
     id: "006",
     name: "Charizard",
@@ -136,11 +121,12 @@ function App() {
     useEffect(()=>{
       const initPokedexList = async () =>{
         const POKEMON_IDS_LIST = await getListOfPokemon()
-        return await getPokemonList(1000, POKEMON_IDS_LIST)
+        setIdList(POKEMON_IDS_LIST)
+        return await getInitialList(POKEMON_IDS_LIST)
       }
-          initPokedexList().then((result)=>{
-          setPokedexList(result)
-          })
+        initPokedexList().then((result)=>{
+        setPokedexList(result)
+        })
       return ()=>{}
     },[])
 
