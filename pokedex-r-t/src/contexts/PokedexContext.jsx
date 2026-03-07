@@ -33,6 +33,10 @@ export const getNextPokemons = async(pokemonNamesList)=>{
 export const PokedexProvider = ({ children }) => {
     const [idList, setIdList] = useState([])
     const [pokedexList, setPokedexList] = useState([])
+    const [inPokedex, setInPokedex] = useState(true)
+    const [pokemonInfo, setPokemonInfo] = useState({})
+    const [showShiny, setShowShiny] = useState(false)
+    //TODO: Mirar si lo usaré o no
     const [currPokedexList, setCurrPokedexList] = useState([])
 
 
@@ -40,6 +44,9 @@ export const PokedexProvider = ({ children }) => {
         <PokedexContext.Provider value={{
             idList,setIdList,
             pokedexList, setPokedexList, 
+            inPokedex, setInPokedex,
+            pokemonInfo, setPokemonInfo,
+            showShiny, setShowShiny,
             currPokedexList, setCurrPokedexList 
         }}>
             {children}

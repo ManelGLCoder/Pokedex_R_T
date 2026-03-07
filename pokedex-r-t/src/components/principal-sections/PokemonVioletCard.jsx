@@ -8,10 +8,10 @@ import SectionPokemonStats from "../Sections/SectionPokemonStats";
 const descriptionFocused = true
 const statsFocused = false
 
-const PokemonVioletCard = ({pokeData, showShiny}) => {
+const PokemonVioletCard = ({pokeData}) => {
     return (
         <div className="relative -top-4 py-5 rounded-xl bg-violet-950 text-white text-sm/7">
-            <ButtonShiny showShiny={showShiny}/>
+            <ButtonShiny/>
             <ButtonsDescripStats descriptionFocused={descriptionFocused} statsFocused={statsFocused}/>
             <div className="flex flex-col gap-3 px-5">
                 {

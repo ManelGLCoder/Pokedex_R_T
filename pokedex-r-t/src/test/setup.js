@@ -22274,7 +22274,8 @@ globalThis.CHARIZARD_EVOLUTION_INFO = {
 }
 
 globalThis.CHARIZARD_DATA_SIMPLE_INFO =  {
-    id: "#0006",
+    id: 6,
+    idCompleted: "#0006",
     name: "Charizard",
     types: [{fire: "Fuego"}, {flying: "Volador"}],
     sprite:  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
@@ -32025,7 +32026,8 @@ globalThis.CHARIZARD_FIVE_MOVES_DATA = [
 globalThis.CHARIZARD_DATA_INFO = {
     simpleInfo:
         {
-            id: "#0006",
+            id: 6,
+            idCompleted: "#0006",
             name: "Charizard",
             types: [{fire: "Fuego"}, {flying: "Volador"}],
             sprite:  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
@@ -32069,7 +32071,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             power: 80,
             pp: 20,
             damageClass: "physical",
-            type: "Normal"
+            type: "normal"
         },
         {
             name: "Puño Fuego",
@@ -32077,7 +32079,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             power: 75,
             pp: 15,
             damageClass: "physical",
-            type: "Fuego"
+            type: "fire"
         },
         {
             name: "Puño Trueno",
@@ -32085,7 +32087,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             power: 75,
             pp: 15,
             damageClass: "physical",
-            type: "Eléctrico"
+            type: "electric"
         },
         {
             name: "Arañazo",
@@ -32093,7 +32095,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             power: 40,
             pp: 35,
             damageClass: "physical",
-            type: "Normal"
+            type: "normal"
         },
         {
             name: "Danza Espada",
@@ -32101,7 +32103,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             power: null,
             pp: 20,
             damageClass: "status",
-            type: "Normal"
+            type: "normal"
         },
     ],
     stats:{

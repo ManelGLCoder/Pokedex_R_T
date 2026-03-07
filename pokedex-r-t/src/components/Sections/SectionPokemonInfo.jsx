@@ -10,12 +10,8 @@ import SectionVariant from "./SectionVariant";
 
 const bHabilities = {name:"Habilidades", isFocus: false }
 const bMoves = {name:"Movimientos", isFocus: true }
-const bLvMoves = {name:"Level Up", isFocus: true }
-const bTMHMMoves = {name:"TM/HM", isFocus: false }
-const bEggMoves = {name:"Egg", isFocus: false }
-const bTutorMoves = {name:"Tutor", isFocus: false }
-const bEvolutions = {name:"Línea Evolutiva", isFocus: false }
-const bVariants = {name:"Variantes", isFocus: true }
+const bEvolutions = {name:"Línea Evolutiva", isFocus: true }
+const bVariants = {name:"Variantes", isFocus: false }
 
 const SectionPokemonInfo = ({pokeData}) => {
     return (
@@ -25,8 +21,8 @@ const SectionPokemonInfo = ({pokeData}) => {
                 <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
                 {
                     bHabilities.isFocus ? 
-                        <SectionHabilities habilitiesData={pokeData.habilities}/> : 
-                        <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
+                        <SectionHabilities habilitiesData={pokeData.abilities}/> : 
+                        <MovementSection moves={pokeData.moves}/>
                 }
                 <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
                 {

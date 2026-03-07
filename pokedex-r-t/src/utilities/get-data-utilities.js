@@ -37,7 +37,8 @@ export function simplePokemonInfo(pokeData, allTypesData) {
     const sprite = pokeData.sprites.front_default
     const shinySprite = pokeData.sprites.front_shiny
     return {
-        id: idCompleted,
+        id: pokeData.id,
+        idCompleted: idCompleted,
         name: namePokemon,
         types: getTypesData(pokeData.types, allTypesData),
         sprite: sprite,
@@ -96,7 +97,7 @@ export function pokemonInfo(
         weight: decimetresToMeters(pokeData.weight),
         abilities: getAbilities(abilitiesData, currlanguage),
         evolutions: evolutionInfo,
-        moves: getMovesInfo(movesData,allTypesData),
+        moves: getMovesInfo(movesData),
         stats: getStatsInfo(pokeData, pokeSpeciesData)
     }
 }
@@ -144,20 +145,19 @@ export function getMoveNames(pokeData, limit){
     return movesNames
 }
 
-export function getMovesInfo(movesData, types){
-    return movesData.map((move)=>getMoveInfo(move,types))
+export function getMovesInfo(movesData){
+    return movesData.map((move)=>getMoveInfo(move))
 }
 
 //TODO: Cuando se implemente cache que en esta función que cree o compruebe el id(nombre en ingles)
-export function getMoveInfo(rawMoveData, allTypesData){
+export function getMoveInfo(rawMoveData,){
     const nameInLang = getNameInLang(rawMoveData, 'es')
-    const typeInLang = allTypesData[rawMoveData.type.name]
     const moveInfo = {
         name: nameInLang,
         accuracy: rawMoveData.accuracy,
         power: rawMoveData.power,
         pp: rawMoveData.pp,
-        type: typeInLang,
+        type: rawMoveData.type.name,
         damageClass: rawMoveData.damage_class.name
     }
     return moveInfo
