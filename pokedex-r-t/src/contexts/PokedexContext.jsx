@@ -36,6 +36,9 @@ export const PokedexProvider = ({ children }) => {
     const [inPokedex, setInPokedex] = useState(true)
     const [pokemonInfo, setPokemonInfo] = useState({})
     const [showShiny, setShowShiny] = useState(false)
+    const [descriptionFocused, setDescriptionFocused] = useState(true)
+    const [abilitiesFocused, setAbilitiesFocused] = useState(true)
+    const [lineEvolutionFocused, setLineEvolutionFocused] = useState(true)
     //TODO: Mirar si lo usaré o no
     const [currPokedexList, setCurrPokedexList] = useState([])
 
@@ -47,6 +50,9 @@ export const PokedexProvider = ({ children }) => {
             inPokedex, setInPokedex,
             pokemonInfo, setPokemonInfo,
             showShiny, setShowShiny,
+            descriptionFocused, setDescriptionFocused,
+            abilitiesFocused, setAbilitiesFocused,
+            lineEvolutionFocused, setLineEvolutionFocused,
             currPokedexList, setCurrPokedexList 
         }}>
             {children}
