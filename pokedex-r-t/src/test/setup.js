@@ -32022,6 +32022,7 @@ globalThis.CHARIZARD_FIVE_MOVES_DATA = [
   }
     },
 ]
+globalThis.CHARIZARD_FIVE_MOVES_NAMES = ["mega-punch","fire-punch","elec-punch","scratch","swords-dance"]
 
 globalThis.CHARIZARD_DATA_INFO = {
     simpleInfo:
@@ -32064,48 +32065,7 @@ globalThis.CHARIZARD_DATA_INFO = {
             }
         ]
     },
-    moves:[
-        {
-            name: "Megapuño",
-            accuracy: 85,
-            power: 80,
-            pp: 20,
-            damageClass: "physical",
-            type: "normal"
-        },
-        {
-            name: "Puño Fuego",
-            accuracy: 100,
-            power: 75,
-            pp: 15,
-            damageClass: "physical",
-            type: "fire"
-        },
-        {
-            name: "Puño Trueno",
-            accuracy: 100,
-            power: 75,
-            pp: 15,
-            damageClass: "physical",
-            type: "electric"
-        },
-        {
-            name: "Arañazo",
-            accuracy: 100,
-            power: 40,
-            pp: 35,
-            damageClass: "physical",
-            type: "normal"
-        },
-        {
-            name: "Danza Espada",
-            accuracy: null,
-            power: null,
-            pp: 20,
-            damageClass: "status",
-            type: "normal"
-        },
-    ],
+    moves:["mega-punch","fire-punch","elec-punch","scratch","swords-dance"],
     stats:{
       hp: 78,
       attack: 84,

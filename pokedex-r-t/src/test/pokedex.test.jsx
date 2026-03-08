@@ -294,7 +294,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
             globalThis.ALL_TYPES_IN_ES,
             globalThis.CHARIZARD_ABILITIES_DATA,
             globalThis.CHARIZARD_EVOLUTION_INFO,
-            globalThis.CHARIZARD_FIVE_MOVES_DATA,
+            globalThis.CHARIZARD_FIVE_MOVES_NAMES,
         )
         expect(charizardData).toEqual(globalThis.CHARIZARD_DATA_INFO)
     })
