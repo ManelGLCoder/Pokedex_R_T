@@ -1,11 +1,16 @@
 import React from "react";
 import "../../App.css"
 import MovementsListSection from "./MovementsListSection";
+import ButtonShowMoreMoves from "../buttons/ButtonShowMoreMoves";
+import { PokedexContext,  } from "../../contexts/PokedexContext";
+import { useContext } from "react";
 
-const MovementSection = ({moves}) => {
+const MovementSection = () => {
+    const {movesList} = useContext(PokedexContext)
     return (
         <div className="isolate flex flex-col px-2 py-3 max-h-100 sm:max-h-70 rounded-b-xl bg-violet-800">
-            <MovementsListSection moves={moves}/>
+            <MovementsListSection moves={movesList}/>
+            <ButtonShowMoreMoves/>
         </div>
     );
 };

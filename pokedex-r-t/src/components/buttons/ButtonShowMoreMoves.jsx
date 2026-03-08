@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { PokedexContext, getNextPokemons } from '../../contexts/PokedexContext.jsx';
+import { PokedexContext, getNextMovesInfo } from '../../contexts/PokedexContext.jsx';
 import { BUTTONS_SHOW_MORE_CLASSNAME } from '../../utilities/buttons-utilities.js';
 
-const ButtonShowMorePokemon = () =>{
-    const {pokedexList, setPokedexList, idList} = useContext(PokedexContext)
+const ButtonShowMoreMoves = () =>{
+    const {movesList, setMovesList, movesNames} = useContext(PokedexContext)
     const showMore = async() =>{
-        const nextPokemons = await getNextPokemons(idList)
-        setPokedexList([...pokedexList, ...nextPokemons])
+        const nextMoves = await getNextMovesInfo(movesNames)
+        setMovesList([...movesList, ...nextMoves])
     }
     return(
         <button 
@@ -24,4 +24,4 @@ const ButtonShowMorePokemon = () =>{
     )
 }
 
-export default ButtonShowMorePokemon
+export default ButtonShowMoreMoves

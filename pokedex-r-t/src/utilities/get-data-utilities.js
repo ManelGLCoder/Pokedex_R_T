@@ -68,7 +68,10 @@ export function getNameInLang(data, language) {
 }
 
 const getTextInLang = (data, key1, key2, lang) =>{
-    const nameInLang = data[key1].find((element) => {return element.language.name === lang})
+    let nameInLang = data[key1].find((element) => {return element.language.name === lang})
+    if (nameInLang === undefined){
+        nameInLang = data[key1].find((element) => {return element.language.name === 'en'})
+    }
     return  nameInLang[key2].replace(/(\r\n|\n|\r)/gm, " ")
 }
 
@@ -78,16 +81,15 @@ export async function getPokemonInfo(pokemonId){
     const abilitiesData = await fetchAbilities(rawPokeData)
     const evolutionData = await fetchEvolutionChainData(rawSpeciesData.evolution_chain.url)
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
-    const movesNames = getMoveNames(rawPokeData,LIMIT_MOVES_FETCH_SAME_TIME)
-    const movesInfo = await fetchAllMovesInfo(movesNames)
+    const movesNames = getAllMoveNames(rawPokeData)
     return pokemonInfo(
-            rawPokeData, rawSpeciesData, types,abilitiesData, evolutionsInfo, movesInfo
+            rawPokeData, rawSpeciesData, types,abilitiesData, evolutionsInfo, movesNames
         )
 }
 
 export function pokemonInfo(
         pokeData, pokeSpeciesData, allTypesData,
-        abilitiesData, evolutionInfo, movesData,
+        abilitiesData, evolutionInfo, movesNames,
     ) {
     return {
         simpleInfo: simplePokemonInfo(pokeData, allTypesData),
@@ -97,7 +99,7 @@ export function pokemonInfo(
         weight: decimetresToMeters(pokeData.weight),
         abilities: getAbilities(abilitiesData, currlanguage),
         evolutions: evolutionInfo,
-        moves: getMovesInfo(movesData),
+        moves: movesNames,
         stats: getStatsInfo(pokeData, pokeSpeciesData)
     }
 }
@@ -132,15 +134,10 @@ function getAbilityInLang(abilityData, lang){
     return abilityInLang
 }
 
-export function getMoveNames(pokeData, limit){
+export function getAllMoveNames(pokeData){
     let movesNames = []
-    let i = 0
     for(let moveElement of pokeData.moves){
         movesNames.push(moveElement.move.name)
-        if(limit && i === limit - 1){
-            break
-        }
-        i++
     }
     return movesNames
 }

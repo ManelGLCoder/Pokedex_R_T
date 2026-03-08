@@ -6,8 +6,8 @@ import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";
 import SectionVariant from "./SectionVariant";
-import { PokedexContext } from "../../contexts/PokedexContext";
-import { useContext } from "react";
+import { PokedexContext,getInitialMovesInfo } from "../../contexts/PokedexContext";
+import { useContext,useEffect } from "react";
 import ButtonMovesSection from "../buttons/ButtonMovesSection";
 import ButtonAbilitiesSection from "../buttons/ButtonAbilitiesSection";
 import ButtonLineEvolutionSection from "../buttons/ButtonLineEvolutionSection";
@@ -16,7 +16,19 @@ import { BUTTONS_SECTION_SELECTION_CLASSNAME } from "../../utilities/buttons-uti
 
 
 const SectionPokemonInfo = ({pokeData}) => {
-    const {abilitiesFocused, lineEvolutionFocused} = useContext(PokedexContext)
+    const {abilitiesFocused, lineEvolutionFocused, setMovesNames, setMovesList} = useContext(PokedexContext)
+    useEffect(()=>{
+        const initMovesList = async () =>{
+        const POKEMON_MOVES_NAMES = pokeData.moves
+        setMovesNames(POKEMON_MOVES_NAMES)
+        return await getInitialMovesInfo(POKEMON_MOVES_NAMES)
+        }
+        initMovesList().then((result)=>{
+        setMovesList(result)
+        })
+        return ()=>{}
+    },[])
+    
     return (
         <>
             <SectionDescription description={pokeData.description} species={pokeData.species} weight={pokeData.weight} height={pokeData.height}/>
@@ -28,7 +40,7 @@ const SectionPokemonInfo = ({pokeData}) => {
                 {
                     abilitiesFocused? 
                         <SectionHabilities habilitiesData={pokeData.abilities}/> : 
-                        <MovementSection moves={pokeData.moves}/>
+                        <MovementSection/>
                 }
                 <div className={BUTTONS_SECTION_SELECTION_CLASSNAME}>
                     <ButtonLineEvolutionSection first={true}/>
