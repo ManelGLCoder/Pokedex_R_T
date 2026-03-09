@@ -1,4 +1,5 @@
 import '../../App.css'
+import TopPokemonInfoSection from '../Sections/TopPokemonInfoSection';
 import PokemonOrangeCard from './PokemonOrangeCard';
 import PokemonVioletCard from './PokemonVioletCard';
 import { PokedexContext } from '../../contexts/PokedexContext';
@@ -9,6 +10,7 @@ function SectionAllPokemonData() {
 
     return (
     <>
+        <TopPokemonInfoSection pokemon={pokemonInfo}/>
         <PokemonOrangeCard pokemon={pokemonInfo} showShiny={showShiny}/>
         <PokemonVioletCard pokeData={pokemonInfo}/>
     </>

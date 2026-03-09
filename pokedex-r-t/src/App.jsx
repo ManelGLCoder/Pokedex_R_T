@@ -11,8 +11,8 @@ import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
   //TODO: [DONE] hacer función para obtener los datos para la pokedex
   //TODO: [DONE] primero que muestre X pokemon en la pokedex
   //TODO: [DONE/ALTERNATIVE]segundo que vaya añadiendo en base vayas bajando
-  //TODO: [WIP: Faltan datos por adaptar]tercero que al seleccionar un pokemon se muestren sus datos
-  //TODO: Crear botón para volver a la pokedex
+  //TODO: [DONE]tercero que al seleccionar un pokemon se muestren sus datos
+  //TODO: [DONE]Crear botón para volver a la pokedex
   //TODO: Las evoluciones sean botones a ese pokemon
   //TODO: No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
   //TODO: cuarto que se guarde en cache y no haga llamadas si ya se tiene
