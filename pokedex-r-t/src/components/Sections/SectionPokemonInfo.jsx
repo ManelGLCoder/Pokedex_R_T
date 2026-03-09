@@ -2,35 +2,52 @@ import React from "react";
 import "../../App.css"
 
 import SectionDescription from "./SectionDescription";
-import ButtonsSectionSelection from "../buttons/ButtonsSectionSelection";
 import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";
 import SectionVariant from "./SectionVariant";
+import { PokedexContext,getInitialMovesInfo } from "../../contexts/PokedexContext";
+import { useContext,useEffect } from "react";
+import ButtonMovesSection from "../buttons/ButtonMovesSection";
+import ButtonAbilitiesSection from "../buttons/ButtonAbilitiesSection";
+import ButtonLineEvolutionSection from "../buttons/ButtonLineEvolutionSection";
+import ButtonVariantsSection from "../buttons/ButtonVariantsSection";
+import { BUTTONS_SECTION_SELECTION_CLASSNAME } from "../../utilities/buttons-utilities";
 
-const bHabilities = {name:"Habilidades", isFocus: false }
-const bMoves = {name:"Movimientos", isFocus: true }
-const bLvMoves = {name:"Level Up", isFocus: true }
-const bTMHMMoves = {name:"TM/HM", isFocus: false }
-const bEggMoves = {name:"Egg", isFocus: false }
-const bTutorMoves = {name:"Tutor", isFocus: false }
-const bEvolutions = {name:"Línea Evolutiva", isFocus: false }
-const bVariants = {name:"Variantes", isFocus: true }
 
 const SectionPokemonInfo = ({pokeData}) => {
+    const {abilitiesFocused, lineEvolutionFocused, setMovesNames, setMovesList} = useContext(PokedexContext)
+    useEffect(()=>{
+        const initMovesList = async () =>{
+        const POKEMON_MOVES_NAMES = pokeData.moves
+        setMovesNames(POKEMON_MOVES_NAMES)
+        return await getInitialMovesInfo(POKEMON_MOVES_NAMES)
+        }
+        initMovesList().then((result)=>{
+        setMovesList(result)
+        })
+        return ()=>{}
+    },[])
+    
     return (
         <>
             <SectionDescription description={pokeData.description} species={pokeData.species} weight={pokeData.weight} height={pokeData.height}/>
             <div className="relative -top-5 flex flex-col gap-2">
-                <ButtonsSectionSelection buttons={[bHabilities, bMoves]}/>
+                <div className={BUTTONS_SECTION_SELECTION_CLASSNAME}>
+                    <ButtonAbilitiesSection first={true}/>
+                    <ButtonMovesSection last={true}/>
+                </div>
                 {
-                    bHabilities.isFocus ? 
-                        <SectionHabilities habilitiesData={pokeData.habilities}/> : 
-                        <MovementSection buttons_moves={[bLvMoves, bTMHMMoves, bEggMoves, bTutorMoves]} moves={pokeData.moves}/>
+                    abilitiesFocused? 
+                        <SectionHabilities habilitiesData={pokeData.abilities}/> : 
+                        <MovementSection/>
                 }
-                <ButtonsSectionSelection buttons={[bEvolutions, bVariants]}/>
+                <div className={BUTTONS_SECTION_SELECTION_CLASSNAME}>
+                    <ButtonLineEvolutionSection first={true}/>
+                    <ButtonVariantsSection last={true}/>
+                </div>
                 {
-                    bEvolutions.isFocus?
+                    lineEvolutionFocused?
                         <SectionEvolutionLine evolutionData={pokeData.evolutions}/> :
                         <SectionVariant variantData={pokeData.variants}/>
                 }

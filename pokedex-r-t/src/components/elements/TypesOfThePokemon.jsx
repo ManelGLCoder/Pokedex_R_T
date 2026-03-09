@@ -7,7 +7,8 @@ const TypesOfThePokemon = ({types, centered = true, onlyIcon = false}) => {
         <div className={`flex ${!onlyIcon && "flex-wrap"} ${centered? "justify-center" : "justify-normal"} gap-1 px-5 my-2`}>
             {types.map((type, i)=>{
                 if(onlyIcon){
-                    return (<PokemonTypeIcon key={i} pokemonType={type} />)
+                    const typeName = Object.keys(type)[0]
+                    return (<PokemonTypeIcon key={i} pokemonType={typeName} />)
                 }
                 return (<PokemonType key={i} pokemonType={type} />)
             })}

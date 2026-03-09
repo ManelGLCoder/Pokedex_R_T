@@ -8,6 +8,6 @@ const MoveCategory = ({moveCategory}) => {
     );
 };
 
-const srcCategory = (moveCategory) => `src/assets/categories/${moveCategory}.svg`
+const srcCategory = (moveCategory) => `src/assets/categories/${moveCategory}.png`
 
 export default MoveCategory;

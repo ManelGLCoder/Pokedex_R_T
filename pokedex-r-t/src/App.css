@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+    --color-steel: #60a1b8;
+    --color-water: #2980ef;
+    --color-bug: #91a119;
+    --color-dragon: #5061e1;
+    --color-electric: #fac000;
+    --color-ghost: #704170;
+    --color-fire: #e62829;
+    --color-fairy: #ef71ef;
+    --color-ice: #3fd8ff;
+    --color-fighting: #ff8000;
+    --color-normal: #9fa19f;
+    --color-grass: #3fa129;
+    --color-psychic: #ef4179;
+    --color-rock: #afa981;
+    --color-dark: #50413f;
+    --color-ground: #915121;
+    --color-poison: #8f41cb;
+    --color-flying: #81b9ef;
+}
