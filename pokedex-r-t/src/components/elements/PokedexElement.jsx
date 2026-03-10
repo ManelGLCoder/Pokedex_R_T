@@ -3,6 +3,7 @@ import TypesOfThePokemon from './TypesOfThePokemon'
 import { PokedexContext } from '../../contexts/PokedexContext'
 import { useContext } from 'react'
 import { getPokemonInfo } from '../../utilities/get-data-utilities'
+import { HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities'
 
 const PokedexElement = ({pokeElementData}) =>{
     const {setPokemonInfo, setInPokedex, setShowShiny} = useContext(PokedexContext)
@@ -14,9 +15,9 @@ const PokedexElement = ({pokeElementData}) =>{
     }
     return(
         <button 
-        className='snap-center grid grid-cols-5 px-1 py-0.5 rounded-xl bg-linear-65 from-violet-800 to-pink-500 font-bold'
+        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl sm:text-xl font-bold bg-linear-65 bg-violet-800 ${HOVER_BUTTONS_COLOR}`}
         onClick={()=>viewPokemonInfo(pokeElementData.id)}>
-            <img className="col-span-1 self-center justify-self-center mx-1 size-10"
+            <img className="col-span-1 self-center justify-self-center mx-1 size-19"
                 src={pokeElementData.sprite}
                 alt={`${pokeElementData.name} Image`} 
             />
@@ -24,7 +25,7 @@ const PokedexElement = ({pokeElementData}) =>{
                 {pokeElementData.idCompleted}
             </span>
             <span className="col-span-2 self-center px-2 py-1 text-center">{pokeElementData.name}</span>
-            <TypesOfThePokemon className="col-span-1" types={pokeElementData.types} onlyIcon={true} />
+            <TypesOfThePokemon className="col-span-1" types={pokeElementData.types} onlyIcon={true}/>
         </button>
     )
 }

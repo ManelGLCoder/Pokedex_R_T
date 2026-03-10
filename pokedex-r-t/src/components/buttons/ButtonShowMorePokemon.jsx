@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { PokedexContext, getNextPokemons } from '../../contexts/PokedexContext.jsx';
-import { BUTTONS_SHOW_MORE_CLASSNAME } from '../../utilities/buttons-utilities.js';
+import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR} from '../../utilities/buttons-utilities.js';
 import Loading from '../Loading.jsx';
 
 const ButtonShowMorePokemon = () =>{
@@ -15,7 +15,7 @@ const ButtonShowMorePokemon = () =>{
         loadingPokemons ? 
             <Loading/> :
             <button 
-                className={BUTTONS_SHOW_MORE_CLASSNAME}
+                className={`${BUTTONS_SHOW_MORE_CLASSNAME} ${HOVER_BUTTONS_COLOR}`}
                 onClick={showMore}
                 >
                     <img className="size-10"

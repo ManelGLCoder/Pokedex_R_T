@@ -4,7 +4,7 @@ import PokemonTypeIcon from "./PokemonTypeIcon"
 
 const TypesOfThePokemon = ({types, centered = true, onlyIcon = false}) => {
     return (
-        <div className={`flex ${!onlyIcon && "flex-wrap"} ${centered? "justify-center" : "justify-normal"} gap-1 px-5 my-2`}>
+        <div className={`flex ${!onlyIcon && "flex-wrap"} ${centered? "justify-center self-center" : "justify-normal"} gap-1 px-5 my-2`}>
             {types.map((type, i)=>{
                 if(onlyIcon){
                     const typeName = Object.keys(type)[0]
