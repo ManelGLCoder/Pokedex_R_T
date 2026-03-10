@@ -44,5 +44,5 @@ export const COLOR_TYPE = {
 }
 
 export const LIMIT_MOVES_FETCH_SAME_TIME = 10
-export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 10
+export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 20
 export const MAX_NUMBER_OF_POKEMON = 1350
