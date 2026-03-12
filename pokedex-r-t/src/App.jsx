@@ -6,21 +6,27 @@ import { getListOfPokemon} from './utilities/get-data-utilities';
 import { useContext, useEffect } from 'react';
 import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
 
-//!To test for now
-
   //TODO: [DONE] hacer función para obtener los datos para la pokedex
   //TODO: [DONE] primero que muestre X pokemon en la pokedex
   //TODO: [DONE/ALTERNATIVE]segundo que vaya añadiendo en base vayas bajando
   //TODO: [DONE]tercero que al seleccionar un pokemon se muestren sus datos
-  //TODO: [DONE]Crear botón para volver a la pokedex
-  //TODO: Las evoluciones sean botones a ese pokemon
-  //TODO: No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
-  //TODO: cuarto que se guarde en cache y no haga llamadas si ya se tiene
+  //TODO: [DONE]Crear botón para volver a la pokedex 
+  //TODO: [DONE]No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
+  //TODO: [DONE]Las evoluciones sean botones a ese pokemon
+  //TODO: [DONE]Los pokemon de la lista tengan hover
+  //![WIP]
+  //TODO: Que se guarde en cache y no haga llamadas si ya se tiene
+  //TODO: Buscador pokemon
+  //TODO: Añadir mi logo(botón por ahora no redirecciona)
+  //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Revisar llamadas de re renderizar
+  //TODO: Optimizaciones
+  //TODO: Púlido arte(paleta colores)
   //TODO: solucionar pokemons sin sprites
+  //TODO: añadir juicy effects
 
 function App() {
-  const {setPokedexList, setIdList, inPokedex} = useContext(PokedexContext)
+  const {setPokedexList, setIdList, inPokedex, setLoadingPokemons} = useContext(PokedexContext)
     /*const charizardData = {
     id: "006",
     name: "Charizard",
@@ -124,14 +130,17 @@ function App() {
     }
     */
 
+    //TODO: Revisar tema si se actualiza más de lo que debería
     useEffect(()=>{
       const initPokedexList = async () =>{
+        setLoadingPokemons(true)
         const POKEMON_IDS_LIST = await getListOfPokemon()
         setIdList(POKEMON_IDS_LIST)
         return await getInitialList(POKEMON_IDS_LIST)
       }
         initPokedexList().then((result)=>{
         setPokedexList(result)
+        setLoadingPokemons(false)
         })
       return ()=>{}
     },[])
@@ -140,7 +149,8 @@ function App() {
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
+            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto"
+            id='content_screen'>
                 {
                     inPokedex? 
                     <SectionPokedexList/> :

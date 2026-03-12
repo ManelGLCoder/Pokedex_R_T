@@ -61,8 +61,10 @@ export const getNextMovesInfo = async(movesNames) =>{
 export const PokedexProvider = ({ children }) => {
     const [idList, setIdList] = useState([])
     const [pokedexList, setPokedexList] = useState([])
+    const [loadingPokemons, setLoadingPokemons] = useState(false)
     const [movesNames, setMovesNames] = useState([])
     const [movesList, setMovesList] = useState([])
+    const [loadingMoves, setLoadingMoves] = useState(false)
     const [inPokedex, setInPokedex] = useState(true)
     const [pokemonInfo, setPokemonInfo] = useState({})
     const [showShiny, setShowShiny] = useState(false)
@@ -77,8 +79,10 @@ export const PokedexProvider = ({ children }) => {
         <PokedexContext.Provider value={{
             idList,setIdList,
             pokedexList, setPokedexList, 
+            loadingPokemons, setLoadingPokemons,
             movesNames, setMovesNames,
             movesList, setMovesList,
+            loadingMoves, setLoadingMoves,
             inPokedex, setInPokedex,
             pokemonInfo, setPokemonInfo,
             showShiny, setShowShiny,
