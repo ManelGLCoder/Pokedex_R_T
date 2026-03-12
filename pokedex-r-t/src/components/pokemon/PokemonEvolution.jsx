@@ -12,7 +12,8 @@ const PokemonEvolution = ({info}) => {
                 setPokemonInfo(pokeInfo)
                 setShowShiny(false)
                 setInPokedex(false)
-                //TODO: Hacer que vuelva a la parte superior
+                const elementToScroll = document.getElementById('content_screen')
+                elementToScroll.scrollTo(0,0)
         }
     return (
         <button className={`flex flex-col justify-end self-center gap-1 p-1 rounded-2xl ${HOVER_BUTTONS_COLOR}`}

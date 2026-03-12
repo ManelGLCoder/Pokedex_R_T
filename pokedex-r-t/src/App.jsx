@@ -12,9 +12,9 @@ import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
   //TODO: [DONE]tercero que al seleccionar un pokemon se muestren sus datos
   //TODO: [DONE]Crear botón para volver a la pokedex 
   //TODO: [DONE]No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
+  //TODO: [DONE]Las evoluciones sean botones a ese pokemon
+  //TODO: [DONE]Los pokemon de la lista tengan hover
   //![WIP]
-  //TODO: Las evoluciones sean botones a ese pokemon
-  //TODO: Los pokemon de la lista tengan hover
   //TODO: Que se guarde en cache y no haga llamadas si ya se tiene
   //TODO: Buscador pokemon
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
@@ -149,7 +149,8 @@ function App() {
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto">
+            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto"
+            id='content_screen'>
                 {
                     inPokedex? 
                     <SectionPokedexList/> :
