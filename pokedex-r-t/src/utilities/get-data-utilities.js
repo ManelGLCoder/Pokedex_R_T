@@ -150,6 +150,7 @@ export function getMovesInfo(movesData){
 export function getMoveInfo(rawMoveData,){
     const nameInLang = getNameInLang(rawMoveData, 'es')
     const moveInfo = {
+        id: rawMoveData.name,
         name: nameInLang,
         accuracy: rawMoveData.accuracy,
         power: rawMoveData.power,

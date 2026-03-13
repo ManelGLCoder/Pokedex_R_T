@@ -14,9 +14,11 @@ import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
   //TODO: [DONE]No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
   //TODO: [DONE]Las evoluciones sean botones a ese pokemon
   //TODO: [DONE]Los pokemon de la lista tengan hover
+  //TODO: [DONE/ALTERNATIVE]Que se guarde en cache y no haga llamadas si ya se tiene(no cache, con useContext)
   //![WIP]
-  //TODO: Que se guarde en cache y no haga llamadas si ya se tiene
+  //TODO: Refactorizar PokedexContext y funciones relacionadas
   //TODO: Buscador pokemon
+  //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Revisar llamadas de re renderizar
