@@ -1,9 +1,9 @@
     import { useContext } from 'react';
-    import { PokedexContext, getMovesNamesLimited } from '../../contexts/PokedexContext.jsx';
+    import { PokedexContext } from '../../contexts/PokedexContext.jsx';
     import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities.js';
     import Loading from '../Loading.jsx';
     import { fetchAllMovesInfo } from '../../utilities/fetch-utilities.js';
-    import { getMovesInfo } from '../../utilities/get-data-utilities.js';
+    import { getMovesInfo, getMovesNamesLimited} from '../../utilities/get-data-utilities.js';
 
     const ButtonShowMoreMoves = () =>{
         const {movesList, setMovesList, movesNames, loadingMoves, setLoadingMoves, movesInfoList, setMovesInfoList} = useContext(PokedexContext)

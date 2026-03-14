@@ -6,7 +6,7 @@ import SectionHabilities from "./SectionHabilities";
 import SectionEvolutionLine from "./SectionEvolutionLine";
 import MovementSection from "./MovementSection";
 import SectionVariant from "./SectionVariant";
-import { PokedexContext, getMovesNamesLimited } from "../../contexts/PokedexContext";
+import { PokedexContext} from "../../contexts/PokedexContext";
 import { useContext,useEffect } from "react";
 import ButtonMovesSection from "../buttons/ButtonMovesSection";
 import ButtonAbilitiesSection from "../buttons/ButtonAbilitiesSection";
@@ -14,7 +14,7 @@ import ButtonLineEvolutionSection from "../buttons/ButtonLineEvolutionSection";
 import ButtonVariantsSection from "../buttons/ButtonVariantsSection";
 import { BUTTONS_SECTION_SELECTION_CLASSNAME } from "../../utilities/buttons-utilities";
 import { fetchAllMovesInfo } from "../../utilities/fetch-utilities";
-import { getMovesInfo } from "../../utilities/get-data-utilities";
+import { getMovesInfo, getMovesNamesLimited} from "../../utilities/get-data-utilities";
 
 
 const SectionPokemonInfo = () => {

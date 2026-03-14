@@ -2,9 +2,9 @@ import './App.css'
 import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData'
 import SectionPokedexList from './components/principal-sections/SectionPokedexList'
 
-import { getListOfPokemon} from './utilities/get-data-utilities';
+import { getListOfPokemon, getInitialList} from './utilities/get-data-utilities';
 import { useContext, useEffect } from 'react';
-import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
+import { PokedexContext} from './contexts/PokedexContext.jsx';
 
   //TODO: [DONE] hacer función para obtener los datos para la pokedex
   //TODO: [DONE] primero que muestre X pokemon en la pokedex
