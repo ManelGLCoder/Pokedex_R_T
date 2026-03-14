@@ -1,9 +1,9 @@
 import { fetchType, fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
-    fetchAllMovesInfo,fetchPokemonList
+    fetchPokemonList
 } from "./fetch-utilities"
-import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME } from "../dto/constants"
+import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME, LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON } from "../dto/constants"
 
 export const types = await getAllTypesIn("es")
 export let currlanguage = 'es'
@@ -150,6 +150,7 @@ export function getMovesInfo(movesData){
 export function getMoveInfo(rawMoveData,){
     const nameInLang = getNameInLang(rawMoveData, 'es')
     const moveInfo = {
+        id: rawMoveData.name,
         name: nameInLang,
         accuracy: rawMoveData.accuracy,
         power: rawMoveData.power,
@@ -186,4 +187,44 @@ export async function getListOfPokemon(){
         const id = pokeData.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/','')
         return id
     })
+}
+
+let lastPokemonId = 0
+export const getInitialList = async(pokemonNamesList) =>{
+    return await getPokemonList(pokemonNamesList, 0)
+}
+
+const getPokemonList = (pokemonNamesList, startId = lastPokemonId + 1) =>{
+let listPromise = []
+    const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
+    for(let i = startId; i <= maxIndex; i++){
+        if(i >= MAX_NUMBER_OF_POKEMON){
+            break
+        }
+        const pokemonPromise = getSimplePokemonInfo(pokemonNamesList[i])
+        listPromise.push(pokemonPromise)
+        lastPokemonId = i
+    }
+    return Promise.all(listPromise)
+}
+
+
+
+export const getNextPokemons = async(pokemonNamesList)=>{
+    return await getPokemonList(pokemonNamesList)
+}
+
+let lastMoveId = 0
+export const getMovesNamesLimited = (movesName, startIndex = lastMoveId + 1) => 
+    {
+    let moves = []
+    const maxIndex = Math.min(startIndex + LIMIT_MOVES_FETCH_SAME_TIME, movesName.length-1)
+    for(let i = startIndex; i <= maxIndex; i ++){
+        if(i >= movesName.length){
+            break
+        }
+        moves.push(movesName[i])
+        lastMoveId = i
+    }
+    return moves
 }

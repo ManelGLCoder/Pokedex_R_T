@@ -2,9 +2,9 @@ import './App.css'
 import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData'
 import SectionPokedexList from './components/principal-sections/SectionPokedexList'
 
-import { getListOfPokemon} from './utilities/get-data-utilities';
+import { getListOfPokemon, getInitialList} from './utilities/get-data-utilities';
 import { useContext, useEffect } from 'react';
-import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
+import { PokedexContext} from './contexts/PokedexContext.jsx';
 
   //TODO: [DONE] hacer función para obtener los datos para la pokedex
   //TODO: [DONE] primero que muestre X pokemon en la pokedex
@@ -14,9 +14,11 @@ import { PokedexContext, getInitialList } from './contexts/PokedexContext.jsx';
   //TODO: [DONE]No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
   //TODO: [DONE]Las evoluciones sean botones a ese pokemon
   //TODO: [DONE]Los pokemon de la lista tengan hover
+  //TODO: [DONE/ALTERNATIVE]Que se guarde en cache y no haga llamadas si ya se tiene(no cache, con useContext)
+  //TODO: [DONE]Refactorizar PokedexContext y funciones relacionadas(al final solo movido funciones)
   //![WIP]
-  //TODO: Que se guarde en cache y no haga llamadas si ya se tiene
   //TODO: Buscador pokemon
+  //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Revisar llamadas de re renderizar

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
-import { PokedexContext, getNextPokemons } from '../../contexts/PokedexContext.jsx';
+import { PokedexContext} from '../../contexts/PokedexContext.jsx';
 import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR} from '../../utilities/buttons-utilities.js';
+import { getNextPokemons } from '../../utilities/get-data-utilities.js';
 import Loading from '../Loading.jsx';
 
 const ButtonShowMorePokemon = () =>{

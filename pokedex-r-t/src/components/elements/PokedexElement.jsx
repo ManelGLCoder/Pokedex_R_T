@@ -6,13 +6,22 @@ import { getPokemonInfo } from '../../utilities/get-data-utilities'
 import { HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities'
 
 const PokedexElement = ({pokeElementData}) =>{
-    const {setPokemonInfo, setInPokedex, setShowShiny} = useContext(PokedexContext)
+    const {setPokemonInfo, setInPokedex, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
     const viewPokemonInfo = async(id) => {
-            const pokeInfo = await getPokemonInfo(id)
+            let pokeInfo
+            if(pokemonInfoList[id]){
+                pokeInfo = pokemonInfoList[id]
+            }else{
+                pokeInfo = await getPokemonInfo(id)
+                const pokeInfoObject = {...pokemonInfoList}
+                pokeInfoObject[id] = pokeInfo
+                setPokemonInfoList(pokeInfoObject)
+            }
             setPokemonInfo(pokeInfo)
             setShowShiny(false)
             setInPokedex(false)
     }
+
     return(
         <button 
         className={`grid grid-cols-5 px-1 py-0.5 rounded-xl sm:text-xl font-bold bg-linear-65 bg-violet-800 ${HOVER_BUTTONS_COLOR}`}

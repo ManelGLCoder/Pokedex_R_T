@@ -15,7 +15,7 @@ const PokemonVioletCard = ({pokeData}) => {
             <div className="flex flex-col gap-3 px-5">
                 {
                     descriptionFocused ? 
-                    <SectionPokemonInfo pokeData={pokeData}/> :
+                    <SectionPokemonInfo/> :
                     <SectionPokemonStats pokeData={pokeData}/>
                 }
             </div>
