@@ -1,24 +1,29 @@
-    import { useContext } from 'react';
-    import { PokedexContext } from '../../contexts/PokedexContext.jsx';
-    import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities.js';
-    import Loading from '../Loading.jsx';
-    import { fetchAllMovesInfo } from '../../utilities/fetch-utilities.js';
-    import { getMovesInfo, getMovesNamesLimited} from '../../utilities/get-data-utilities.js';
+import { useContext } from 'react';
+import { PokedexContext } from '../../contexts/PokedexContext.jsx';
+import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities.js';
+import Loading from '../Loading.jsx';
+import { fetchAllMovesInfo } from '../../utilities/fetch-utilities.js';
+import { getMovesInfo, getMovesNamesLimited} from '../../utilities/get-data-utilities.js';
 
-    const ButtonShowMoreMoves = () =>{
-        const {movesList, setMovesList, movesNames, loadingMoves, setLoadingMoves, movesInfoList, setMovesInfoList} = useContext(PokedexContext)
-        const showMore = async() =>{
-            setLoadingMoves(true)
-            const nextMoves = await getNextMovesInfo(movesNames)
-            setMovesList([...movesList, ...nextMoves])
-            setLoadingMoves(false)
-        }
-        const getNextMovesInfo = async(movesNames) =>{
-            const movesList = getMovesNamesLimited(movesNames)
-            const movesFiltered = filterMovesAlreadySaved(movesList)
-            const movesData = await fetchAllMovesInfo(movesFiltered.toFetch)
-            const newMovesInfo = getMovesInfo(movesData)
-            saveMoves(newMovesInfo)
+const ButtonShowMoreMoves = () =>{
+    const {
+            movesList, setMovesList, 
+            movesNames, loadingMoves, 
+            setLoadingMoves, movesInfoList, 
+            setMovesInfoList
+    } = useContext(PokedexContext)
+    const showMore = async() =>{
+        setLoadingMoves(true)
+        const nextMoves = await getNextMovesInfo(movesNames)
+        setMovesList([...movesList, ...nextMoves])
+        setLoadingMoves(false)
+    }
+    const getNextMovesInfo = async(movesNames) =>{
+        const movesList = getMovesNamesLimited(movesNames)
+        const movesFiltered = filterMovesAlreadySaved(movesList)
+        const movesData = await fetchAllMovesInfo(movesFiltered.toFetch)
+        const newMovesInfo = getMovesInfo(movesData)
+        saveMoves(newMovesInfo)
         return [...movesFiltered.withInfo, ...newMovesInfo]
     }
     const filterMovesAlreadySaved = (movesNames) =>{

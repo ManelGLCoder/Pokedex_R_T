@@ -15,8 +15,8 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Las evoluciones sean botones a ese pokemon
   //TODO: [DONE]Los pokemon de la lista tengan hover
   //TODO: [DONE/ALTERNATIVE]Que se guarde en cache y no haga llamadas si ya se tiene(no cache, con useContext)
+  //TODO: [DONE]Refactorizar PokedexContext y funciones relacionadas(al final solo movido funciones)
   //![WIP]
-  //TODO: Refactorizar PokedexContext y funciones relacionadas
   //TODO: Buscador pokemon
   //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
