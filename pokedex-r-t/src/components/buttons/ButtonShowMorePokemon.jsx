@@ -8,7 +8,7 @@ const ButtonShowMorePokemon = () =>{
     const {pokedexList, setPokedexList, idList, loadingPokemons, setLoadingPokemons} = useContext(PokedexContext)
     const showMore = async() =>{
         setLoadingPokemons(true)
-        const nextPokemons = await getNextPokemons(idList)
+        const nextPokemons = await getNextPokemons(Object.keys(idList))
         setPokedexList([...pokedexList, ...nextPokemons])
         setLoadingPokemons(false)
     }
