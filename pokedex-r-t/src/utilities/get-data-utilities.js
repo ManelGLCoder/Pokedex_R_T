@@ -3,7 +3,9 @@ import { fetchType, fetchPokemonSimpleData,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
     fetchPokemonList
 } from "./fetch-utilities"
-import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME, LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON } from "../dto/constants"
+import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME,
+        LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
+        ID_START_POKEMONS_ALTERNATIVE_FORMS } from "../dto/constants"
 
 export const types = await getAllTypesIn("es")
 export let currlanguage = 'es'
@@ -183,25 +185,28 @@ export function getStatsInfo(pokeData, pokeSpeciesData){
 
 export async function getListOfPokemon(){
     const listData = await fetchPokemonList()
-    return listData.results.map((pokeData)=> {
+    let pokeList = {}
+    listData.results.map((pokeData)=> {
         const id = pokeData.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/','')
-        return id
+        const name = pokeData.name
+        pokeList[`${id}`] = name
     })
+    return pokeList
 }
 
 let lastPokemonId = 0
-export const getInitialList = async(pokemonNamesList) =>{
-    return await getPokemonList(pokemonNamesList, 0)
+export const getInitialList = async(pokemonIDsList) =>{
+    return await getPokemonList(Object.keys(pokemonIDsList), 0)
 }
 
-const getPokemonList = (pokemonNamesList, startId = lastPokemonId + 1) =>{
-let listPromise = []
+const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
+    let listPromise = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
     for(let i = startId; i <= maxIndex; i++){
-        if(i >= MAX_NUMBER_OF_POKEMON){
+        if(i >= MAX_NUMBER_OF_POKEMON || pokemonIDsList[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS){
             break
         }
-        const pokemonPromise = getSimplePokemonInfo(pokemonNamesList[i])
+        const pokemonPromise = getSimplePokemonInfo(pokemonIDsList[i])
         listPromise.push(pokemonPromise)
         lastPokemonId = i
     }
@@ -210,8 +215,8 @@ let listPromise = []
 
 
 
-export const getNextPokemons = async(pokemonNamesList)=>{
-    return await getPokemonList(pokemonNamesList)
+export const getNextPokemons = async(pokemonIDsList)=>{
+    return await getPokemonList(pokemonIDsList)
 }
 
 let lastMoveId = 0

@@ -16,9 +16,13 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Los pokemon de la lista tengan hover
   //TODO: [DONE/ALTERNATIVE]Que se guarde en cache y no haga llamadas si ya se tiene(no cache, con useContext)
   //TODO: [DONE]Refactorizar PokedexContext y funciones relacionadas(al final solo movido funciones)
+  //TODO: [DONE]Buscador pokemon
+  //TODO: [DONE]Pokedex no muestre en su listado las formas alternativas por ahora  
   //![WIP]
-  //TODO: Buscador pokemon
   //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
+  //TODO: Nombres en la lista sin guiones(hacer parecido a la búsqueda)
+  //TODO: Mirar porque no muestra Xerneas
+  //TODO: Botones showMore se escondan cuando ya no hay más que mostrar
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Revisar llamadas de re renderizar
