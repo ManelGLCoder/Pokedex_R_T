@@ -6,7 +6,7 @@ import TypesOfThePokemon from "../elements/TypesOfThePokemon";
 import { HOVER_BUTTONS_COLOR } from "../../utilities/buttons-utilities";
 
 const PokemonEvolution = ({info}) => {
-    const {setPokemonInfo, setInPokedex, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
+    const {setPokemonInfo, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
         const viewPokemonInfo = async(id) => {
             
             let pokeInfo
