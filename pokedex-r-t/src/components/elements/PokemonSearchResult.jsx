@@ -1,15 +1,13 @@
 import { useContext } from "react"
 import { PokedexContext } from "../../contexts/PokedexContext"
-import { getPokemonInfo } from "../../utilities/get-data-utilities"
+import { getPokemonInfo, getNameCleaned } from "../../utilities/get-data-utilities"
 
 const PokemonSearchResult = ({pokemon}) =>{
 
     const pokemonResult = (pokemon) =>{
         const idCompleted = String(pokemon[0]).padStart(4,'0')
-        const nameWithSpace = pokemon[1].replaceAll('-',' ')
-        const words = nameWithSpace.split(' ')
-        const nameCapitalized = words.map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
-        return `#${idCompleted}: ${nameCapitalized}`
+        const name = getNameCleaned(pokemon[1])
+        return `#${idCompleted}: ${name}`
     }
     const {setPokemonInfo, setInPokedex,
         setShowShiny, pokemonInfoList,

@@ -19,9 +19,9 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Buscador pokemon
   //TODO: [DONE]Pokedex no muestre en su listado las formas alternativas por ahora  
   //TODO: [DONE]Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
+  //TODO: [DONE]Nombres en la lista sin guiones(hacer parecido a la búsqueda)
   //![WIP]
-  //TODO: Nombres en la lista sin guiones(hacer parecido a la búsqueda)
-  //TODO: Mirar porque no muestra Xerneas
+  //TODO: Mirar porque no muestra Xerneas, porque peta con Deoxys,etc
   //TODO: Botones showMore se escondan cuando ya no hay más que mostrar
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas

@@ -35,7 +35,7 @@ export async function getSimplePokemonInfo(pokemonId){
 
 export function simplePokemonInfo(pokeData, allTypesData) {
     const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
-    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1)
+    const namePokemon = getNameCleaned(pokeData.name)
     const sprite = pokeData.sprites.front_default
     const shinySprite = pokeData.sprites.front_shiny
     return {
@@ -232,4 +232,11 @@ export const getMovesNamesLimited = (movesName, startIndex = lastMoveId + 1) =>
         lastMoveId = i
     }
     return moves
+}
+
+export const getNameCleaned = (name) =>{
+    const nameWithSpace = name.replaceAll('-',' ')
+    const words = nameWithSpace.split(' ')
+    const nameCapitalized = words.map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
+    return nameCapitalized
 }
