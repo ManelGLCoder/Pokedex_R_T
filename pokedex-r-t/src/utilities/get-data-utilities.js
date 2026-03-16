@@ -188,6 +188,9 @@ export async function getListOfPokemon(){
     let pokeList = {}
     listData.results.map((pokeData)=> {
         const id = pokeData.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/','')
+        if(id >= ID_START_POKEMONS_ALTERNATIVE_FORMS){
+            return
+        }
         const name = pokeData.name
         pokeList[`${id}`] = name
     })
@@ -203,7 +206,10 @@ const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
     let listPromise = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
     for(let i = startId; i <= maxIndex; i++){
-        if(i >= MAX_NUMBER_OF_POKEMON || pokemonIDsList[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS){
+        if(i >= MAX_NUMBER_OF_POKEMON || 
+            pokemonIDsList[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS ||
+            i === pokemonIDsList.length )
+        {
             break
         }
         const pokemonPromise = getSimplePokemonInfo(pokemonIDsList[i])

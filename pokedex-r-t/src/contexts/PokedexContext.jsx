@@ -6,8 +6,10 @@ export const PokedexProvider = ({ children }) => {
     const [idList, setIdList] = useState([])
     const [pokedexList, setPokedexList] = useState([])
     const [loadingPokemons, setLoadingPokemons] = useState(false)
+    const [hideShowMorePokemons, setHideShowMorePokemons] = useState(false)
     const [movesNames, setMovesNames] = useState([])
     const [movesList, setMovesList] = useState([])
+    const [hideShowMoreMoves,setHideShowMoreMoves] = useState(false)
     const [movesInfoList, setMovesInfoList] = useState({})
     const [loadingMoves, setLoadingMoves] = useState(false)
     const [inPokedex, setInPokedex] = useState(true)
@@ -25,8 +27,10 @@ export const PokedexProvider = ({ children }) => {
             idList,setIdList,
             pokedexList, setPokedexList, 
             loadingPokemons, setLoadingPokemons,
+            hideShowMorePokemons, setHideShowMorePokemons,
             movesNames, setMovesNames,
             movesList, setMovesList,
+            hideShowMoreMoves, setHideShowMoreMoves,
             movesInfoList, setMovesInfoList,
             loadingMoves, setLoadingMoves,
             inPokedex, setInPokedex,
