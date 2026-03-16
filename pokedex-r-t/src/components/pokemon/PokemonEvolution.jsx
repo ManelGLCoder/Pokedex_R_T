@@ -20,7 +20,6 @@ const PokemonEvolution = ({info}) => {
             }
             setPokemonInfo(pokeInfo)
             setShowShiny(false)
-            setInPokedex(false)
             const elementToScroll = document.getElementById('content_screen')
             elementToScroll.scrollTo(0,0)
         }

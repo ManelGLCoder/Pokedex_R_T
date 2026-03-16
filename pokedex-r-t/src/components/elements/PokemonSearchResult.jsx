@@ -11,7 +11,9 @@ const PokemonSearchResult = ({pokemon}) =>{
         const nameCapitalized = words.map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
         return `#${idCompleted}: ${nameCapitalized}`
     }
-    const {setPokemonInfo, setInPokedex, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
+    const {setPokemonInfo, setInPokedex,
+        setShowShiny, pokemonInfoList,
+        setPokemonInfoList, setPokedexScrollY} = useContext(PokedexContext)
     const viewPokemonInfo = async(id) => {
         
         let pokeInfo
@@ -23,6 +25,8 @@ const PokemonSearchResult = ({pokemon}) =>{
             pokeInfoObject[id] = pokeInfo
             setPokemonInfoList(pokeInfoObject)
         }
+        const pokedexScroll = document.getElementById('pokedexScrollingList')
+        setPokedexScrollY(pokedexScroll.scrollTop)
         setPokemonInfo(pokeInfo)
         setShowShiny(false)
         setInPokedex(false)

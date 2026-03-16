@@ -18,14 +18,14 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Refactorizar PokedexContext y funciones relacionadas(al final solo movido funciones)
   //TODO: [DONE]Buscador pokemon
   //TODO: [DONE]Pokedex no muestre en su listado las formas alternativas por ahora  
+  //TODO: [DONE]Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
   //![WIP]
-  //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
   //TODO: Nombres en la lista sin guiones(hacer parecido a la búsqueda)
   //TODO: Mirar porque no muestra Xerneas
   //TODO: Botones showMore se escondan cuando ya no hay más que mostrar
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas
-  //TODO: Revisar llamadas de re renderizar
+  //TODO: Revisar llamadas de re renderizar(p.e. ButtonReturnToPokedex se crea 3 veces)
   //TODO: Optimizaciones
   //TODO: Púlido arte(paleta colores)
   //TODO: solucionar pokemons sin sprites
@@ -33,108 +33,6 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
 
 function App() {
   const {setPokedexList, setIdList, inPokedex, setLoadingPokemons} = useContext(PokedexContext)
-    /*const charizardData = {
-    id: "006",
-    name: "Charizard",
-    types: ["fire", "flying"],
-    species: "Pokémon Llama",
-    description: "Cuando lanza una descarga de fuego supercaliente, la roja llama de su cola brilla más intensamente.",
-    height: "1.70",
-    weight: "90.50",
-    habilities: ["Mar Llamas", "Poder Solar"],
-    evolutions:[
-      {
-        name: "Charmander",
-        types: ["fire"],
-        lvEvolution: 16
-      },
-      {
-        name: "Charmeleon",
-        types: ["fire"],
-        lvEvolution: 36
-      },
-      {
-        name: "Charizard",
-        types: ["fire", "flying"],
-        lvEvolution: null
-      },
-    ],
-    evolutions2:{ 
-        pokemonInfo:{
-            id: "#0004",
-            name: "Charmander",
-            types: ["fire"]
-        },
-        evolutions: [
-            {
-                pokemonInfo:{
-                    id: "#0005",
-                    name: "Charmeleon",
-                    types: ["fire"]
-                },
-                evolutions: [
-                    {
-                        pokemonInfo: {
-                            id: "#0006",
-                            name: "Chaizard",
-                            types: ["fire", "flying"]
-                        },
-                        evolutions: null
-                    }
-                ]
-            }
-        ]
-    },
-    variants:[
-      {
-        name: "Charizard X",
-        types: ["fire", "dragon"]
-      },
-      {
-        name: "Charizard Y",
-        types: ["fire", "flying"],
-      },
-      {
-        name: "Charizard Gmax",
-        types: ["fire", "flying"]
-      },
-    ],
-    moves:[
-        {name: "Megapuño",accuracy: 85,power: 80,pp: 20,damageClass: "physical",type: "Normal"},
-        {name: "Puño Fuego",accuracy: 100,power: 75,pp: 15,damageClass: "physical",type: "Fuego"},
-        {name: "Puño Trueno",accuracy: 100,power: 75,pp: 15,damageClass: "physical",type: "Eléctrico"},
-        {name: "Arañazo",accuracy: 100,power: 40,pp: 35,damageClass: "physical",type: "Normal"},
-        {name: "Danza Espada",accuracy: null,power: null, pp: 20, damageClass: "status",type: "Normal"},
-    ],
-    stats:{
-      ps: 78,
-      attack: 84,
-      defense: 78,
-      speed: 100,
-      specialAttack: 109,
-      specialDefense: 85,
-      happiness:50,
-      catchRatio: 45,
-      statMax:255,
-      totalSum:534,
-      totalSumMax: 1530
-    },
-    strengths: [
-      {type:"ground", multiplier: "0"},
-      {type:"bug", multiplier: "1/4"},
-      {type:"grass", multiplier: "1/4"},
-      {type:"steel", multiplier: "1/2"},
-      {type:"fire", multiplier: "1/2"},
-      {type:"fairy", multiplier: "1/2"},
-      {type:"fighting", multiplier: "1/2"},
-    ],
-    weakness: [
-      {type:"rock", multiplier: "4"},
-      {type:"water", multiplier: "2"},
-      {type:"electric", multiplier: "2"}
-    ]
-    }
-    */
 
     //TODO: Revisar tema si se actualiza más de lo que debería
     useEffect(()=>{

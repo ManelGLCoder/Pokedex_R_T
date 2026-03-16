@@ -17,6 +17,7 @@ export const PokedexProvider = ({ children }) => {
     const [descriptionFocused, setDescriptionFocused] = useState(true)
     const [abilitiesFocused, setAbilitiesFocused] = useState(true)
     const [lineEvolutionFocused, setLineEvolutionFocused] = useState(true)
+    const [pokedexScrollY, setPokedexScrollY] = useState(0)
 
 
     return (
@@ -34,7 +35,8 @@ export const PokedexProvider = ({ children }) => {
             showShiny, setShowShiny,
             descriptionFocused, setDescriptionFocused,
             abilitiesFocused, setAbilitiesFocused,
-            lineEvolutionFocused, setLineEvolutionFocused
+            lineEvolutionFocused, setLineEvolutionFocused,
+            pokedexScrollY, setPokedexScrollY
         }}>
             {children}
         </PokedexContext.Provider>
