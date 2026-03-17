@@ -24,8 +24,8 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Botones showMore se escondan cuando ya no hay más que mostrar
   //TODO: [DONE]Mirar nombres largos en apartado del pokemon info o arreglar tamaño botón de retorno
   //TODO: [DONE]Arreglar diferencia ancho entre sección de descripción y sección de stats
-  //![WIP]
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
+  //![WIP]
   //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Mirar de arreglar que para los test requiera de comentar ciertas lineas del archivo get_data_utilities
   //TODO: Cambiar estilo ScrollBars
@@ -56,7 +56,7 @@ function App() {
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto"
+            <div className="flex-col justify-center min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto"
             id='content_screen'>
                 {
                     inPokedex? 

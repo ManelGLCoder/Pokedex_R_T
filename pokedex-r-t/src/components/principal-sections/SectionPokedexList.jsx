@@ -2,6 +2,7 @@ import '../../App.css'
 import SectionSearchPokemon from '../Sections/SectionSearchPokemon'
 import PokedexElement from '../elements/PokedexElement'
 import ButtonShowMorePokemon from '../buttons/ButtonShowMorePokemon.jsx';
+import ButtonManelGLCoder from '../buttons/ButtonManelGLCoder.jsx';
 
 
 import { useContext, useEffect } from 'react';
@@ -42,7 +43,8 @@ function SectionPokedexList() {
         </section>
         <div className='relative -top-4 flex rounded-b-xl px-2 py-2 text-sm/7 bg-violet-950 text-white'>
             <ButtonShowMorePokemon/>
-        </div>        
+        </div>
+        <ButtonManelGLCoder/>
     </div>
     )
 }

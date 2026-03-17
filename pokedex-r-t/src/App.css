@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 @theme {
     --color-steel: #60a1b8;
@@ -19,4 +20,10 @@
     --color-ground: #915121;
     --color-poison: #8f41cb;
     --color-flying: #81b9ef;
+
+    --color-my-logo-bg: #1d1b20;
+    --color-my-logo: #791136;
+    --color-my-logo-hover: #c6bfcf;
+
+    --font-logo: "Source Code Pro", monospace;
 }
