@@ -10,12 +10,12 @@ function SectionAllPokemonData() {
     const {pokemonInfo, showShiny} = useContext(PokedexContext)
 
     return (
-    <>
+    <section className='py-2'>
         <TopPokemonInfoSection pokemon={pokemonInfo}/>
         <PokemonOrangeCard pokemon={pokemonInfo} showShiny={showShiny}/>
         <PokemonVioletCard pokeData={pokemonInfo}/>
         <ButtonManelGLCoder/>
-    </>
+    </section>
     )
 }
 

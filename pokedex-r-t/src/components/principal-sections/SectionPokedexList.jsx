@@ -27,7 +27,7 @@ function SectionPokedexList() {
     },[pokedexScrollY])
     
     return (
-    <div className='flex isolate flex-col min-w-dvw max-w-dvw max-h-dvh sm:min-w-2xl'>
+    <div className='flex flex-col py-2 min-w-dvw max-w-dvw max-h-dvh sm:min-w-2xl'>
         <section className="flex gap-2.5 px-5 py-5 rounded-t-xl bg-orange-300 text-lg sm:text-2xl font-bold text-white">
             <span className="justify-self-left self-center">Pokédex</span>
             <SectionSearchPokemon/>
