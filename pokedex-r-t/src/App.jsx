@@ -22,11 +22,13 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Nombres en la lista sin guiones(hacer parecido a la búsqueda)
   //TODO: [DONE]Mirar porque no muestra Xerneas, porque peta con Deoxys,etc
   //TODO: [DONE]Botones showMore se escondan cuando ya no hay más que mostrar
+  //TODO: [DONE]Mirar nombres largos en apartado del pokemon info o arreglar tamaño botón de retorno
+  //TODO: [DONE]Arreglar diferencia ancho entre sección de descripción y sección de stats
   //![WIP]
-  //TODO: Mirar nombres largos en apartado del pokemon info o arreglar tamaño botón de retorno
   //TODO: Añadir mi logo(botón por ahora no redirecciona)
   //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Mirar de arreglar que para los test requiera de comentar ciertas lineas del archivo get_data_utilities
+  //TODO: Cambiar estilo ScrollBars
   //TODO: Revisar llamadas de re renderizar(p.e. ButtonReturnToPokedex se crea 3 veces)
   //TODO: Optimizaciones
   //TODO: Púlido arte(paleta colores)

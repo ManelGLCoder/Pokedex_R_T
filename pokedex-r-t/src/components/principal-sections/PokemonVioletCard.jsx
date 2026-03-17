@@ -12,7 +12,7 @@ const PokemonVioletCard = ({pokeData}) => {
         <div className="relative -top-4 py-5 rounded-xl bg-violet-950 text-white text-sm/7">
             <ButtonShiny/>
             <ButtonsDescripStats/>
-            <div className="flex flex-col gap-3 px-5">
+            <div className="flex flex-col gap-3 sm:min-w-2xl px-5">
                 {
                     descriptionFocused ? 
                     <SectionPokemonInfo/> :
