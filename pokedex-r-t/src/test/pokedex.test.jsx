@@ -1,6 +1,3 @@
-// import { render, screen, cleanup, fireEvent } from '@testing-library/react'
-// import { json } from 'node:stream/consumers'
-// import { useState } from 'react'
 import { afterEach, describe, it, expect, vi} from 'vitest'
 import { 
         fetchPokemonSimpleData, fetchPokemonData , fetchAbility, fetchMove,
@@ -8,7 +5,7 @@ import {
     } from '../utilities/fetch-utilities'
 
 import { 
-    simplePokemonInfo, pokemonInfo, getTypesData, getNameInLang,
+    simplePokemonInfo, pokemonInfo, getTypesData, getNameES,
     getSprite, getShinySprite
 } from '../utilities/get-data-utilities'
 
@@ -89,7 +86,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${globalThis.BLAZE_ABILITY}/`)
 
-        const blazeES = getNameInLang(blazeData, "es")
+        const blazeES = getNameES(blazeData)
         expect(blazeES).toBe(globalThis.BLAZE_ABILITY_ES)
 
         vi.clearAllMocks()
@@ -105,7 +102,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/ability/${globalThis.SOLAR_POWER_ABILITY}/`)
 
-        const solarPowerES = getNameInLang(solarPowerData, "es")
+        const solarPowerES = getNameES(solarPowerData)
         expect(solarPowerES).toBe(globalThis.SOLAR_POWER_ABILITY_ES)
     })
 
@@ -151,7 +148,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${globalThis.BRUTAL_SWING_MOVE}/`)
 
-        const brutalSwingES = getNameInLang(brutalSwingData, "es")
+        const brutalSwingES = getNameES(brutalSwingData)
         expect(brutalSwingES).toBe(globalThis.BRUTAL_SWING_MOVE_ES)
 
         vi.clearAllMocks()
@@ -167,7 +164,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/move/${globalThis.BREAKING_SWIPE_MOVE}/`)
 
-        const breakingSwipeES = getNameInLang(breakingSwipeData, "es")
+        const breakingSwipeES = getNameES(breakingSwipeData)
         expect(breakingSwipeES).toBe(globalThis.BREAKING_SWIPE_MOVE_ES)
     })
 
@@ -183,7 +180,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${globalThis.HP_STAT_ID}/`)
 
-        const hpES = getNameInLang(hpData, "es")
+        const hpES = getNameES(hpData)
         expect(hpES).toBe(globalThis.HP_STAT_ES)
 
         vi.clearAllMocks()
@@ -199,7 +196,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/stat/${globalThis.ATTACK_STAT_ID}/`)
 
-        const attackES = getNameInLang(attackData, "es")
+        const attackES = getNameES(attackData)
         expect(attackES).toBe(globalThis.ATTACK_STAT_ES)
     })
 
@@ -215,7 +212,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${globalThis.FIRE_TYPE_ID}/`)
 
-        const fireES = getNameInLang(fireData, "es")
+        const fireES = getNameES(fireData)
         expect(fireES).toBe(globalThis.FIRE_TYPE_ES)
 
         vi.clearAllMocks()
@@ -231,7 +228,7 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(fetch).toHaveBeenCalledWith(`https://pokeapi.co/api/v2/type/${globalThis.FLYING_TYPE_ID}/`)
 
-        const flyingES = getNameInLang(flyingData, "es")
+        const flyingES = getNameES(flyingData)
         expect(flyingES).toBe(globalThis.FLYING_TYPE_ES)
     })
 
@@ -291,7 +288,6 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         const charizardData = pokemonInfo(
             globalThis.CHARIZARD_DATA,
             globalThis.CHARIZARD_SPECIES_DATA,
-            globalThis.ALL_TYPES_IN_ES,
             globalThis.CHARIZARD_ABILITIES_DATA,
             globalThis.CHARIZARD_EVOLUTION_INFO,
             globalThis.CHARIZARD_FIVE_MOVES_NAMES,
@@ -300,12 +296,12 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
     })
 
     it('should get pokemon types data', ()=>{
-        const typesData = getTypesData(globalThis.CHARIZARD_FORM_DATA.types, globalThis.ALL_TYPES_IN_ES)
+        const typesData = getTypesData(globalThis.CHARIZARD_FORM_DATA.types)
         expect(typesData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO.types)
     })
 
     it('should get pokemon data simplified needed for PokemonList section from PokeAPI', ()=>{
-        const charizardSimpleData = simplePokemonInfo(globalThis.CHARIZARD_FORM_DATA, globalThis.ALL_TYPES_IN_ES)
+        const charizardSimpleData = simplePokemonInfo(globalThis.CHARIZARD_FORM_DATA)
         expect(charizardSimpleData).toEqual(globalThis.CHARIZARD_DATA_SIMPLE_INFO)
     })
 
@@ -316,14 +312,4 @@ describe('PokemApi REQUEST FUNCTIONS', () =>{
         expect(sprite).toEqual(globalThis.CHARIZARD_DATA_INFO.simpleInfo.sprite)
         expect(spriteShiny).toEqual(globalThis.CHARIZARD_DATA_INFO.simpleInfo.spriteShiny)
     })
-
-    // afterEach(cleanup)
-    // it('should render',() =>{
-    //     render(<Calculator/>)
-    // })
-
-    // it('should render title correctly', ()=>{
-    //     render(<Calculator/>)
-    //     screen.getByText('Calculator')
-    // })
 })

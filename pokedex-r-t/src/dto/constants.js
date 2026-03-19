@@ -1,24 +1,24 @@
-export const POKEMON_TYPES = [
-    "Steel",
-    "Water",
-    "Bug",
-    "Dragon",
-    "Electric",
-    "Ghost",
-    "Fire",
-    "Fairy",
-    "Ice",
-    "Fighting",
-    "Normal",
-    "Grass",
-    "Psychic",
-    "Rock",
-    "Dark",
-    "Ground",
-    "Poison",
-    "Flying",
-    "Stellar"
-]
+export const POKEMON_TYPES_ES = {
+    bug: "Bicho",
+    dark: "Siniestro",
+    dragon: "Dragón",
+    electric: "Eléctrico",
+    fairy: "Hada",
+    fighting: "Lucha",
+    fire: "Fuego",
+    flying: "Volador",
+    ghost: "Fantasma",
+    grass: "Planta",
+    ground: "Tierra",
+    ice: "Hielo",
+    normal: "Normal",
+    poison: "Veneno",
+    psychic: "Psíquico",
+    rock: "Roca",
+    steel: "Acero",
+    stellar: "Astral",
+    water: "Agua",
+}
 
 export const SRC_TYPE = (pokemonType) => `src/assets/types/t_${pokemonType}.svg`
 

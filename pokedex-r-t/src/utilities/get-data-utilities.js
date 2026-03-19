@@ -1,38 +1,20 @@
-import { fetchType, fetchPokemonSimpleData, 
+import { fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
     fetchPokemonList
 } from "./fetch-utilities"
-import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME,
+import { POKEMON_TYPES_ES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
         ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"
 
-export const types = await getAllTypesES()
-export async function getAllTypesES() {
-    let typesPromises = []
-    let esTypes = {}
-    
-    POKEMON_TYPES.forEach(type => {
-        const typePromise = new Promise((resolve)=>{resolve(fetchType(type))})
-        typesPromises.push(typePromise)
-    }) 
-    Promise.all(typesPromises).then(typesData=>{
-        typesData.forEach((type)=>{
-            esTypes[type.name] =  getNameES(type)
-        })
-    })
+export const typesES = POKEMON_TYPES_ES
 
-    return esTypes
-}
-
-//TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData,types)
-    // return simplePokemonInfo(rawPokeData/*,types*/)
+    return simplePokemonInfo(rawPokeData)
 }
 
-export function simplePokemonInfo(pokeData, allTypesData) {
+export function simplePokemonInfo(pokeData) {
     const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
     const namePokemon = getNameCleaned(pokeData.name)
     const sprite = pokeData.sprites.front_default
@@ -41,7 +23,7 @@ export function simplePokemonInfo(pokeData, allTypesData) {
         id: pokeData.id,
         idCompleted: idCompleted,
         name: namePokemon,
-        types: getTypesData(pokeData.types, allTypesData),
+        types: getTypesData(pokeData.types),
         sprite: sprite,
         spriteShiny: shinySprite
     }
@@ -55,11 +37,11 @@ export function getShinySprite(pokemonSimpleInfo){
     return pokemonSimpleInfo.spriteShiny
 }
 
-export function getTypesData(typesWanted, allTypesData){
+export function getTypesData(typesWanted){
     let typesData = []
     typesWanted.forEach(type=>{
         const typeName = [type.type.name]
-        typesData.push({[typeName]: allTypesData[typeName]})
+        typesData.push({[typeName]: typesES[typeName]})
     })
     return typesData
 }
@@ -84,16 +66,16 @@ export async function getPokemonInfo(pokemonId){
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
     const movesNames = getAllMoveNames(rawPokeData)
     return pokemonInfo(
-            rawPokeData, rawSpeciesData, types,abilitiesData, evolutionsInfo, movesNames
+            rawPokeData, rawSpeciesData,abilitiesData, evolutionsInfo, movesNames
         )
 }
 
 export function pokemonInfo(
-        pokeData, pokeSpeciesData, allTypesData,
-        abilitiesData, evolutionInfo, movesNames,
+        pokeData, pokeSpeciesData, abilitiesData,
+        evolutionInfo, movesNames,
     ) {
     return {
-        simpleInfo: simplePokemonInfo(pokeData, allTypesData),
+        simpleInfo: simplePokemonInfo(pokeData),
         species: getGeneraTextES(pokeSpeciesData),
         description: getFlavorTextES(pokeSpeciesData),
         height: decimetresToMeters(pokeData.height),
@@ -147,12 +129,11 @@ export function getMovesInfo(movesData){
     return movesData.map((move)=>getMoveInfo(move))
 }
 
-//TODO: Cuando se implemente cache que en esta función que cree o compruebe el id(nombre en ingles)
 export function getMoveInfo(rawMoveData,){
-    const nameInLang = getNameES(rawMoveData)
+    const nameES = getNameES(rawMoveData)
     const moveInfo = {
         id: rawMoveData.name,
-        name: nameInLang,
+        name: nameES,
         accuracy: rawMoveData.accuracy,
         power: rawMoveData.power,
         pp: rawMoveData.pp,
