@@ -5,11 +5,10 @@ import { fetchType, fetchPokemonSimpleData,
 } from "./fetch-utilities"
 import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
-        ID_START_POKEMONS_ALTERNATIVE_FORMS } from "../dto/constants"
+        ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"
 
-export const types = await getAllTypesIn("es")
-export let currlanguage = 'es'
-export async function getAllTypesIn(lang) {
+export const types = await getAllTypesES()
+export async function getAllTypesES() {
     let typesPromises = []
     let esTypes = {}
     
@@ -19,7 +18,7 @@ export async function getAllTypesIn(lang) {
     }) 
     Promise.all(typesPromises).then(typesData=>{
         typesData.forEach((type)=>{
-            esTypes[type.name] =  getNameInLang(type,lang)
+            esTypes[type.name] =  getNameES(type)
         })
     })
 
@@ -65,14 +64,14 @@ export function getTypesData(typesWanted, allTypesData){
     return typesData
 }
 
-export function getNameInLang(data, language) {
-    return getTextInLang(data, 'names', 'name', language)
+export function getNameES(data) {
+    return getTextES(data, 'names', 'name')
 }
 
-const getTextInLang = (data, key1, key2, lang) =>{
-    let nameInLang = data[key1].find((element) => {return element.language.name === lang})
+const getTextES = (data, key1, key2) =>{
+    let nameInLang = data[key1].find((element) => {return element.language.name === ES})
     if (nameInLang === undefined){
-        nameInLang = data[key1].find((element) => {return element.language.name === 'en'})
+        nameInLang = data[key1].find((element) => {return element.language.name === EN})
     }
     return  nameInLang[key2].replace(/(\r\n|\n|\r)/gm, " ")
 }
@@ -95,45 +94,45 @@ export function pokemonInfo(
     ) {
     return {
         simpleInfo: simplePokemonInfo(pokeData, allTypesData),
-        species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
-        description: getFlavorTextInLang(pokeSpeciesData, currlanguage),
+        species: getGeneraTextES(pokeSpeciesData),
+        description: getFlavorTextES(pokeSpeciesData),
         height: decimetresToMeters(pokeData.height),
         weight: decimetresToMeters(pokeData.weight),
-        abilities: getAbilities(abilitiesData, currlanguage),
+        abilities: getAbilities(abilitiesData),
         evolutions: evolutionInfo,
         moves: movesNames,
         stats: getStatsInfo(pokeData, pokeSpeciesData)
     }
 }
 
-function getFlavorTextInLang(data, language){
-    return getTextInLang(data, 'flavor_text_entries', 'flavor_text', language)
+function getFlavorTextES(data){
+    return getTextES(data, 'flavor_text_entries', 'flavor_text')
 }
 
-function getGeneraTextInLang(data, language){
-    return getTextInLang(data, 'genera', 'genus', language)
+function getGeneraTextES(data){
+    return getTextES(data, 'genera', 'genus')
 }
 
 function decimetresToMeters(dm){
     return (dm / 10).toFixed(2)
 }
 
-export function getAbilities(abilitiesData, lang){
-    let abilitiesInLang = []
+export function getAbilities(abilitiesData){
+    let abilitiesES = []
     abilitiesData.forEach((abilityData)=>{
-        abilitiesInLang.push(getAbilityInLang(abilityData,lang))
+        abilitiesES.push(getAbilityES(abilityData))
     })
-    return abilitiesInLang
+    return abilitiesES
 }
 
-function getAbilityInLang(abilityData, lang){
-    let abilityInLang
+function getAbilityES(abilityData){
+    let abilityES
     abilityData.names.forEach((ability)=>{
-        if(ability.language.name === lang){
-            abilityInLang = ability.name
+        if(ability.language.name === ES){
+            abilityES = ability.name
         }
     })
-    return abilityInLang
+    return abilityES
 }
 
 export function getAllMoveNames(pokeData){
@@ -150,7 +149,7 @@ export function getMovesInfo(movesData){
 
 //TODO: Cuando se implemente cache que en esta función que cree o compruebe el id(nombre en ingles)
 export function getMoveInfo(rawMoveData,){
-    const nameInLang = getNameInLang(rawMoveData, 'es')
+    const nameInLang = getNameES(rawMoveData)
     const moveInfo = {
         id: rawMoveData.name,
         name: nameInLang,

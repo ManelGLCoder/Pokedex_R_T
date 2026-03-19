@@ -43,6 +43,8 @@ export const COLOR_TYPE = {
     "water": "bg-water",
 }
 
+export const ES = 'es'
+export const EN = 'en'
 export const LIMIT_MOVES_FETCH_SAME_TIME = 10
 export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 200
 export const ID_START_POKEMONS_ALTERNATIVE_FORMS = 10001

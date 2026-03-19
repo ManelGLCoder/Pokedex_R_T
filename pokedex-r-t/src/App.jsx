@@ -26,8 +26,9 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Arreglar diferencia ancho entre sección de descripción y sección de stats
   //TODO: [DONE]Añadir mi logo(botón por ahora no redirecciona)
   //TODO: [DONE]Cambiar estilo ScrollBars
+  //TODO: [Cancel]Adaptar para inglés y español + botón idiomas
+  //TODO: [DONE]Limpiar todo relacionado con varios idiomas y solo quede español
   //![WIP]
-  //TODO: Adaptar para inglés y español + botón idiomas
   //TODO: Mirar de arreglar que para los test requiera de comentar ciertas lineas del archivo get_data_utilities
   //TODO: Revisar llamadas de re renderizar(p.e. ButtonReturnToPokedex se crea 3 veces)
   //TODO: Optimizaciones
