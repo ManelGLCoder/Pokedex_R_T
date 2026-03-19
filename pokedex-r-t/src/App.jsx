@@ -28,8 +28,9 @@ import { PokedexContext} from './contexts/PokedexContext.jsx';
   //TODO: [DONE]Cambiar estilo ScrollBars
   //TODO: [Cancel]Adaptar para inglés y español + botón idiomas
   //TODO: [DONE]Limpiar todo relacionado con varios idiomas y solo quede español
-  //![WIP]
   //TODO: Mirar de arreglar que para los test requiera de comentar ciertas lineas del archivo get_data_utilities
+  //TODO: [DONE]Arreglar scroll cuando pulsas una evolución
+  //![WIP]
   //TODO: Revisar llamadas de re renderizar(p.e. ButtonReturnToPokedex se crea 3 veces)
   //TODO: Optimizaciones
   //TODO: Púlido arte(paleta colores)
@@ -57,8 +58,7 @@ function App() {
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <div className="flex flex-1 justify-center min-w-dvw min-h-dvh bg-violet-400">
-            <div className="flex-col justify-center min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl"
-            id='content_screen'>
+            <div className="flex-col justify-center min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl">
                 {
                     inPokedex? 
                     <SectionPokedexList/> :
