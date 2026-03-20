@@ -1,8 +1,7 @@
 import { fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
-    fetchPokemonList
-} from "./fetch-utilities"
+    fetchPokemonList } from "./fetch-utilities"
 import { POKEMON_TYPES_ES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
         ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"

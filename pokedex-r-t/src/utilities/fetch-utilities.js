@@ -1,8 +1,3 @@
-// export function fetchNameInLang(data, language) {
-//     const nameInLang = data.names.find((element) => {return element.language.name === language})
-//     return  nameInLang.name
-// }
-
 import {getSimplePokemonInfo } from "./get-data-utilities"
 
 export async function fetchPokemonSimpleData(pokemon){
@@ -65,7 +60,6 @@ export async function fetchEvolutionChainData(url) {
     return await fetchData(url)
 }
 
-//TODO: Refactorizar para que los fetch sean independiente de los gets
 export async function fetchEvolutionLineDataBy(chainEvolutionData) {
     const id = chainEvolutionData.chain.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/','')
     const pokemonInfo = await getSimplePokemonInfo(id)

@@ -1,4 +1,3 @@
-import React from "react";
 import "../../App.css"
 import MovementsListSection from "./MovementsListSection";
 import ButtonShowMoreMoves from "../buttons/ButtonShowMoreMoves";

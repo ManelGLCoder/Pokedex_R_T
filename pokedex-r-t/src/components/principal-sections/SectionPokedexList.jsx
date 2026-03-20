@@ -4,22 +4,11 @@ import PokedexElement from '../elements/PokedexElement'
 import ButtonShowMorePokemon from '../buttons/ButtonShowMorePokemon.jsx';
 import ButtonManelGLCoder from '../buttons/ButtonManelGLCoder.jsx';
 
-
 import { useContext, useEffect } from 'react';
 import { PokedexContext } from '../../contexts/PokedexContext.jsx';
 
 function SectionPokedexList() {
     const {pokedexList, pokedexScrollY} = useContext(PokedexContext)
-    //TODO: implementar que muestre cargando cuando no estén listos
-    useEffect(()=>{
-        if(pokedexList.lenght === undefined){
-            console.log(`pokedexList empty`)
-        }else{
-            console.log(pokedexList)
-        }
-        return 
-    },[pokedexList])
-
     useEffect(()=>{
         const pokedexScroll = document.getElementById('pokedexScrollingList')
         pokedexScroll.scrollTo(0,pokedexScrollY)

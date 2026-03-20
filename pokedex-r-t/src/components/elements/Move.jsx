@@ -1,4 +1,3 @@
-import React from "react";
 import "../../App.css"
 import PokemonTypeIcon from "./PokemonTypeIcon";
 import MoveCategory from "./MoveCategory";
