@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/Pokedex_R_T",
   plugins: [
     react(),
     tailwindcss(),
