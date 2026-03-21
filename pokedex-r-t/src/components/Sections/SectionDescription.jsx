@@ -1,4 +1,6 @@
 import "../../App.css"
+import weightIcon from '../../assets/description/weight.svg'
+import heightIcon from '../../assets/description/height.svg'
 
 const SectionDescription = ({species, description, weight, height}) => {
     return (
@@ -9,9 +11,9 @@ const SectionDescription = ({species, description, weight, height}) => {
                 {description}
             </p>
             <div className="flex justify-around px-5 py-3 sm:py-5 my-5 my-relative rounded-xl bg-violet-800 text-xl text-white">
-                <img className="size-10 sm:size-13" src="src/assets/description/weight.svg" alt="Weight Icon" />
+                <img className="size-10 sm:size-13" src={weightIcon} alt="Weight Icon" />
                 <span className="flex items-center">{`${weight}kg`}</span>
-                <img className="size-10 sm:size-13" src="src/assets/description/height.svg" alt="Height Icon" />
+                <img className="size-10 sm:size-13" src={heightIcon} alt="Height Icon" />
                 <span className="flex items-center">{`${height}m`}</span>
             </div>
         </section>

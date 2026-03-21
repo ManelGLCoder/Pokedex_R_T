@@ -4,6 +4,7 @@ import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilitie
 import Loading from '../Loading.jsx';
 import { fetchAllMovesInfo } from '../../utilities/fetch-utilities.js';
 import { getMovesInfo, getMovesNamesLimited} from '../../utilities/get-data-utilities.js';
+import moreIcon from '../../assets/more.svg'
 
 const ButtonShowMoreMoves = () =>{
     const {
@@ -70,7 +71,7 @@ const ButtonShowMoreMoves = () =>{
                 onClick={showMore}
                 >
                     <img className="size-10"
-                        src={'src/assets/more.svg'}
+                        src={moreIcon}
                         alt={`More Image`} 
                     />
                     <span className='justify-center self-center px-2 py-1 text-center'>

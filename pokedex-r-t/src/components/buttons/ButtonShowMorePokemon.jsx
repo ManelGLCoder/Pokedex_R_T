@@ -3,6 +3,7 @@ import { PokedexContext} from '../../contexts/PokedexContext.jsx';
 import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR} from '../../utilities/buttons-utilities.js';
 import { getNextPokemons } from '../../utilities/get-data-utilities.js';
 import Loading from '../Loading.jsx';
+import moreIcon from '../../assets/more.svg'
 
 const ButtonShowMorePokemon = () =>{
     const {pokedexList, setPokedexList, idList,
@@ -29,7 +30,7 @@ const ButtonShowMorePokemon = () =>{
                 onClick={showMore}
                 >
                     <img className="size-10"
-                        src={'src/assets/more.svg'}
+                        src={moreIcon}
                         alt={`More Image`} 
                     />
                     <span className='justify-center self-center px-2 py-1 text-center'>

@@ -1,3 +1,22 @@
+import bugIcon from '../assets/types/t_bug.svg'
+import darkIcon from '../assets/types/t_dark.svg'
+import dragonIcon from '../assets/types/t_dragon.svg'
+import electricIcon from '../assets/types/t_electric.svg'
+import fairyIcon from '../assets/types/t_fairy.svg'
+import fightingIcon from '../assets/types/t_fighting.svg'
+import fireIcon from '../assets/types/t_fire.svg'
+import flyingIcon from '../assets/types/t_flying.svg'
+import ghostIcon from '../assets/types/t_ghost.svg'
+import grassIcon from '../assets/types/t_grass.svg'
+import groundIcon from '../assets/types/t_ground.svg'
+import iceIcon from '../assets/types/t_ice.svg'
+import normalIcon from '../assets/types/t_normal.svg'
+import poisonIcon from '../assets/types/t_poison.svg'
+import psychicIcon from '../assets/types/t_psychic.svg'
+import rockIcon from '../assets/types/t_rock.svg'
+import steelIcon from '../assets/types/t_steel.svg'
+import waterIcon from '../assets/types/t_water.svg'
+
 export const POKEMON_TYPES_ES = {
     bug: "Bicho",
     dark: "Siniestro",
@@ -20,7 +39,26 @@ export const POKEMON_TYPES_ES = {
     water: "Agua",
 }
 
-export const SRC_TYPE = (pokemonType) => `src/assets/types/t_${pokemonType}.svg`
+export const SRC_TYPE = {
+    bug: bugIcon,
+    dark: darkIcon,
+    dragon: dragonIcon,
+    electric: electricIcon,
+    fairy: fairyIcon,
+    fighting: fightingIcon,
+    fire: fireIcon,
+    flying: flyingIcon,
+    ghost: ghostIcon,
+    grass: grassIcon,
+    ground: groundIcon,
+    ice: iceIcon,
+    normal: normalIcon,
+    poison: poisonIcon,
+    psychic: psychicIcon,
+    rock: rockIcon,
+    steel: steelIcon,
+    water: waterIcon,
+}
 
 export const COLOR_TYPE = {
     "bug": "bg-bug",

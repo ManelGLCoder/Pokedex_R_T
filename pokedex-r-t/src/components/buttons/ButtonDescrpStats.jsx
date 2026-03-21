@@ -1,6 +1,9 @@
 import { useContext } from 'react';
 import "../../App.css"
 import { PokedexContext } from "../../contexts/PokedexContext";
+import descriptionIcon from '../../assets/b_description.svg'
+import statsIcon from '../../assets/b_stats.svg'
+import focusIcon from '../../assets/b_focus.svg'
 
 const ButtonsDescripStats = () => {
     const {descriptionFocused, setDescriptionFocused} = useContext(PokedexContext)
@@ -18,15 +21,15 @@ const ButtonsDescripStats = () => {
                 <img className="size-8" src={iconPath} alt={`${name} Btn`} />
                 {
                     selected &&
-                    <img className="relative size-5" src="src/assets/b_focus.svg" alt="" />
+                    <img className="relative size-5" src={focusIcon} alt="" />
                 }
             </button>
         )
     }
     return (
         <div className="relative -top-5 flex justify-items-center">
-            {buttonWithIcon("src/assets/b_description.svg", "Description", descriptionFocused)}
-            {buttonWithIcon("src/assets/b_stats.svg", "Stats", !descriptionFocused)}
+            {buttonWithIcon(descriptionIcon, "Description", descriptionFocused)}
+            {buttonWithIcon(statsIcon, "Stats", !descriptionFocused)}
         </div>
     );
 };

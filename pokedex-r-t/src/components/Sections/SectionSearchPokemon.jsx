@@ -4,6 +4,8 @@ import { PokedexContext } from '../../contexts/PokedexContext'
 import { useContext, useCallback, useState, useEffect } from 'react'
 import SectionSearchResults from './SectionSearchResults'
 import { ID_START_POKEMONS_ALTERNATIVE_FORMS } from '../../dto/constants'
+import cancelIcon from '../../assets/cancel.svg'
+import searchlIcon from '../../assets/search.svg'
 
 const SectionSearchPokemon = () =>{
     const {idList} = useContext(PokedexContext)
@@ -54,7 +56,7 @@ const SectionSearchPokemon = () =>{
     return(
         <div className="flex-1 flex items-center my-1 h-fit rounded-2xl border-box border-2 border-violet-800 bg-violet-300">
             <img className="flex justify-center rounded-l-xl m-1 mx-2 sm:mx-1 size-7"
-                src="src/assets/search.svg" alt="Search Icon"
+                src={searchlIcon} alt="Search Icon"
             />
             <input id="pokemonName" 
                 className={`block min-w-0 grow py-1.5 pr-3 pl-1
@@ -66,7 +68,7 @@ const SectionSearchPokemon = () =>{
             <button className='flex justify-center rounded-r-xl hover:bg-violet-800'
             onClick={cancelSearch}>
                 <img className="m-1 mx-2 sm:mx-1 size-7"
-                    src="src/assets/cancel.svg" alt="Cancel Icon"
+                    src={cancelIcon} alt="Cancel Icon"
                 />
             </button>
             {searchResults.length > 0 && (
