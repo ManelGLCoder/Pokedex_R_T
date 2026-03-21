@@ -1,12 +1,11 @@
-// export function fetchNameInLang(data, language) {
-//     const nameInLang = data.names.find((element) => {return element.language.name === language})
-//     return  nameInLang.name
-// }
-
 import {getSimplePokemonInfo } from "./get-data-utilities"
 
 export async function fetchPokemonSimpleData(pokemon){
-    return await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
+    const pokemonFormData = await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
+    if(pokemonFormData.sprites.front_default){
+        return pokemonFormData
+    }
+    return await fetchData(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
 }
 
 async function fetchData(url) {
@@ -61,9 +60,9 @@ export async function fetchEvolutionChainData(url) {
     return await fetchData(url)
 }
 
-//TODO: Refactorizar para que los fetch sean independiente de los gets
 export async function fetchEvolutionLineDataBy(chainEvolutionData) {
-    const pokemonInfo = await getSimplePokemonInfo(chainEvolutionData.chain.species.name)
+    const id = chainEvolutionData.chain.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/','')
+    const pokemonInfo = await getSimplePokemonInfo(id)
     const evolutionsInfo = await fetchEvolutionsData(chainEvolutionData.chain.evolves_to)
     const pokemonEvLineInfo = {
             pokemonInfo: pokemonInfo,
@@ -84,7 +83,8 @@ const fetchEvolutionsData = async (evoData) =>{
 
 const fetchEvolutionData = async(ev)=>{
     let evInfo 
-    const pokemonInfo = await getSimplePokemonInfo(ev.species.name)
+    const id = ev.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/','')
+    const pokemonInfo = await getSimplePokemonInfo(id)
     if(Array.isArray(ev.evolves_to) && ev.evolves_to.length === 0){
         evInfo = {
             pokemonInfo: pokemonInfo,

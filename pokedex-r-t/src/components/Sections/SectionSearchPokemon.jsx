@@ -20,7 +20,6 @@ const SectionSearchPokemon = () =>{
     }
     const handleSearch = useCallback(
         debounce((term) => {
-            console.log('handle')
         if (term.trim() === '') {
             setSearchResults([])
         } else {

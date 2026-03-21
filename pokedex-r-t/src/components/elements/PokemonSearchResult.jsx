@@ -1,17 +1,17 @@
 import { useContext } from "react"
 import { PokedexContext } from "../../contexts/PokedexContext"
-import { getPokemonInfo } from "../../utilities/get-data-utilities"
+import { getPokemonInfo, getNameCleaned } from "../../utilities/get-data-utilities"
 
 const PokemonSearchResult = ({pokemon}) =>{
 
     const pokemonResult = (pokemon) =>{
         const idCompleted = String(pokemon[0]).padStart(4,'0')
-        const nameWithSpace = pokemon[1].replaceAll('-',' ')
-        const words = nameWithSpace.split(' ')
-        const nameCapitalized = words.map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
-        return `#${idCompleted}: ${nameCapitalized}`
+        const name = getNameCleaned(pokemon[1])
+        return `#${idCompleted}: ${name}`
     }
-    const {setPokemonInfo, setInPokedex, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
+    const {setPokemonInfo, setInPokedex,
+        setShowShiny, pokemonInfoList,
+        setPokemonInfoList, setPokedexScrollY} = useContext(PokedexContext)
     const viewPokemonInfo = async(id) => {
         
         let pokeInfo
@@ -23,6 +23,8 @@ const PokemonSearchResult = ({pokemon}) =>{
             pokeInfoObject[id] = pokeInfo
             setPokemonInfoList(pokeInfoObject)
         }
+        const pokedexScroll = document.getElementById('pokedexScrollingList')
+        setPokedexScrollY(pokedexScroll.scrollTop)
         setPokemonInfo(pokeInfo)
         setShowShiny(false)
         setInPokedex(false)
@@ -31,7 +33,7 @@ const PokemonSearchResult = ({pokemon}) =>{
     }
 
     return(
-        <button className='flex hover:bg-orange-300h' onClick={()=>viewPokemonInfo(pokemon[0])}>
+        <button className='flex hover:bg-orange-300' onClick={()=>viewPokemonInfo(pokemon[0])}>
             <span className="px-1 sm:px-2 py-1 sm:py-0.5 text-gray-500 text-sm sm:text-base">{pokemonResult(pokemon)}</span>
         </button>
     )

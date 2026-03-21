@@ -1,24 +1,24 @@
-export const POKEMON_TYPES = [
-    "Steel",
-    "Water",
-    "Bug",
-    "Dragon",
-    "Electric",
-    "Ghost",
-    "Fire",
-    "Fairy",
-    "Ice",
-    "Fighting",
-    "Normal",
-    "Grass",
-    "Psychic",
-    "Rock",
-    "Dark",
-    "Ground",
-    "Poison",
-    "Flying",
-    "Stellar"
-]
+export const POKEMON_TYPES_ES = {
+    bug: "Bicho",
+    dark: "Siniestro",
+    dragon: "Dragón",
+    electric: "Eléctrico",
+    fairy: "Hada",
+    fighting: "Lucha",
+    fire: "Fuego",
+    flying: "Volador",
+    ghost: "Fantasma",
+    grass: "Planta",
+    ground: "Tierra",
+    ice: "Hielo",
+    normal: "Normal",
+    poison: "Veneno",
+    psychic: "Psíquico",
+    rock: "Roca",
+    steel: "Acero",
+    stellar: "Astral",
+    water: "Agua",
+}
 
 export const SRC_TYPE = (pokemonType) => `src/assets/types/t_${pokemonType}.svg`
 
@@ -43,6 +43,8 @@ export const COLOR_TYPE = {
     "water": "bg-water",
 }
 
+export const ES = 'es'
+export const EN = 'en'
 export const LIMIT_MOVES_FETCH_SAME_TIME = 10
 export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 200
 export const ID_START_POKEMONS_ALTERNATIVE_FORMS = 10001

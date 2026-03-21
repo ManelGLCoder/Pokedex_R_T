@@ -1,4 +1,3 @@
-import React from "react";
 import "../../App.css"
 
 import SectionDescription from "./SectionDescription";
@@ -18,7 +17,9 @@ import { getMovesInfo, getMovesNamesLimited} from "../../utilities/get-data-util
 
 
 const SectionPokemonInfo = () => {
-    const {pokemonInfo, abilitiesFocused, lineEvolutionFocused, setMovesNames, setMovesList, movesInfoList, setMovesInfoList} = useContext(PokedexContext)
+    const {pokemonInfo, abilitiesFocused,
+        lineEvolutionFocused, setMovesNames,
+        setMovesList, movesInfoList, setMovesInfoList} = useContext(PokedexContext)
     
     const getInitialMovesInfo = async(movesNames) =>{
         const movesList = getMovesNamesLimited(movesNames, 0)

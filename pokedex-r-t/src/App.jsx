@@ -6,137 +6,8 @@ import { getListOfPokemon, getInitialList} from './utilities/get-data-utilities'
 import { useContext, useEffect } from 'react';
 import { PokedexContext} from './contexts/PokedexContext.jsx';
 
-  //TODO: [DONE] hacer función para obtener los datos para la pokedex
-  //TODO: [DONE] primero que muestre X pokemon en la pokedex
-  //TODO: [DONE/ALTERNATIVE]segundo que vaya añadiendo en base vayas bajando
-  //TODO: [DONE]tercero que al seleccionar un pokemon se muestren sus datos
-  //TODO: [DONE]Crear botón para volver a la pokedex 
-  //TODO: [DONE]No permitir pulsar botón de mostrar más si no ha acabado de cargar los pokemon
-  //TODO: [DONE]Las evoluciones sean botones a ese pokemon
-  //TODO: [DONE]Los pokemon de la lista tengan hover
-  //TODO: [DONE/ALTERNATIVE]Que se guarde en cache y no haga llamadas si ya se tiene(no cache, con useContext)
-  //TODO: [DONE]Refactorizar PokedexContext y funciones relacionadas(al final solo movido funciones)
-  //TODO: [DONE]Buscador pokemon
-  //TODO: [DONE]Pokedex no muestre en su listado las formas alternativas por ahora  
-  //![WIP]
-  //TODO: Al volver a la pokedex se mantenga el scroll en el pokemon que has visto
-  //TODO: Nombres en la lista sin guiones(hacer parecido a la búsqueda)
-  //TODO: Mirar porque no muestra Xerneas
-  //TODO: Botones showMore se escondan cuando ya no hay más que mostrar
-  //TODO: Añadir mi logo(botón por ahora no redirecciona)
-  //TODO: Adaptar para inglés y español + botón idiomas
-  //TODO: Revisar llamadas de re renderizar
-  //TODO: Optimizaciones
-  //TODO: Púlido arte(paleta colores)
-  //TODO: solucionar pokemons sin sprites
-  //TODO: añadir juicy effects
-
 function App() {
   const {setPokedexList, setIdList, inPokedex, setLoadingPokemons} = useContext(PokedexContext)
-    /*const charizardData = {
-    id: "006",
-    name: "Charizard",
-    types: ["fire", "flying"],
-    species: "Pokémon Llama",
-    description: "Cuando lanza una descarga de fuego supercaliente, la roja llama de su cola brilla más intensamente.",
-    height: "1.70",
-    weight: "90.50",
-    habilities: ["Mar Llamas", "Poder Solar"],
-    evolutions:[
-      {
-        name: "Charmander",
-        types: ["fire"],
-        lvEvolution: 16
-      },
-      {
-        name: "Charmeleon",
-        types: ["fire"],
-        lvEvolution: 36
-      },
-      {
-        name: "Charizard",
-        types: ["fire", "flying"],
-        lvEvolution: null
-      },
-    ],
-    evolutions2:{ 
-        pokemonInfo:{
-            id: "#0004",
-            name: "Charmander",
-            types: ["fire"]
-        },
-        evolutions: [
-            {
-                pokemonInfo:{
-                    id: "#0005",
-                    name: "Charmeleon",
-                    types: ["fire"]
-                },
-                evolutions: [
-                    {
-                        pokemonInfo: {
-                            id: "#0006",
-                            name: "Chaizard",
-                            types: ["fire", "flying"]
-                        },
-                        evolutions: null
-                    }
-                ]
-            }
-        ]
-    },
-    variants:[
-      {
-        name: "Charizard X",
-        types: ["fire", "dragon"]
-      },
-      {
-        name: "Charizard Y",
-        types: ["fire", "flying"],
-      },
-      {
-        name: "Charizard Gmax",
-        types: ["fire", "flying"]
-      },
-    ],
-    moves:[
-        {name: "Megapuño",accuracy: 85,power: 80,pp: 20,damageClass: "physical",type: "Normal"},
-        {name: "Puño Fuego",accuracy: 100,power: 75,pp: 15,damageClass: "physical",type: "Fuego"},
-        {name: "Puño Trueno",accuracy: 100,power: 75,pp: 15,damageClass: "physical",type: "Eléctrico"},
-        {name: "Arañazo",accuracy: 100,power: 40,pp: 35,damageClass: "physical",type: "Normal"},
-        {name: "Danza Espada",accuracy: null,power: null, pp: 20, damageClass: "status",type: "Normal"},
-    ],
-    stats:{
-      ps: 78,
-      attack: 84,
-      defense: 78,
-      speed: 100,
-      specialAttack: 109,
-      specialDefense: 85,
-      happiness:50,
-      catchRatio: 45,
-      statMax:255,
-      totalSum:534,
-      totalSumMax: 1530
-    },
-    strengths: [
-      {type:"ground", multiplier: "0"},
-      {type:"bug", multiplier: "1/4"},
-      {type:"grass", multiplier: "1/4"},
-      {type:"steel", multiplier: "1/2"},
-      {type:"fire", multiplier: "1/2"},
-      {type:"fairy", multiplier: "1/2"},
-      {type:"fighting", multiplier: "1/2"},
-    ],
-    weakness: [
-      {type:"rock", multiplier: "4"},
-      {type:"water", multiplier: "2"},
-      {type:"electric", multiplier: "2"}
-    ]
-    }
-    */
-
-    //TODO: Revisar tema si se actualiza más de lo que debería
     useEffect(()=>{
       const initPokedexList = async () =>{
         setLoadingPokemons(true)
@@ -148,15 +19,14 @@ function App() {
         setPokedexList(result)
         setLoadingPokemons(false)
         })
-      return ()=>{}
+      return
     },[])
 
     return (
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <div className="flex justify-center min-w-dvw min-h-dvh py-2 bg-violet-400">
-            <div className="flex-col min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl max-h-screen overflow-y-auto"
-            id='content_screen'>
+        <div className="flex flex-1 justify-center min-w-dvw min-h-dvh bg-violet-400">
+            <div className="flex-col justify-center min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl">
                 {
                     inPokedex? 
                     <SectionPokedexList/> :

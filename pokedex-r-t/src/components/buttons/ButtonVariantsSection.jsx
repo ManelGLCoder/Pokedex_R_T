@@ -2,6 +2,7 @@ import "../../App.css"
 import { getButtonSelectionClassName } from "../../utilities/buttons-utilities";
 import { PokedexContext } from "../../contexts/PokedexContext";
 import { useContext } from "react";
+
 const ButtonVariantsSection = ({first = false, last = false}) => {
     const {lineEvolutionFocused, setLineEvolutionFocused} = useContext(PokedexContext)
     const altSection = () =>{
@@ -16,6 +17,5 @@ const ButtonVariantsSection = ({first = false, last = false}) => {
         </button>
     );
 };
-
 
 export default ButtonVariantsSection;

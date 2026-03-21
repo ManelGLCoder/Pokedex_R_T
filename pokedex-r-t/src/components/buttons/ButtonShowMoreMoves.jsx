@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { PokedexContext } from '../../contexts/PokedexContext.jsx';
 import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities.js';
 import Loading from '../Loading.jsx';
@@ -10,8 +10,10 @@ const ButtonShowMoreMoves = () =>{
             movesList, setMovesList, 
             movesNames, loadingMoves, 
             setLoadingMoves, movesInfoList, 
-            setMovesInfoList
+            setMovesInfoList, hideShowMoreMoves,
+            setHideShowMoreMoves
     } = useContext(PokedexContext)
+
     const showMore = async() =>{
         setLoadingMoves(true)
         const nextMoves = await getNextMovesInfo(movesNames)
@@ -49,11 +51,19 @@ const ButtonShowMoreMoves = () =>{
                 updatedMovesInfoList[move.id] = move
             })
         }
+        setHideShowMoreMoves(movesInfoList.length === movesNames.length)
         setMovesInfoList(updatedMovesInfoList)
     }
 
+    useEffect(()=>{
+        const lenghtMovesList = movesList.length
+        const lenghtMovesNames = movesNames.length
+        setHideShowMoreMoves(lenghtMovesList === lenghtMovesNames)
+            return 
+        },[movesList])
+
     return(
-        loadingMoves ? 
+        hideShowMoreMoves? null : loadingMoves ? 
             <Loading/> :
             <button 
                 className={`${BUTTONS_SHOW_MORE_CLASSNAME} ${HOVER_BUTTONS_COLOR}`}

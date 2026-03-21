@@ -54394,25 +54394,3 @@ globalThis.FLYING_TYPE_DATA = {
   }
 }
 globalThis.FLYING_TYPE_ES = "Volador"
-
-globalThis.ALL_TYPES_IN_ES = {
-    bug: "Bicho",
-    dark: "Siniestro",
-    dragon: "Dragón",
-    electric: "Eléctrico",
-    fairy: "Hada",
-    fighting: "Lucha",
-    fire: "Fuego",
-    flying: "Volador",
-    ghost: "Fantasma",
-    grass: "Planta",
-    ground: "Tierra",
-    ice: "Hielo",
-    normal: "Normal",
-    poison: "Veneno",
-    psychic: "Psíquico",
-    rock: "Roca",
-    steel: "Acero",
-    stellar: "Astral",
-    water: "Agua"
-}

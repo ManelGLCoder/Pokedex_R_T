@@ -1,48 +1,28 @@
-import { fetchType, fetchPokemonSimpleData, 
+import { fetchPokemonSimpleData, 
     fetchPokemonData, fetchPokemonSpeciesData, fetchAbilities,
     fetchEvolutionChainData, fetchEvolutionLineDataBy,
-    fetchPokemonList
-} from "./fetch-utilities"
-import { POKEMON_TYPES, LIMIT_MOVES_FETCH_SAME_TIME,
+    fetchPokemonList } from "./fetch-utilities"
+import { POKEMON_TYPES_ES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
-        ID_START_POKEMONS_ALTERNATIVE_FORMS } from "../dto/constants"
+        ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"
 
-export const types = await getAllTypesIn("es")
-export let currlanguage = 'es'
-export async function getAllTypesIn(lang) {
-    let typesPromises = []
-    let esTypes = {}
-    
-    POKEMON_TYPES.forEach(type => {
-        const typePromise = new Promise((resolve)=>{resolve(fetchType(type))})
-        typesPromises.push(typePromise)
-    }) 
-    Promise.all(typesPromises).then(typesData=>{
-        typesData.forEach((type)=>{
-            esTypes[type.name] =  getNameInLang(type,lang)
-        })
-    })
+export const typesES = POKEMON_TYPES_ES
 
-    return esTypes
-}
-
-//TODO: falta variable global que guarde todos los tipos en español
 export async function getSimplePokemonInfo(pokemonId){
     const rawPokeData = await fetchPokemonSimpleData(pokemonId)
-    return simplePokemonInfo(rawPokeData,types)
-    // return simplePokemonInfo(rawPokeData/*,types*/)
+    return simplePokemonInfo(rawPokeData)
 }
 
-export function simplePokemonInfo(pokeData, allTypesData) {
+export function simplePokemonInfo(pokeData) {
     const idCompleted = `#${String(pokeData.id).padStart(4,'0')}`
-    const namePokemon = pokeData.name[0].toUpperCase() + pokeData.name.slice(1)
+    const namePokemon = getNameCleaned(pokeData.name)
     const sprite = pokeData.sprites.front_default
     const shinySprite = pokeData.sprites.front_shiny
     return {
         id: pokeData.id,
         idCompleted: idCompleted,
         name: namePokemon,
-        types: getTypesData(pokeData.types, allTypesData),
+        types: getTypesData(pokeData.types),
         sprite: sprite,
         spriteShiny: shinySprite
     }
@@ -56,23 +36,23 @@ export function getShinySprite(pokemonSimpleInfo){
     return pokemonSimpleInfo.spriteShiny
 }
 
-export function getTypesData(typesWanted, allTypesData){
+export function getTypesData(typesWanted){
     let typesData = []
     typesWanted.forEach(type=>{
         const typeName = [type.type.name]
-        typesData.push({[typeName]: allTypesData[typeName]})
+        typesData.push({[typeName]: typesES[typeName]})
     })
     return typesData
 }
 
-export function getNameInLang(data, language) {
-    return getTextInLang(data, 'names', 'name', language)
+export function getNameES(data) {
+    return getTextES(data, 'names', 'name')
 }
 
-const getTextInLang = (data, key1, key2, lang) =>{
-    let nameInLang = data[key1].find((element) => {return element.language.name === lang})
+const getTextES = (data, key1, key2) =>{
+    let nameInLang = data[key1].find((element) => {return element.language.name === ES})
     if (nameInLang === undefined){
-        nameInLang = data[key1].find((element) => {return element.language.name === 'en'})
+        nameInLang = data[key1].find((element) => {return element.language.name === EN})
     }
     return  nameInLang[key2].replace(/(\r\n|\n|\r)/gm, " ")
 }
@@ -85,55 +65,55 @@ export async function getPokemonInfo(pokemonId){
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
     const movesNames = getAllMoveNames(rawPokeData)
     return pokemonInfo(
-            rawPokeData, rawSpeciesData, types,abilitiesData, evolutionsInfo, movesNames
+            rawPokeData, rawSpeciesData,abilitiesData, evolutionsInfo, movesNames
         )
 }
 
 export function pokemonInfo(
-        pokeData, pokeSpeciesData, allTypesData,
-        abilitiesData, evolutionInfo, movesNames,
+        pokeData, pokeSpeciesData, abilitiesData,
+        evolutionInfo, movesNames,
     ) {
     return {
-        simpleInfo: simplePokemonInfo(pokeData, allTypesData),
-        species: getGeneraTextInLang(pokeSpeciesData, currlanguage),
-        description: getFlavorTextInLang(pokeSpeciesData, currlanguage),
+        simpleInfo: simplePokemonInfo(pokeData),
+        species: getGeneraTextES(pokeSpeciesData),
+        description: getFlavorTextES(pokeSpeciesData),
         height: decimetresToMeters(pokeData.height),
         weight: decimetresToMeters(pokeData.weight),
-        abilities: getAbilities(abilitiesData, currlanguage),
+        abilities: getAbilities(abilitiesData),
         evolutions: evolutionInfo,
         moves: movesNames,
         stats: getStatsInfo(pokeData, pokeSpeciesData)
     }
 }
 
-function getFlavorTextInLang(data, language){
-    return getTextInLang(data, 'flavor_text_entries', 'flavor_text', language)
+function getFlavorTextES(data){
+    return getTextES(data, 'flavor_text_entries', 'flavor_text')
 }
 
-function getGeneraTextInLang(data, language){
-    return getTextInLang(data, 'genera', 'genus', language)
+function getGeneraTextES(data){
+    return getTextES(data, 'genera', 'genus')
 }
 
 function decimetresToMeters(dm){
     return (dm / 10).toFixed(2)
 }
 
-export function getAbilities(abilitiesData, lang){
-    let abilitiesInLang = []
+export function getAbilities(abilitiesData){
+    let abilitiesES = []
     abilitiesData.forEach((abilityData)=>{
-        abilitiesInLang.push(getAbilityInLang(abilityData,lang))
+        abilitiesES.push(getAbilityES(abilityData))
     })
-    return abilitiesInLang
+    return abilitiesES
 }
 
-function getAbilityInLang(abilityData, lang){
-    let abilityInLang
+function getAbilityES(abilityData){
+    let abilityES
     abilityData.names.forEach((ability)=>{
-        if(ability.language.name === lang){
-            abilityInLang = ability.name
+        if(ability.language.name === ES){
+            abilityES = ability.name
         }
     })
-    return abilityInLang
+    return abilityES
 }
 
 export function getAllMoveNames(pokeData){
@@ -148,12 +128,11 @@ export function getMovesInfo(movesData){
     return movesData.map((move)=>getMoveInfo(move))
 }
 
-//TODO: Cuando se implemente cache que en esta función que cree o compruebe el id(nombre en ingles)
 export function getMoveInfo(rawMoveData,){
-    const nameInLang = getNameInLang(rawMoveData, 'es')
+    const nameES = getNameES(rawMoveData)
     const moveInfo = {
         id: rawMoveData.name,
-        name: nameInLang,
+        name: nameES,
         accuracy: rawMoveData.accuracy,
         power: rawMoveData.power,
         pp: rawMoveData.pp,
@@ -188,6 +167,9 @@ export async function getListOfPokemon(){
     let pokeList = {}
     listData.results.map((pokeData)=> {
         const id = pokeData.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/','')
+        if(id >= ID_START_POKEMONS_ALTERNATIVE_FORMS){
+            return
+        }
         const name = pokeData.name
         pokeList[`${id}`] = name
     })
@@ -203,7 +185,10 @@ const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
     let listPromise = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
     for(let i = startId; i <= maxIndex; i++){
-        if(i >= MAX_NUMBER_OF_POKEMON || pokemonIDsList[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS){
+        if(i >= MAX_NUMBER_OF_POKEMON || 
+            pokemonIDsList[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS ||
+            i === pokemonIDsList.length )
+        {
             break
         }
         const pokemonPromise = getSimplePokemonInfo(pokemonIDsList[i])
@@ -232,4 +217,11 @@ export const getMovesNamesLimited = (movesName, startIndex = lastMoveId + 1) =>
         lastMoveId = i
     }
     return moves
+}
+
+export const getNameCleaned = (name) =>{
+    const nameWithSpace = name.replaceAll('-',' ')
+    const words = nameWithSpace.split(' ')
+    const nameCapitalized = words.map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
+    return nameCapitalized
 }

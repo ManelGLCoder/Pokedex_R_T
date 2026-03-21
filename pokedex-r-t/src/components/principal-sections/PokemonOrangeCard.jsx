@@ -1,5 +1,4 @@
 import "../../App.css"
-import TypesOfThePokemon from "../elements/TypesOfThePokemon";
 
 const PokemonOrangeCard = ({pokemon, showShiny}) => {
     return (

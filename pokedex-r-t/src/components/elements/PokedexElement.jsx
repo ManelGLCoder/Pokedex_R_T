@@ -6,7 +6,8 @@ import { getPokemonInfo } from '../../utilities/get-data-utilities'
 import { HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities'
 
 const PokedexElement = ({pokeElementData}) =>{
-    const {setPokemonInfo, setInPokedex, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
+    const {setPokemonInfo, setInPokedex, setShowShiny, 
+        pokemonInfoList, setPokemonInfoList, setPokedexScrollY} = useContext(PokedexContext)
     const viewPokemonInfo = async(id) => {
             let pokeInfo
             if(pokemonInfoList[id]){
@@ -17,6 +18,8 @@ const PokedexElement = ({pokeElementData}) =>{
                 pokeInfoObject[id] = pokeInfo
                 setPokemonInfoList(pokeInfoObject)
             }
+            const pokedexScroll = document.getElementById('pokedexScrollingList')
+            setPokedexScrollY(pokedexScroll.scrollTop)
             setPokemonInfo(pokeInfo)
             setShowShiny(false)
             setInPokedex(false)
