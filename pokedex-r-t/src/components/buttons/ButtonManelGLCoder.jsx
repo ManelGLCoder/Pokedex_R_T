@@ -1,4 +1,4 @@
-import manelGLCoderIcon from '../../assets/ManelGLCoder.svg'
+import manelGLCoderIcon from '../../../public/ManelGLCoder.svg'
 const ButtonManelGLCoder = () =>{
     return(
         <div className="flex sm:min-w-xl justify-center">
