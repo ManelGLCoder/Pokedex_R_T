@@ -54,7 +54,7 @@ const SectionSearchPokemon = () =>{
     }
 
     return(
-        <div className="flex-1 flex items-center my-1 h-fit rounded-2xl border-box border-2 border-violet-800 bg-violet-300">
+        <div className="flex-1 flex items-center my-1 h-fit rounded-2xl bg-violet-300">
             <img className="flex justify-center rounded-l-xl m-1 mx-2 sm:mx-1 size-7"
                 src={searchlIcon} alt="Search Icon"
             />

@@ -32,7 +32,7 @@ const PokemonEvolution = ({info}) => {
                 alt={`${info.name} Icon`}
             />
             <TypesOfThePokemon types={info.types} onlyIcon={true}/>
-            <span className="flex justify-center text-base sm:text-lg">{info.name}</span>
+            <span className="flex justify-center font-name text-base sm:text-lg">{info.name}</span>
         </button>
     );
 };

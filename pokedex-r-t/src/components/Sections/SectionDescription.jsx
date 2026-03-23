@@ -1,12 +1,13 @@
 import "../../App.css"
 import weightIcon from '../../assets/description/weight.svg'
 import heightIcon from '../../assets/description/height.svg'
+import { TITLE_SUB_SECTION_TEXT } from "../../utilities/tailwind-utilities";
 
 const SectionDescription = ({species, description, weight, height}) => {
     return (
         <section>
-            <span className="text-xl font-bold">Descripción</span>
-            <span className="mx-1 text-gray-400">{species}</span>
+            <span className={`${TITLE_SUB_SECTION_TEXT}`}>Descripción</span>
+            <span className="mx-1 font-name text-xl text-gray-400">{species}</span>
             <p className="text-gray-400">
                 {description}
             </p>

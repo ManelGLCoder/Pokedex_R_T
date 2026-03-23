@@ -27,7 +27,7 @@ const PokedexElement = ({pokeElementData}) =>{
 
     return(
         <button 
-        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl sm:text-xl font-bold bg-linear-65 bg-violet-800 ${HOVER_BUTTONS_COLOR}`}
+        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl text-xl font-name bg-linear-65 bg-violet-800 ${HOVER_BUTTONS_COLOR}`}
         onClick={()=>viewPokemonInfo(pokeElementData.id)}>
             <img className="col-span-1 self-center justify-self-center mx-1 size-19"
                 src={pokeElementData.sprite}

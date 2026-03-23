@@ -5,7 +5,7 @@ const PokemonOrangeCard = ({pokemon, showShiny}) => {
             <div className="py-1  text-sm/7 bg-orange-300 text-white">
                 <div className="flex justify-center">
                     <img 
-                        className="size-32" 
+                        className="size-44 sm:size-60" 
                         src={showShiny? pokemon.simpleInfo.spriteShiny : pokemon.simpleInfo.sprite}
                         alt={`${pokemon.simpleInfo.name} Icon`}
                     />
