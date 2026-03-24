@@ -25,7 +25,7 @@ function App() {
     return (
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <div className="flex flex-1 justify-center min-w-dvw min-h-dvh bg-violet-400">
+        <div className="flex flex-1 justify-center min-w-dvw min-h-dvh bg-page-bg">
             <div className="flex-col justify-center min-w-screen sm:min-w-md max-w-11/12 sm:max-w-2xl">
                 {
                     inPokedex? 

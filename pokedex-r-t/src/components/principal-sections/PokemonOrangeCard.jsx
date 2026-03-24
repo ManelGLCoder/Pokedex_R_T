@@ -2,7 +2,7 @@ import "../../App.css"
 
 const PokemonOrangeCard = ({pokemon, showShiny}) => {
     return (
-            <div className="py-1  text-sm/7 bg-orange-300 text-white">
+            <div className="py-1  text-sm/7 bg-pokemon-bg text-white">
                 <div className="flex justify-center">
                     <img 
                         className="size-44 sm:size-60" 

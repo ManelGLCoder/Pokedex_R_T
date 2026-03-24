@@ -17,13 +17,13 @@ function SectionPokedexList() {
     
     return (
     <div className='flex flex-col py-2 min-w-dvw max-w-dvw max-h-dvh sm:min-w-2xl'>
-        <section className="flex flex-col gap-1 px-5 py-2 rounded-t-xl bg-orange-300 ">
+        <section className="flex flex-col gap-1 px-5 py-2 rounded-t-xl bg-principal ">
             <span className="justify-self-left self-center font-title font text-4xl text-white">Pokédex</span>
             <SectionSearchPokemon/>
             <br />
         </section>
         <section className={`relative overflow-y-auto snap-y snap-proximity flex flex-1 flex-col gap-1.5 
-                -top-4 rounded-t-xl px-2 py-2 text-sm/7 bg-violet-950 text-white [&::-webkit-scrollbar]:w-0`}
+                -top-4 rounded-t-xl px-2 py-2 text-sm/7 bg-secondary text-white [&::-webkit-scrollbar]:w-0`}
                 id='pokedexScrollingList'>
                     {
                         pokedexList.map((pokemon, i)=>{
@@ -31,7 +31,7 @@ function SectionPokedexList() {
                         })
                     }
         </section>
-        <div className='relative -top-4 flex rounded-b-xl px-2 py-2 text-sm/7 bg-violet-950 text-white'>
+        <div className='relative -top-4 flex rounded-b-xl px-2 py-2 text-sm/7 bg-principal text-white'>
             <ButtonShowMorePokemon/>
         </div>
         <ButtonManelGLCoder/>

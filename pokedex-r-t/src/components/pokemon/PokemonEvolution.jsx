@@ -3,7 +3,7 @@ import { PokedexContext } from "../../contexts/PokedexContext";
 import { getPokemonInfo } from "../../utilities/get-data-utilities";
 import "../../App.css"
 import TypesOfThePokemon from "../elements/TypesOfThePokemon";
-import { HOVER_BUTTONS_COLOR } from "../../utilities/buttons-utilities";
+import { HOVER_BUTTONS_COLOR, HOVER_BUTTONS_COLOR_SECONDARY } from "../../utilities/buttons-utilities";
 
 const PokemonEvolution = ({info}) => {
     const {setPokemonInfo, setShowShiny, pokemonInfoList, setPokemonInfoList} = useContext(PokedexContext)
@@ -23,7 +23,7 @@ const PokemonEvolution = ({info}) => {
             window.scrollTo(0,0)
         }
     return (
-        <button className={`flex flex-col justify-end self-center gap-1 p-1 rounded-2xl ${HOVER_BUTTONS_COLOR}`}
+        <button className={`flex flex-col justify-end self-center gap-1 p-1 rounded-2xl ${HOVER_BUTTONS_COLOR_SECONDARY}`}
             onClick={()=>viewPokemonInfo(info.id)}
         >
             <img 

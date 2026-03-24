@@ -3,8 +3,8 @@ import TypesOfThePokemon from "../elements/TypesOfThePokemon"
 import { TITLE_POKEMON_TEXT, TEXT_CENTERED } from "../../utilities/tailwind-utilities"
 const TopPokemonInfoSection = ({pokemon}) =>{
     return(
-        <section className="flex flex-col sticky -top-0.5 z-2 bg-violet-400">
-            <div className="flex py-2 rounded-t-xl bg-orange-300">
+        <section className="flex flex-col sticky -top-0.5 z-2 bg-page-bg">
+            <div className="flex py-2 rounded-t-xl bg-principal">
                 <ButtonReturnToPokedex/>
                 <div className={`flex flex-1 sm:gap-5 px-1 sm:px-5 py-1 self-center ${TITLE_POKEMON_TEXT}`}>
                     <span className={`${TEXT_CENTERED}`}>{pokemon.simpleInfo.idCompleted}</span>

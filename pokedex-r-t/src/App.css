@@ -25,7 +25,33 @@
     --color-my-logo: #791136;
     --color-my-logo-hover: #c6bfcf;
 
+    --color-page-bg: #272523;
+    --color-pokemon-bg: #e2ebed;
+    --color-principal: #c40c24;
+    --color-principal-lite: #d54c5d;
+    --color-principal-dark: #842321;
+    --color-secondary: #52a8c4;
+    --color-secondary-middle: #9fdcee;
+    --color-secondary-lite: #aee2ee;
+    --color-search: #272523;
+    --color-search-lite:  #514f4d;
+    --color-section-bg: #272523;
+    --color-button: #272523;
+    --color-button-lite: #514f4d;
+
+
+    /* Paleta pokedex:
+Rojo: #c40c24
+Rojo claro: #d54c5d
+ Gris: #272523
+Gris claro: #514f4d
+Azul: #9fdcee
+Azul más clarito: #aee2ee
+Azul casi blanco: #e2ebed
+Blanco: #f7fcfa */
     --font-logo: "Source Code Pro", monospace;
     --font-title: "DotGothic16", sans-serif;
     --font-name: "Pixelify Sans", sans-serif;
+    /* Mirar font para los ids se lean bien */
+
 }

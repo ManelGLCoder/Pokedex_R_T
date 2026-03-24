@@ -26,7 +26,7 @@ const ButtonShowMorePokemon = () =>{
         hideShowMorePokemons? null : loadingPokemons ? 
             <Loading/> :
             <button 
-                className={`${BUTTONS_SHOW_MORE_CLASSNAME} ${HOVER_BUTTONS_COLOR}`}
+                className={`${BUTTONS_SHOW_MORE_CLASSNAME} bg-principal-dark ${HOVER_BUTTONS_COLOR}`}
                 onClick={showMore}
                 >
                     <img className="size-10"

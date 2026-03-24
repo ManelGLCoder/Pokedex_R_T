@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { PokedexContext } from '../../contexts/PokedexContext.jsx';
-import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities.js';
+import { BUTTONS_SHOW_MORE_CLASSNAME, HOVER_BUTTONS_COLOR, HOVER_BUTTONS_COLOR_SECONDARY } from '../../utilities/buttons-utilities.js';
 import Loading from '../Loading.jsx';
 import { fetchAllMovesInfo } from '../../utilities/fetch-utilities.js';
 import { getMovesInfo, getMovesNamesLimited} from '../../utilities/get-data-utilities.js';
@@ -65,9 +65,9 @@ const ButtonShowMoreMoves = () =>{
 
     return(
         hideShowMoreMoves? null : loadingMoves ? 
-            <Loading/> :
+            <Loading isPrincipal={false}/> :
             <button 
-                className={`${BUTTONS_SHOW_MORE_CLASSNAME} ${HOVER_BUTTONS_COLOR}`}
+                className={`${BUTTONS_SHOW_MORE_CLASSNAME}  bg-secondary-middle ${HOVER_BUTTONS_COLOR_SECONDARY}`}
                 onClick={showMore}
                 >
                     <img className="size-10"

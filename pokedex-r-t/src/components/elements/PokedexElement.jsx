@@ -3,7 +3,6 @@ import TypesOfThePokemon from './TypesOfThePokemon'
 import { PokedexContext } from '../../contexts/PokedexContext'
 import { useContext } from 'react'
 import { getPokemonInfo } from '../../utilities/get-data-utilities'
-import { HOVER_BUTTONS_COLOR } from '../../utilities/buttons-utilities'
 
 const PokedexElement = ({pokeElementData}) =>{
     const {setPokemonInfo, setInPokedex, setShowShiny, 
@@ -27,7 +26,7 @@ const PokedexElement = ({pokeElementData}) =>{
 
     return(
         <button 
-        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl text-xl font-name bg-linear-65 bg-violet-800 ${HOVER_BUTTONS_COLOR}`}
+        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl text-xl font-name bg-linear-65 hover:bg-pokemon-bg bg-secondary-lite`}
         onClick={()=>viewPokemonInfo(pokeElementData.id)}>
             <img className="col-span-1 self-center justify-self-center mx-1 size-19"
                 src={pokeElementData.sprite}
