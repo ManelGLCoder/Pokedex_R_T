@@ -34,10 +34,15 @@
     --color-secondary-middle: #9fdcee;
     --color-secondary-lite: #aee2ee;
     --color-search: #272523;
-    --color-search-lite:  #514f4d;
+    --color-search-lite: #514f4d;
     --color-section-bg: #272523;
+    --color-text-pokemon-element: #514f4d;
+    --color-text-search: #fff;
     --color-button: #272523;
     --color-button-lite: #514f4d;
+    --color-warning: #e6cc00;
+    --color-stat-fill: #aee2ee;
+    --color-stat-bg: #52a8c4;
 
 
     /* Paleta pokedex:

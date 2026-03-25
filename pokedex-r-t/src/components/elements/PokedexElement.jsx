@@ -26,13 +26,13 @@ const PokedexElement = ({pokeElementData}) =>{
 
     return(
         <button 
-        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl text-xl font-name bg-linear-65 hover:bg-pokemon-bg bg-secondary-lite`}
+        className={`grid grid-cols-5 px-1 py-0.5 rounded-xl text-xl font-name text-text-pokemon-element bg-linear-65 hover:bg-pokemon-bg bg-secondary-lite text-`}
         onClick={()=>viewPokemonInfo(pokeElementData.id)}>
             <img className="col-span-1 self-center justify-self-center mx-1 size-19"
                 src={pokeElementData.sprite}
                 alt={`${pokeElementData.name} Image`} 
             />
-            <span className='col-span-1 justify-center self-center px-2 py-1 text-center sm:flex-1'>
+            <span className='col-span-1 justify-center self-center px-2 py-1 font-title text-center sm:flex-1'>
                 {pokeElementData.idCompleted}
             </span>
             <span className="col-span-2 self-center px-2 py-1 text-center">{pokeElementData.name}</span>

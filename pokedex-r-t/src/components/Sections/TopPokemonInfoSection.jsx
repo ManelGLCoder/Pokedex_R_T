@@ -7,7 +7,7 @@ const TopPokemonInfoSection = ({pokemon}) =>{
             <div className="flex py-2 rounded-t-xl bg-principal">
                 <ButtonReturnToPokedex/>
                 <div className={`flex flex-1 sm:gap-5 px-1 sm:px-5 py-1 self-center ${TITLE_POKEMON_TEXT}`}>
-                    <span className={`${TEXT_CENTERED}`}>{pokemon.simpleInfo.idCompleted}</span>
+                    <span className={`${TEXT_CENTERED} font-title`}>{pokemon.simpleInfo.idCompleted}</span>
                     <span className={`flex-1 ${TEXT_CENTERED}`}>{pokemon.simpleInfo.name}</span>
                 </div>
                 <TypesOfThePokemon types={pokemon.simpleInfo.types} onlyIcon={true} centered={false}/>

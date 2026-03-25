@@ -1,7 +1,7 @@
 import loadingIcon from '../assets/loading.svg'
 const Loading = ({isPrincipal = true}) =>{
         return (
-        <div className={`flex flex-1 justify-center gap-1 px-1 py-0.5 rounded-xl 
+        <div className={`flex flex-1 justify-center gap-1 px-1 py-1 rounded-xl 
         ${isPrincipal? "bg-principal-lite" : "bg-secondary-lite"} font-bold`}>
                     <img className="size-6 self-center"
                         src={loadingIcon}
