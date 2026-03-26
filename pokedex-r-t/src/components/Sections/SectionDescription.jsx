@@ -5,7 +5,7 @@ const SectionDescription = ({species, description, weight, height}) => {
     return (
         <section>
             <span className={`${TITLE_SUB_SECTION_TEXT}`}>Descripción</span>
-            <span className="mx-1 font-name text-xl text-gray-400">{species}</span>
+            <p className="font-name text-xl text-principal-lite">{species}</p>
             <p className="text-gray-400">
                 {description}
             </p>

@@ -5,7 +5,7 @@ import { COLOR_TYPE } from "../../dto/constants";
 
 const Move = ({moveData}) => {
     return (
-        <section className="flex flex-col my-1">
+        <section className="flex flex-col">
             <div className={`flex justify-around items-center gap-1 px-5 rounded-xl text-xs ${COLOR_TYPE[moveData.type]} p-1 font-bold`}>
                 <MoveCategory className="flex-1" moveCategory={moveData.damageClass}/>
                 <span className="flex-2">{moveData.name}</span>

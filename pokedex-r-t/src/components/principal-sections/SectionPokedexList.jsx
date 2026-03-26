@@ -30,9 +30,9 @@ function SectionPokedexList() {
                             return(<PokedexElement key={i} pokeElementData={pokemon}/>)
                         })
                     }
+                    <ButtonShowMorePokemon/>
         </section>
         <div className='relative -top-4 flex rounded-b-xl px-2 py-2 text-sm/7 bg-principal text-white'>
-            <ButtonShowMorePokemon/>
         </div>
         <ButtonManelGLCoder/>
     </div>

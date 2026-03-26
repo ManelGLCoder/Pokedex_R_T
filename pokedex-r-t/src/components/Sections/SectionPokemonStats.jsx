@@ -9,8 +9,8 @@ const SectionPokemonStats = ({pokeData}) => {
     return (
         <>
             <SectionBasicStats stats={pokeData.stats}/>
-            <SectionStrengths strengths={pokeData.strengths}/>
-            <SectionWeakness weakness={pokeData.weakness}/>
+            {/* <SectionStrengths strengths={pokeData.strengths}/>
+            <SectionWeakness weakness={pokeData.weakness}/> */}
             <SectionOtherStats stats={pokeData.stats}/>
         </>
     );

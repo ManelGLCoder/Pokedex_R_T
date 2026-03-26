@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
+.centered{
+    justify-content: center;
+}
 @theme {
     --color-steel: #60a1b8;
     --color-water: #2980ef;
@@ -21,7 +24,7 @@
     --color-poison: #8f41cb;
     --color-flying: #81b9ef;
 
-    --color-my-logo-bg: #1d1b20;
+    --color-my-logo-bg: #7e768d;
     --color-my-logo: #791136;
     --color-my-logo-hover: #c6bfcf;
 
@@ -45,18 +48,7 @@
     --color-stat-bg: #52a8c4;
 
 
-    /* Paleta pokedex:
-Rojo: #c40c24
-Rojo claro: #d54c5d
- Gris: #272523
-Gris claro: #514f4d
-Azul: #9fdcee
-Azul más clarito: #aee2ee
-Azul casi blanco: #e2ebed
-Blanco: #f7fcfa */
     --font-logo: "Source Code Pro", monospace;
     --font-title: "DotGothic16", sans-serif;
     --font-name: "Pixelify Sans", sans-serif;
-    /* Mirar font para los ids se lean bien */
-
 }

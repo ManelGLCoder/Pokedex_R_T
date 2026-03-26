@@ -81,14 +81,19 @@ const SectionPokemonInfo = () => {
                         <SectionHabilities habilitiesData={pokemonInfo.abilities}/> : 
                         <MovementSection/>
                 }
-                <div className={BUTTONS_SECTION_SELECTION_CLASSNAME}>
-                    <ButtonLineEvolutionSection first={true}/>
-                    <ButtonVariantsSection last={true}/>
+                {/* <div className={BUTTONS_SECTION_SELECTION_CLASSNAME}> */}
+                <div className="relative top-3 flex justify-center text-lg md:text-xl rounded-t-2xl bg-secondary">
+                    <span className="flex px-0 py-2 font-bold ">
+                        Línea Evolutiva
+                    </span>
+                    {/* <ButtonLineEvolutionSection first={true}/>
+                    <ButtonVariantsSection last={true}/> */}
                 </div>
+                <SectionEvolutionLine evolutionData={pokemonInfo.evolutions}/>
                 {
-                    lineEvolutionFocused?
-                        <SectionEvolutionLine evolutionData={pokemonInfo.evolutions}/> :
-                        <SectionVariant variantData={pokemonInfo.variants}/>
+                    // lineEvolutionFocused?
+                    //     <SectionEvolutionLine evolutionData={pokemonInfo.evolutions}/> :
+                    //     <SectionVariant variantData={pokemonInfo.variants}/>
                 }
             </div>
         </>
