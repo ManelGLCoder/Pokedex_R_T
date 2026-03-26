@@ -33,8 +33,8 @@ const PokemonSearchResult = ({pokemon}) =>{
     }
 
     return(
-        <button className='flex hover:bg-orange-300' onClick={()=>viewPokemonInfo(pokemon[0])}>
-            <span className="px-1 sm:px-2 py-1 sm:py-0.5 text-gray-500 text-sm sm:text-base">{pokemonResult(pokemon)}</span>
+        <button className='flex hover:bg-search-lite' onClick={()=>viewPokemonInfo(pokemon[0])}>
+            <span className="px-1 sm:px-2 py-1 sm:py-0.5 text-text-search text-sm sm:text-base">{pokemonResult(pokemon)}</span>
         </button>
     )
 } 

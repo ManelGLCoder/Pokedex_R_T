@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
+.centered{
+    justify-content: center;
+}
 @theme {
     --color-steel: #60a1b8;
     --color-water: #2980ef;
@@ -21,9 +24,31 @@
     --color-poison: #8f41cb;
     --color-flying: #81b9ef;
 
-    --color-my-logo-bg: #1d1b20;
+    --color-my-logo-bg: #7e768d;
     --color-my-logo: #791136;
     --color-my-logo-hover: #c6bfcf;
 
+    --color-page-bg: #272523;
+    --color-pokemon-bg: #e2ebed;
+    --color-principal: #c40c24;
+    --color-principal-lite: #d54c5d;
+    --color-principal-dark: #842321;
+    --color-secondary: #52a8c4;
+    --color-secondary-middle: #9fdcee;
+    --color-secondary-lite: #aee2ee;
+    --color-search: #272523;
+    --color-search-lite: #514f4d;
+    --color-section-bg: #272523;
+    --color-text-pokemon-element: #514f4d;
+    --color-text-search: #fff;
+    --color-button: #272523;
+    --color-button-lite: #514f4d;
+    --color-warning: #e6cc00;
+    --color-stat-fill: #aee2ee;
+    --color-stat-bg: #52a8c4;
+
+
     --font-logo: "Source Code Pro", monospace;
+    --font-title: "DotGothic16", sans-serif;
+    --font-name: "Pixelify Sans", sans-serif;
 }

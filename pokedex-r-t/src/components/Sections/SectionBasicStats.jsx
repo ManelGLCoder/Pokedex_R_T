@@ -1,11 +1,12 @@
 import "../../App.css"
+import { TITLE_SUB_SECTION_TEXT } from "../../utilities/tailwind-utilities";
 
 import Stat from "../elements/Stat";
 
 const SectionBasicStats = ({stats}) => {
     return (
         <section className="py-2">
-            <span className="text-xl font-bold">Estadísticas base</span>
+            <span className={`${TITLE_SUB_SECTION_TEXT}`}>Estadísticas Base</span>
             <div className="flex flex-col">
                 <Stat name={"PS"} val={stats.hp} maxVal={stats.statMax}/>
                 <Stat name={"Ataque"} val={stats.attack} maxVal={stats.statMax}/>
