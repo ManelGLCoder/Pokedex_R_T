@@ -6,7 +6,7 @@ const SectionDescription = ({species, description, weight, height}) => {
         <section>
             <span className={`${TITLE_SUB_SECTION_TEXT}`}>Descripción</span>
             <p className="font-name text-xl text-principal-lite">{species}</p>
-            <p className="text-gray-400">
+            <p className="text-white">
                 {description}
             </p>
             <div className="flex justify-around px-5 py-3 sm:py-5 my-5 my-relative rounded-xl bg-secondary text-xl text-white">
