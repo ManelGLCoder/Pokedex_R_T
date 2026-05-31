@@ -87,3 +87,4 @@ export const LIMIT_MOVES_FETCH_SAME_TIME = 10
 export const LIMIT_POKEMON_LIST_FETCH_SAME_TIME = 200
 export const ID_START_POKEMONS_ALTERNATIVE_FORMS = 10001
 export const MAX_NUMBER_OF_POKEMON = 1350
+export const MANELGLCODER_LINK = 'https://manelglcoder.github.io/manelglcoder/'
