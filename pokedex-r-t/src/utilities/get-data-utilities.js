@@ -5,6 +5,7 @@ import { fetchPokemonSimpleData,
 import { POKEMON_TYPES_ES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
         ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"
+import { asyncPool } from "./async-pool"
 
 export const typesES = POKEMON_TYPES_ES
 
@@ -182,7 +183,7 @@ export const getInitialList = async(pokemonIDsList) =>{
 }
 
 const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
-    let listPromise = []
+    const ids = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
     for(let i = startId; i <= maxIndex; i++){
         if(i >= MAX_NUMBER_OF_POKEMON || 
@@ -191,11 +192,10 @@ const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
         {
             break
         }
-        const pokemonPromise = getSimplePokemonInfo(pokemonIDsList[i])
-        listPromise.push(pokemonPromise)
+        ids.push(pokemonIDsList[i])
         lastPokemonId = i
     }
-    return Promise.all(listPromise)
+    return asyncPool(8, ids, getSimplePokemonInfo)
 }
 
 

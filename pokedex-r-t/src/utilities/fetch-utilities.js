@@ -1,4 +1,5 @@
 import {getSimplePokemonInfo } from "./get-data-utilities"
+import { asyncPool } from "./async-pool"
 
 export async function fetchPokemonSimpleData(pokemon){
     const pokemonFormData = await fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemon}/`)
@@ -24,16 +25,7 @@ export async function fetchPokemonData(pokemon){
 
 export async function fetchAbilities(pokeData) {
     const abilitiesNames = pokeData.abilities.map((a)=> a.ability.name)
-
-    let abilitiesPromises = []
-    
-    abilitiesNames.forEach(ability => {
-        const abilityPromise = new Promise((resolve)=>{resolve(fetchAbility(ability))})
-        abilitiesPromises.push(abilityPromise)
-    }) 
-    return Promise.all(abilitiesPromises).then(abilitiesData=>{
-        return abilitiesData
-    })
+    return asyncPool(8, abilitiesNames, fetchAbility)
 }
 
 export async function fetchAbility(ability) {
@@ -102,12 +94,7 @@ const fetchEvolutionData = async(ev)=>{
 }
 
 export async function fetchAllMovesInfo(movesName) {
-    let movePromises = []
-    movesName.forEach( (name)=>{
-        const movePromise =  new Promise((resolve)=>{resolve(fetchMove(name))})
-        movePromises.push(movePromise)
-    })
-    return Promise.all(movePromises)
+    return asyncPool(8, movesName, fetchMove)
 }
 
 export async function fetchPokemonList(){
