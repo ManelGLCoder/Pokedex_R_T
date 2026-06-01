@@ -189,6 +189,33 @@ export const getInitialList = async(pokemonIDsList) =>{
     return await getPokemonList(Object.keys(pokemonIDsList), 0)
 }
 
+export const getInitialListIncremental = async (pokemonIDsList, onPokemon) => {
+    const keys = Object.keys(pokemonIDsList)
+    const ids = []
+    const maxIndex = LIMIT_POKEMON_LIST_FETCH_SAME_TIME - 1
+    for (let i = 0; i <= maxIndex; i++) {
+        if (i >= MAX_NUMBER_OF_POKEMON ||
+            keys[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS ||
+            i === keys.length) {
+            break
+        }
+        ids.push(keys[i])
+        lastPokemonId = i
+    }
+
+    let index = 0
+    async function worker() {
+        const i = index++
+        if (i >= ids.length) return
+        const pokemon = await getSimplePokemonInfo(ids[i])
+        onPokemon(pokemon)
+        await worker()
+    }
+
+    const workers = Array(Math.min(8, ids.length)).fill().map(() => worker())
+    await Promise.all(workers)
+}
+
 const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
     const ids = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1

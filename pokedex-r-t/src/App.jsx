@@ -2,7 +2,7 @@ import './App.css'
 import SectionAllPokemonData from './components/principal-sections/SectionAllPokemonData'
 import SectionPokedexList from './components/principal-sections/SectionPokedexList'
 
-import { getListOfPokemon, getInitialList} from './utilities/get-data-utilities';
+import { getListOfPokemon, getInitialListIncremental } from './utilities/get-data-utilities';
 import { useContext, useEffect } from 'react';
 import { PokedexContext} from './contexts/PokedexContext.jsx';
 
@@ -13,12 +13,13 @@ function App() {
         setLoadingPokemons(true)
         const POKEMON_IDS_LIST = await getListOfPokemon()
         setIdList(POKEMON_IDS_LIST)
-        return await getInitialList(POKEMON_IDS_LIST)
-      }
-        initPokedexList().then((result)=>{
-        setPokedexList(result)
-        setLoadingPokemons(false)
+        setPokedexList([])
+        await getInitialListIncremental(POKEMON_IDS_LIST, (pokemon) => {
+          setPokedexList(prev => [...prev, pokemon])
         })
+        setLoadingPokemons(false)
+      }
+        initPokedexList()
       return
     },[])
 
