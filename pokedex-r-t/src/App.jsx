@@ -7,8 +7,10 @@ import { useContext, useEffect } from 'react';
 import { PokedexContext} from './contexts/PokedexContext.jsx';
 
 function App() {
-  const {setPokedexList, setIdList, inPokedex, setLoadingPokemons} = useContext(PokedexContext)
+  const {idList, pokedexList, setPokedexList, setIdList, inPokedex, setLoadingPokemons} = useContext(PokedexContext)
     useEffect(()=>{
+      if (idList.length > 0 && pokedexList.length > 0) return
+
       const initPokedexList = async () =>{
         setLoadingPokemons(true)
         const POKEMON_IDS_LIST = await getListOfPokemon()
