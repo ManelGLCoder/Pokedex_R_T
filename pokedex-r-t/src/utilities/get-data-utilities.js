@@ -203,17 +203,29 @@ export const getInitialListIncremental = async (pokemonIDsList, onPokemon) => {
         lastPokemonId = i
     }
 
-    let index = 0
+    const buffer = {}
+    let nextFlush = 0
+    let nextIndex = 0
+
+    const flushBuffer = () => {
+        while (buffer[nextFlush] !== undefined) {
+            onPokemon(buffer[nextFlush])
+            delete buffer[nextFlush]
+            nextFlush++
+        }
+    }
+
     async function worker() {
-        const i = index++
+        const i = nextIndex++
         if (i >= ids.length) return
-        const pokemon = await getSimplePokemonInfo(ids[i])
-        onPokemon(pokemon)
+        buffer[i] = await getSimplePokemonInfo(ids[i])
+        flushBuffer()
         await worker()
     }
 
     const workers = Array(Math.min(8, ids.length)).fill().map(() => worker())
     await Promise.all(workers)
+    flushBuffer()
 }
 
 const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
