@@ -59,14 +59,21 @@ const getTextES = (data, key1, key2) =>{
 }
 
 export async function getPokemonInfo(pokemonId){
-    const rawPokeData = await fetchPokemonData(pokemonId)
-    const rawSpeciesData = await fetchPokemonSpeciesData(pokemonId)
-    const abilitiesData = await fetchAbilities(rawPokeData)
-    const evolutionData = await fetchEvolutionChainData(rawSpeciesData.evolution_chain.url)
+    const [rawPokeData, rawSpeciesData] = await Promise.all([
+        fetchPokemonData(pokemonId),
+        fetchPokemonSpeciesData(pokemonId),
+    ])
+
+    const [abilitiesData, evolutionData] = await Promise.all([
+        fetchAbilities(rawPokeData),
+        fetchEvolutionChainData(rawSpeciesData.evolution_chain.url),
+    ])
+
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
     const movesNames = getAllMoveNames(rawPokeData)
+
     return pokemonInfo(
-            rawPokeData, rawSpeciesData,abilitiesData, evolutionsInfo, movesNames
+            rawPokeData, rawSpeciesData, abilitiesData, evolutionsInfo, movesNames
         )
 }
 
