@@ -5,6 +5,7 @@ import { fetchPokemonSimpleData,
 import { POKEMON_TYPES_ES, LIMIT_MOVES_FETCH_SAME_TIME,
         LIMIT_POKEMON_LIST_FETCH_SAME_TIME, MAX_NUMBER_OF_POKEMON,
         ID_START_POKEMONS_ALTERNATIVE_FORMS, ES, EN } from "../dto/constants"
+import { asyncPool } from "./async-pool"
 
 export const typesES = POKEMON_TYPES_ES
 
@@ -58,14 +59,21 @@ const getTextES = (data, key1, key2) =>{
 }
 
 export async function getPokemonInfo(pokemonId){
-    const rawPokeData = await fetchPokemonData(pokemonId)
-    const rawSpeciesData = await fetchPokemonSpeciesData(pokemonId)
-    const abilitiesData = await fetchAbilities(rawPokeData)
-    const evolutionData = await fetchEvolutionChainData(rawSpeciesData.evolution_chain.url)
+    const [rawPokeData, rawSpeciesData] = await Promise.all([
+        fetchPokemonData(pokemonId),
+        fetchPokemonSpeciesData(pokemonId),
+    ])
+
+    const [abilitiesData, evolutionData] = await Promise.all([
+        fetchAbilities(rawPokeData),
+        fetchEvolutionChainData(rawSpeciesData.evolution_chain.url),
+    ])
+
     const evolutionsInfo = await fetchEvolutionLineDataBy(evolutionData)
     const movesNames = getAllMoveNames(rawPokeData)
+
     return pokemonInfo(
-            rawPokeData, rawSpeciesData,abilitiesData, evolutionsInfo, movesNames
+            rawPokeData, rawSpeciesData, abilitiesData, evolutionsInfo, movesNames
         )
 }
 
@@ -181,8 +189,47 @@ export const getInitialList = async(pokemonIDsList) =>{
     return await getPokemonList(Object.keys(pokemonIDsList), 0)
 }
 
+export const getInitialListIncremental = async (pokemonIDsList, onPokemon) => {
+    const keys = Object.keys(pokemonIDsList)
+    const ids = []
+    const maxIndex = LIMIT_POKEMON_LIST_FETCH_SAME_TIME - 1
+    for (let i = 0; i <= maxIndex; i++) {
+        if (i >= MAX_NUMBER_OF_POKEMON ||
+            keys[i] >= ID_START_POKEMONS_ALTERNATIVE_FORMS ||
+            i === keys.length) {
+            break
+        }
+        ids.push(keys[i])
+        lastPokemonId = i
+    }
+
+    const buffer = {}
+    let nextFlush = 0
+    let nextIndex = 0
+
+    const flushBuffer = () => {
+        while (buffer[nextFlush] !== undefined) {
+            onPokemon(buffer[nextFlush])
+            delete buffer[nextFlush]
+            nextFlush++
+        }
+    }
+
+    async function worker() {
+        const i = nextIndex++
+        if (i >= ids.length) return
+        buffer[i] = await getSimplePokemonInfo(ids[i])
+        flushBuffer()
+        await worker()
+    }
+
+    const workers = Array(Math.min(8, ids.length)).fill().map(() => worker())
+    await Promise.all(workers)
+    flushBuffer()
+}
+
 const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
-    let listPromise = []
+    const ids = []
     const maxIndex = startId + LIMIT_POKEMON_LIST_FETCH_SAME_TIME -1
     for(let i = startId; i <= maxIndex; i++){
         if(i >= MAX_NUMBER_OF_POKEMON || 
@@ -191,11 +238,10 @@ const getPokemonList = (pokemonIDsList, startId = lastPokemonId + 1) =>{
         {
             break
         }
-        const pokemonPromise = getSimplePokemonInfo(pokemonIDsList[i])
-        listPromise.push(pokemonPromise)
+        ids.push(pokemonIDsList[i])
         lastPokemonId = i
     }
-    return Promise.all(listPromise)
+    return asyncPool(8, ids, getSimplePokemonInfo)
 }
 
 
